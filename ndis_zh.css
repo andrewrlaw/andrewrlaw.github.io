@@ -70,3 +70,60 @@ h3{
   line-height: 42px;
   color: #007C89;
 }
+
+button{
+    border-radius: 4px;
+    padding: 16px 22px;
+    border: 0px;
+    font-size: 16px;
+    transition: 100ms ease-in-out;
+    cursor: pointer;
+  }
+  button.primary
+  {
+    background: #6A2875;
+    color: #ffffff;
+  }
+  button.primary:hover
+  {
+    background: #8631A8;
+  }
+  button.primary:active
+  {
+    background: #000000;
+  }
+  button.primary:disabled
+  {
+    background: #CDCDCD;
+    color: black;
+    cursor:not-allowed;
+  }
+  button.secondary
+  {
+    background: #ffffff;
+    padding: 14px 20px;
+    color: #6A2875;
+    border: 2px solid #6A2875;
+    transition: none;
+  }
+  button.secondary:hover
+  {
+    background: #ffffff;
+    border: 3px solid #8631A8;
+    padding: 13px 19px;
+    color: #8631A8;
+  }
+  button.secondary:active
+  {
+    padding: 13px 19px;
+    border: 3px solid #000000;
+    color: #000000
+  }
+  button.secondary:disabled, button.secondary:disabled:hover
+  {
+    background: #F6F6F7;
+    color: #CDCDCD;
+    padding: 14px 20px;
+    cursor:not-allowed;
+    border: 2px solid #CDCDCD;
+  }
