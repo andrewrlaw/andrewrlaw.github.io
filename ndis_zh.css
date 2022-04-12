@@ -1,0 +1,72 @@
+@font-face {
+font-family: "72 Regular";
+src:url('https://andrewrlaw.github.io/72-Regular.ttf') format('truetype');
+}
+@font-face {
+font-family: "72 Light";
+src:url('https://andrewrlaw.github.io/72-Light.ttf') format('truetype');
+}
+@font-face {
+font-family: "72 Bold";
+src:url('https://andrewrlaw.github.io/72-Bold.ttf') format('truetype');
+}
+@font-face {
+font-family: "72 Black";
+src:url('https://andrewrlaw.github.io/72-Black.ttf') format('truetype');
+}
+
+body{
+    background: #ffffff;
+    font-family: "72 Light";
+    font-size: 16px/1em;
+    line-height: 28px;
+    color: #000000;
+    padding: 1em; 
+}
+
+a{
+  color: #6A2875;
+  text-decoration: underline;
+}
+a:hover{
+  color: #6A2875;
+  text-decoration: none;
+}
+
+h1{
+  font-family: "72 Bold";
+  font-size: 24px;
+  letter-spacing: -0.063em;
+  line-height: 44px;
+  color: #000000;
+}
+h2{
+  font-family: "72 Bold";
+  font-size: 18px;
+  letter-spacing: -0.063em;
+  line-height: 36px;
+  color: #000000;
+}
+h3{
+  font-family: "72 Bold";
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 28px;
+  color: #000000;
+}
+
+.subheading{
+  font-family: "72 Light";
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 28px;
+  color: #000000;
+}
+
+.display{
+  font-family: "72 Light";
+  font-size: 49px;
+  letter-spacing: 0;
+  line-height: 42px;
+  color: #007C89;
+}
