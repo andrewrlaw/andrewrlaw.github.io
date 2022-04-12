@@ -80,62 +80,67 @@
       color: #007C89;
     }
 
-    button{
-      border-radius: 4px;
-      padding: 16px 22px;
-      border: 0px;
-      font-size: 16px;
-      transition: 100ms ease-in-out;
-      cursor: pointer;
-    }
-    button.primary
-    {
-      background: #6A2875;
-      color: #ffffff;
-    }
-    button.primary:hover
-    {
-      background: #8631A8;
-    }
-    button.primary:active
-    {
-      background: #000000;
-    }
-    button.primary:disabled
-    {
-      background: #CDCDCD;
-      color: black;
-      cursor:not-allowed;
-    }
-    button.secondary
-    {
-      background: #ffffff;
-      padding: 14px 20px;
-      color: #6A2875;
-      border: 2px solid #6A2875;
-      transition: none;
-    }
-    button.secondary:hover
-    {
-      background: #ffffff;
-      border: 3px solid #8631A8;
-      padding: 13px 19px;
-      color: #8631A8;
-    }
-    button.secondary:active
-    {
-      padding: 13px 19px;
-      border: 3px solid #000000;
-      color: #000000
-    }
-    button.secondary:disabled, button.secondary:disabled:hover
-    {
-      background: #F6F6F7;
-      color: #CDCDCD;
-      padding: 14px 20px;
-      cursor:not-allowed;
-      border: 2px solid #CDCDCD;
-    }
+button{
+  border-radius: 4px;
+  padding: 16px 22px;
+  border: 0px;
+  font-size: 16px;
+  transition: 100ms ease-in-out;
+  cursor: pointer;
+}
+button.primary
+{
+  background: #6A2875;
+  color: #ffffff;
+}
+button.primary:hover
+{
+  background: #8631A8;
+}
+button.primary:active
+{
+  background: #000000;
+}
+button.primary:disabled
+{
+  background: #CDCDCD;
+  color: black;
+  cursor:not-allowed;
+}
+button.secondary
+{
+  background: #ffffff;
+  padding: 14px 20px;
+  color: #6A2875;
+  border: 2px solid #6A2875;
+  transition: none;
+}
+button.secondary:hover
+{
+  background: #ffffff;
+  border: 3px solid #8631A8;
+  padding: 13px 19px;
+  color: #8631A8;
+}
+button.secondary:active
+{
+  padding: 13px 19px;
+  border: 3px solid #000000;
+  color: #000000
+}
+button.secondary:disabled, button.secondary:disabled:hover
+{
+  background: #F6F6F7;
+  color: #CDCDCD;
+  padding: 14px 20px;
+  cursor:not-allowed;
+  border: 2px solid #CDCDCD;
+}
+
+button img{
+  height: 16px;
+  color: #ffffff;
+}
    
         </style>
   </head>
@@ -143,11 +148,12 @@
     <h1>Heading 1</h1>
     <h2>Heading 2</h2>
 	  <h3>Heading 3</h3>
+    
     <p class="subheading">Subheading</p>
     <p class="display">Display</p>
     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 
-    <button type="button" class="primary">Primary button</button>
+    <button type="button" class="primary"><img src="https://andrewrlaw.github.io/icons/streamline-icon-arrow-right-1@16x16.SVG" alt="Right chevron"> Primary button</button>
     <button class="primary" disabled>Primary button</button>
     <button class="secondary">Secondary button</button>
     <button class="secondary" disabled>Secondary button</button>
