@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
+    <script src="https://kit.fontawesome.com/cbc5577ab6.js" crossorigin="anonymous"></script>
     <style>
         @font-face {
             font-family: "72 Regular";
@@ -90,26 +91,30 @@ button{
 }
 button.primary
 {
-  background: #6A2875;
+  background-color: #6A2875;
   color: #ffffff;
 }
 button.primary:hover
 {
-  background: #8631A8;
+  background-color: #8631A8;
 }
 button.primary:active
 {
-  background: #000000;
+  background-color: #000000;
 }
 button.primary:disabled
 {
-  background: #CDCDCD;
+  background-color: #CDCDCD;
   color: black;
   cursor:not-allowed;
 }
+button i
+{
+  margin-right: 6px;
+}
 button.secondary
 {
-  background: #ffffff;
+  background-color: #ffffff;
   padding: 14px 20px;
   color: #6A2875;
   border: 2px solid #6A2875;
@@ -117,7 +122,7 @@ button.secondary
 }
 button.secondary:hover
 {
-  background: #ffffff;
+  background-color: #ffffff;
   border: 3px solid #8631A8;
   padding: 13px 19px;
   color: #8631A8;
@@ -130,18 +135,17 @@ button.secondary:active
 }
 button.secondary:disabled, button.secondary:disabled:hover
 {
-  background: #F6F6F7;
+  background-color: #F6F6F7;
   color: #CDCDCD;
   padding: 14px 20px;
   cursor:not-allowed;
   border: 2px solid #CDCDCD;
 }
 
-button img{
-  height: 16px;
-  display: inline-block;
-  color: #ffffff;
-  vertical-align: middle;
+p.icons
+{
+  font-size: 2em;
+
 }
    
         </style>
@@ -153,11 +157,44 @@ button img{
     
     <p class="subheading">Subheading</p>
     <p class="display">Display</p>
+    <p><a href="#">Hyperlink</a></p>
     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 
-    <button type="button" class="primary"><img src="https://andrewrlaw.github.io/icons/streamline-icon-cancel@16x16.SVG" alt="Right chevron"> Primary button</button>
-    <button class="primary" disabled>Primary button</button>
-    <button class="secondary">Secondary button</button>
-    <button class="secondary" disabled>Secondary button</button>
+    <button type="button" class="primary"><i class="fa-solid fa-house"></i>Primary button</i></button>
+    <button type="button" class="primary"><i class="fa-solid fa-house"></i>Primary button</i></button>
+    <button type="button" class="primary" disabled><i class="fa-solid fa-lock"></i>Primary button</button>
+    <button type="button" class="secondary"><i class="fa-solid fa-house"></i>Secondary button</button>
+    <button type="button" class="secondary" disabled><i class="fa-solid fa-lock"></i> Secondary button</button>
+
+
+    <h2>Icons</h2>
+    <p class="icons">
+    <i class="fa-solid fa-calendar"></i>
+    <i class="fa-solid fa-circle-check"></i>
+    <i class="fa-solid fa-circle-exclamation"></i>
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    <i class="fa-solid fa-circle-info"></i>
+    <i class="fa-solid fa-paper-plane"></i>
+    <i class="fa-solid fa-clock"></i>
+    <i class="fa-solid fa-circle-xmark"></i>
+    <i class="fa-solid fa-clipboard"></i>
+    <i class="fa-solid fa-circle-dollar"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-heart"></i>
+    <i class="fa-solid fa-trash-can"></i>
+    <i class="fa-solid fa-arrow-rotate-right"></i>
+    <i class="fa-solid fa-check"></i>
+    <i class="fa-solid fa-bell"></i>
+    <i class="fa-solid fa-house"></i>
+    <i class="fa-solid fa-ellipsis"></i>
+    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+    <i class="fa-solid fa-lock"></i>
+    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    <i class="fa-solid fa-chevron-up"></i>
+    <i class="fa-solid fa-chevron-right"></i>
+    <i class="fa-solid fa-chevron-left"></i>
+    <i class="fa-solid fa-chevron-down"></i>
+    </p>
+
   </body>
 </html>

@@ -79,6 +79,10 @@ button{
     transition: 100ms ease-in-out;
     cursor: pointer;
   }
+  button i
+{
+  margin-right: 6px;
+}
   button.primary
   {
     background: #6A2875;
