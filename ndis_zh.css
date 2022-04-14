@@ -1,257 +1,284 @@
 /* IMPORT FONTS */
 
 @font-face {
-font-family: "72 Regular";
-src:url('https://andrewrlaw.github.io/72-Regular.ttf') format('truetype');
+    font-family: "72 Regular";
+    src        : url('https://andrewrlaw.github.io/72-Regular.ttf') format('truetype');
 }
+
 @font-face {
-font-family: "72 Light";
-src:url('https://andrewrlaw.github.io/72-Light.ttf') format('truetype');
+    font-family: "72 Light";
+    src        : url('https://andrewrlaw.github.io/72-Light.ttf') format('truetype');
 }
+
 @font-face {
-font-family: "72 Bold";
-src:url('https://andrewrlaw.github.io/72-Bold.ttf') format('truetype');
+    font-family: "72 Bold";
+    src        : url('https://andrewrlaw.github.io/72-Bold.ttf') format('truetype');
 }
+
 @font-face {
-font-family: "72 Black";
-src:url('https://andrewrlaw.github.io/72-Black.ttf') format('truetype');
+    font-family: "72 Black";
+    src        : url('https://andrewrlaw.github.io/72-Black.ttf') format('truetype');
 }
 
 /* COLOUR VARIABLES */
 
 :root {
-    --purpleHeavy:  #6A2875;
-    --purpleLight:  #F2E7F4;
-    --purple:       #8631A8;
-    --tealHeavy:    #007C89;
-    --tealLight:    #EDF6F7;
-    --white:        #FFFFFF;
-    --greyLight:    #F6F6F7;
-    --grey:         #FFFFFF;
-    --greyHeavy:    #333333;
-    --black:        #000000;
-    --yellow:       #FFCB04;
-    --red:          #9D100F;
-  }
+    --purpleHeavy: #6A2875;
+    --purpleLight: #F2E7F4;
+    --purple     : #8631A8;
+    --tealHeavy  : #007C89;
+    --tealLight  : #EDF6F7;
+    --white      : #FFFFFF;
+    --greyLight  : #F6F6F7;
+    --grey       : #CDCDCD;
+    --greyHeavy  : #333333;
+    --black      : #000000;
+    --yellow     : #FFCB04;
+    --red        : #9D100F;
+}
 
 /* BASE BODY STYLE FOR ZEROHEIGHT DEMO CONTAINERS */
 
-body{
-    background: var(--white);
+body {
+    background : var(--white);
     font-family: "72 Light";
-    font-size: 16px/1em;
+    font-size  : 16px;
     line-height: 28px;
-    color: var(--black);
-    padding: 1em; 
+    color      : var(--black);
+    padding    : 1em;
 }
 
 /* TYPOGRAPHIC STYLES */
 
-h1{
-  font-family: "72 Bold";
-  font-size: 24px;
-  letter-spacing: -0.063em;
-  line-height: 44px;
-  color: var(--black);
-}
-h2{
-  font-family: "72 Bold";
-  font-size: 18px;
-  letter-spacing: -0.063em;
-  line-height: 36px;
-  color: var(--black);
-}
-h3{
-  font-family: "72 Bold";
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 28px;
-  color: var(--black);
+h1 {
+    font-family   : "72 Bold";
+    font-size     : 24px;
+    letter-spacing: -0.063em;
+    line-height   : 44px;
+    color         : var(--black);
 }
 
-.subheading{
-  font-family: "72 Light";
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: 28px;
-  color: var(--black);
+h2 {
+    font-family   : "72 Bold";
+    font-size     : 18px;
+    letter-spacing: -0.063em;
+    line-height   : 36px;
+    color         : var(--black);
 }
 
-.display{
-  font-family: "72 Light";
-  font-size: 49px;
-  letter-spacing: 0;
-  line-height: 42px;
-  color: var(--tealHeavy);
+h3 {
+    font-family   : "72 Bold";
+    font-size     : 16px;
+    letter-spacing: 0;
+    line-height   : 28px;
+    color         : var(--black);
 }
 
-a{
-    color: var(--purpleHeavy);
+.subheading {
+    font-family   : "72 Light";
+    font-size     : 18px;
+    letter-spacing: 0;
+    line-height   : 28px;
+    color         : var(--black);
+}
+
+.display {
+    font-family   : "72 Light";
+    font-size     : 49px;
+    letter-spacing: 0;
+    line-height   : 42px;
+    color         : var(--tealHeavy);
+}
+
+a {
+    color          : var(--purpleHeavy);
     text-decoration: underline;
-  }
-a:hover{
-      color: var(--purple);
-      text-decoration: none;
+}
+
+a:hover {
+    color          : var(--purple);
+    text-decoration: none;
 }
 
 /* BUTTON STYLES */
 
-button{
+button {
     border-radius: 4px;
-    padding: 16px 22px;
-    border: 0px;
-    font-size: 16px;
-    transition: 100ms ease-in-out;
-    cursor: pointer;
-  }
-button i
-    {
-  margin-right: 6px;
+    padding      : 16px 22px;
+    border       : 0px;
+    font-size    : 16px;
+    transition   : 100ms ease-in-out;
+    cursor       : pointer;
 }
-  button.primary
-  {
+
+button:hover {
+    text-decoration: underline;
+}
+
+button:disabled:hover {
+    text-decoration: none;
+}
+
+button i {
+    margin-right: 6px;
+}
+
+button.primary {
     background: var(--purpleHeavy);
-    color: var(--white);
+    color     : var(--white);
 
-  }
-  button.primary:hover
-  {
-    background: var(--purple);
-  }
-  button.primary:active
-  {
-    background: var(--black);
-  }
-  button.primary:disabled
-  {
-    background:  var(--grey);
-    color: var(--black);
-    cursor:not-allowed;
-  }
-  button.secondary
-  {
+}
+
+button.primary:hover {
+    background        : var(--purple);
+    -webkit-box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow   : inset 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+    box-shadow        : inset 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+button.primary:active {
+    background: var(--greyHeavy);
+}
+
+button.primary:disabled {
+    background: var(--grey);
+    color     : var(--black);
+    cursor    : not-allowed;
+}
+
+button.primary:disabled:hover {
+    box-shadow: none;
+}
+
+button.secondary {
     background: var(--white);
-    padding: 14px 20px;
-    color: var(--purpleHeavy);
-    border: 2px solid var(--purpleHeavy);
+    padding   : 14px 20px;
+    color     : var(--purpleHeavy);
+    border    : 2px solid var(--purpleHeavy);
     transition: none;
-  }
-  button.secondary:hover
-  {
+}
+
+button.secondary:hover {
     background: #ffffff;
-    border: 3px solid var(--purple);
+    border    : 3px solid var(--purple);
+    padding   : 13px 19px;
+    color     : var(--purple);
+}
+
+button.secondary:active {
     padding: 13px 19px;
-    color: var(--purple);
-  }
-  button.secondary:active
-  {
-    padding: 13px 19px;
-    border: 3px solid var(--black);
-    color:  var(--black);
-  }
-  button.secondary:disabled, button.secondary:disabled:hover
-  {
-    background:  var(--purpleLight);
-    color: var(--grey);
-    padding: 14px 20px;
-    cursor:not-allowed;
-    border: 2px solid var(--grey);
-  }
+    border : 3px solid var(--black);
+    color  : var(--black);
+}
+
+button.secondary:disabled,
+button.secondary:disabled:hover {
+    background: var(--purpleLight);
+    color     : var(--grey);
+    padding   : 14px 20px;
+    cursor    : not-allowed;
+    border    : 2px solid var(--grey);
+}
 
 
-  /* CARD STYLES */
+/* CARD STYLES */
 
-  .NDIScardBasic {
-    max-width:1200px;
-    width: auto;
-    padding: 36px;
-    border: 1px solid var(--grey);
-    border-radius: 12px;
+.NDIScardBasic {
+    max-width       : 1200px;
+    width           : auto;
+    padding         : 36px;
+    border          : 1px solid var(--grey);
+    border-radius   : 12px;
     background-color: var(--white);
-    box-shadow: 0px 2px 10px rgb(0,0,0,0.2)
-  }
-  .NDIScardBasic i
-  {
+    box-shadow      : 0px 2px 10px rgb(0, 0, 0, 0.2)
+}
+
+.NDIScardBasic i {
     font-size: 24px;
-  }
+}
 
-  /* DRAWER STYLES */
+/* DRAWER STYLES */
 
-  /* Control the width of both cards with this container */
+/* Control the width of both cards with this container */
 .NDIScardContainer {
-    display:block;
-    width: 600px;
-  }
+    display: block;
+    width  : 600px;
+}
 
-  .NDIScardBasic {
+.NDIScardBasic {
     position: relative;
-    z-index: 100;
-  }
-  
-  .NDISdrawer { 
-    width: auto;
-    max-width:1200px;
-    position: relative;
-    margin-top: -24px;
-    line-height: 1.6;
-    background: #F2E7F4;
-    border: 1px solid #cdcdcd;
-    border-radius: 16px;
+    z-index : 100;
+}
+
+.NDISdrawer {
+    width         : auto;
+    max-width     : 1200px;
+    position      : relative;
+    margin-top    : -24px;
+    line-height   : 1.6;
+    background    : #F2E7F4;
+    border        : 1px solid #cdcdcd;
+    border-radius : 16px;
     padding-bottom: 32px;
-    box-shadow: 0px 2px 10px rgb(0,0,0,0.2);
-    z-index: 0;
-  }
-  
-  .NDISdrawer__title {
-      padding: 48px 32px 0px 32px;
-      display: block;
-      position: relative;
-      font-weight: 400;
-  }
-  
-  .NDISdrawer__title:before {
-      font-family: FontAwesome;
-      content: "\f078";
-      font-size: 16px;
-      position: absolute;
-      left: 32px;
-      top: 48px;
-  }
-     
-      .NDISdrawer__title:hover {
-        cursor: pointer;
-        outline: none;
-        text-decoration: underline;
-      }
-  
-      .NDISdrawer__item.is-expanded .NDISdrawer__title:before {
-          content: "\f077";
-        }
-  
-  
-     .NDISdrawer__content-inner {
-          padding: 16px 32px 0px 64px;
-      }
-    
-    .NDISdrawer__title h3
-      {padding-left: 32px;}
-  
-    .NDISdrawer__content {
-      transition: height 0.3s ease-out;
-      height: 0;
-      overflow: hidden;
-    }
+    box-shadow    : 0px 2px 10px rgb(0, 0, 0, 0.2);
+    z-index       : 0;
+}
 
-  /* UNIVERSAL FOCUS STATE STYLES */
+.NDISdrawer__title {
+    padding    : 48px 32px 0px 32px;
+    display    : block;
+    position   : relative;
+    font-weight: 400;
+}
+
+.NDISdrawer__title:before {
+    font-family: FontAwesome;
+    content    : "\f078";
+    font-size  : 16px;
+    position   : absolute;
+    left       : 32px;
+    top        : 48px;
+}
+
+.NDISdrawer__title:hover {
+    cursor         : pointer;
+    outline        : none;
+    text-decoration: underline;
+}
+
+.NDISdrawer__item.is-expanded .NDISdrawer__title:before {
+    content: "\f077";
+}
+
+
+.NDISdrawer__content-inner {
+    padding: 16px 32px 0px 64px;
+}
+
+.NDISdrawer__title h3 {
+    padding-left: 32px;
+}
+
+.NDISdrawer__content {
+    transition: height 0.3s ease-out;
+    height    : 0;
+    overflow  : hidden;
+}
+
+/* UNIVERSAL FOCUS STATE STYLES */
 
 .NDISdrawer__title:focus
+
 /* Firefox-specific - removing dotted focus state on parent container */
-{
-  outline: 0;
+    {
+    outline: 0;
 }
-a:focus, button:focus, .NDISdrawer__title:focus h3 {
-    outline: 3px solid #8AC53F;
+
+a:focus,
+button:focus,
+.NDISdrawer__title:focus h3 {
+    outline       : 3px solid #8AC53F;
     outline-offset: 2px;
-    border-radius: 0px;
-    transition: none;
+    border-radius : 0px;
+    transition    : none;
 }
