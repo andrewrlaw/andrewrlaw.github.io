@@ -7,7 +7,8 @@
     <title>HTML 5 Boilerplate</title>
     <link rel="stylesheet" href="ndis_zh.css">
     <script src="https://kit.fontawesome.com/cbc5577ab6.js" crossorigin="anonymous"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
   </head>
   <body>
     <h1>Heading 1</h1>
@@ -57,5 +58,91 @@
     <i class="fa-solid fa-chevron-down"></i>
     </p>
 
+    <section class="NDIScardContainer">
+
+<section class="NDIScardBasic">
+<i class="fa-solid fa-clipboard"></i>
+<h2>Title goes here</h2>
+<p class=“NDISparagraph”>This is a subheading</p>
+</section>
+
+<!-- Drawer -->
+<section class="NDISdrawer" role="tablist" aria-live="polite" data-behavior="NDISdrawer">
+	<article class="NDISdrawer__item js-show-item-default" data-binding="expand-NDISdrawer-item">
+	<span id="tab5" tabindex="0" class="NDISdrawer__title" aria-controls="panel5" role="tab" aria-selected="false" aria-expanded="false" data-binding="expand-NDISdrawer-trigger"><h3>Heading 1</h3></span>
+
+        <div id="panel5" class="NDISdrawer__content" role="tabpanel" aria-hidden="true" aria-labelledby="tab5" data-binding="expand-NDISdrawer-container">
+          <div class="NDISdrawer__content-inner">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          </div>
+        </div>
+
+      </article>
+    </section>
+  
+</section>
+
   </body>
+  <script>
+
+    var NDISdrawer = $('body').find('[data-behavior="NDISdrawer"]');
+    var expandedClass = 'is-expanded';
+    
+    $.each(NDISdrawer, function () { // loop through all NDISdrawers on the page
+    
+      var NDISdrawerItems = $(this).find('[data-binding="expand-NDISdrawer-item"]');
+    
+      $.each(NDISdrawerItems, function () { // loop through all NDISdrawer items of each accordion
+        var $this = $(this);
+        var triggerBtn = $this.find('[data-binding="expand-NDISdrawer-trigger"]');
+        
+        var setHeight = function (nV) {
+          // set height of inner content for smooth animation
+          var innerContent = nV.find('.NDISdrawer__content-inner')[0],
+              maxHeight = $(innerContent).outerHeight(),
+              content = nV.find('.NDISdrawer__content')[0];
+    
+          if (!content.style.height || content.style.height === '0px') {
+            $(content).css('height', maxHeight);
+          } else {
+            $(content).css('height', '0px');
+          }
+        };
+        
+        var toggleClasses = function (event) {
+          var clickedItem = event.currentTarget;
+          var currentItem = $(clickedItem).parent();
+          var clickedContent = $(currentItem).find('.NDISdrawer__content')
+          $(currentItem).toggleClass(expandedClass);
+          setHeight(currentItem);
+          
+          if ($(currentItem).hasClass('is-expanded')) {
+            $(clickedItem).attr('aria-selected', 'true');
+            $(clickedItem).attr('aria-expanded', 'true');
+            $(clickedContent).attr('aria-hidden', 'false');
+    
+          } else {
+            $(clickedItem).attr('aria-selected', 'false');
+            $(clickedItem).attr('aria-expanded', 'false');
+            $(clickedContent).attr('aria-hidden', 'true');
+          }
+        }
+        
+        triggerBtn.on('click', event, function (e) {
+          e.preventDefault();
+          toggleClasses(event);
+        });
+    
+        // open tabs if the spacebar or enter button is clicked whilst they are in focus
+        $(triggerBtn).on('keydown', event, function (e) {
+          if (e.keyCode === 13 || e.keyCode === 32) {
+            e.preventDefault();
+            toggleClasses(event);
+          }
+        });
+      });
+    
+    });
+        </script>
+        
 </html>
