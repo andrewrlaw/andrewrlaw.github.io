@@ -1,5 +1,4 @@
 /* IMPORT FONTS */
-
 @font-face {
     font-family: "72 Regular";
     src        : url('https://andrewrlaw.github.io/72-Regular.ttf') format('truetype');
@@ -21,7 +20,6 @@
 }
 
 /* COLOUR VARIABLES */
-
 :root {
     --purpleHeavy: #6A2875;
     --purpleLight: #F2E7F4;
@@ -38,7 +36,6 @@
 }
 
 /* BASE BODY STYLE FOR ZEROHEIGHT DEMO CONTAINERS */
-
 body {
     background : var(--white);
     font-family: "72 Light";
@@ -49,7 +46,6 @@ body {
 }
 
 /* TYPOGRAPHIC STYLES */
-
 h1 {
     font-family   : "72 Bold";
     font-size     : 24px;
@@ -119,8 +115,10 @@ button:disabled:hover {
     text-decoration: none;
 }
 
-button i {
-    margin-right: 6px;
+button span.material-icons-outlined {
+    margin-right: 8px;
+    font-size: 18px;
+    vertical-align: text-bottom;
 }
 
 button.primary {
@@ -173,7 +171,7 @@ button.secondary:active {
 
 button.secondary:disabled,
 button.secondary:disabled:hover {
-    background: var(--purpleLight);
+    background: var(--greyLight);
     color     : var(--grey);
     padding   : 14px 20px;
     cursor    : not-allowed;
@@ -232,9 +230,9 @@ button.secondary:disabled:hover {
 }
 
 .NDISdrawer__title:before {
-    font-family: FontAwesome;
-    content    : "\f078";
-    font-size  : 16px;
+    font-family: 'Material Icons';
+    content    : "\e5cf";
+    font-size  : 18px;
     position   : absolute;
     left       : 32px;
     top        : 48px;
@@ -247,7 +245,7 @@ button.secondary:disabled:hover {
 }
 
 .NDISdrawer__item.is-expanded .NDISdrawer__title:before {
-    content: "\f077";
+    content: "\e5ce";
 }
 
 
@@ -266,7 +264,6 @@ button.secondary:disabled:hover {
 }
 
 /* UNIVERSAL FOCUS STATE STYLES */
-
 .NDISdrawer__title:focus
 
 /* Firefox-specific - removing dotted focus state on parent container */
