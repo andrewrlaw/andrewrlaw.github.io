@@ -15,44 +15,60 @@ font-family: "72 Black";
 src:url('https://andrewrlaw.github.io/72-Black.ttf') format('truetype');
 }
 
+:root {
+    --purpleHeavy:  #6A2875;
+    --purpleLight:  #F2E7F4;
+    --purple:       #8631A8;
+    --tealHeavy:    #007C89;
+    --tealLight:    #EDF6F7;
+    --white:        #FFFFFF;
+    --greyLight:    #F6F6F7;
+    --grey:         #FFFFFF;
+    --greyHeavy:    #333333;
+    --black:        #000000;
+    --yellow:       #FFCB04;
+    --red:          #9D100F;
+  }
+
 body{
-    background: #ffffff;
+    background: var(--white);
     font-family: "72 Light";
     font-size: 16px/1em;
     line-height: 28px;
-    color: #000000;
+    color: var(--black);
     padding: 1em; 
 }
 
 a{
-  color: #6A2875;
+  color: var(--purpleHeavy);
   text-decoration: underline;
 }
 a:hover{
-  color: #6A2875;
-  text-decoration: none;
+    color: var(--purple);
+    text-decoration: none;
 }
+
 
 h1{
   font-family: "72 Bold";
   font-size: 24px;
   letter-spacing: -0.063em;
   line-height: 44px;
-  color: #000000;
+  color: var(--black);
 }
 h2{
   font-family: "72 Bold";
   font-size: 18px;
   letter-spacing: -0.063em;
   line-height: 36px;
-  color: #000000;
+  color: var(--black);
 }
 h3{
   font-family: "72 Bold";
   font-size: 16px;
   letter-spacing: 0;
   line-height: 28px;
-  color: #000000;
+  color: var(--black);
 }
 
 .subheading{
@@ -60,7 +76,7 @@ h3{
   font-size: 18px;
   letter-spacing: 0;
   line-height: 28px;
-  color: #000000;
+  color: var(--black);
 }
 
 .display{
@@ -68,7 +84,7 @@ h3{
   font-size: 49px;
   letter-spacing: 0;
   line-height: 42px;
-  color: #007C89;
+  color: var(--tealHeavy);
 }
 
 button{
@@ -80,26 +96,27 @@ button{
     cursor: pointer;
   }
   button i
-{
+    {
   margin-right: 6px;
 }
   button.primary
   {
-    background: #6A2875;
-    color: #ffffff;
+    background: var(--purpleHeavy);
+    color: var(--white);
+
   }
   button.primary:hover
   {
-    background: #8631A8;
+    background: var(--purple);
   }
   button.primary:active
   {
-    background: #000000;
+    background: var(--black);
   }
   button.primary:disabled
   {
     background: #CDCDCD;
-    color: black;
+    color: var(--black);
     cursor:not-allowed;
   }
   button.secondary
@@ -131,3 +148,12 @@ button{
     cursor:not-allowed;
     border: 2px solid #CDCDCD;
   }
+
+  .NDISdrawer__title:focus
+{
+  outline: 0;
+
+  body a:focus, body button:focus, .NDISdrawer__title:focus .NDISdrawer__title h3 {
+    outline: 3px solid #9263DE;
+    outline-offset: 2px;
+    }
