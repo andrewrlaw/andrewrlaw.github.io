@@ -1,3 +1,5 @@
+/* IMPORT FONTS */
+
 @font-face {
 font-family: "72 Regular";
 src:url('https://andrewrlaw.github.io/72-Regular.ttf') format('truetype');
@@ -15,6 +17,8 @@ font-family: "72 Black";
 src:url('https://andrewrlaw.github.io/72-Black.ttf') format('truetype');
 }
 
+/* COLOUR VARIABLES */
+
 :root {
     --purpleHeavy:  #6A2875;
     --purpleLight:  #F2E7F4;
@@ -30,6 +34,8 @@ src:url('https://andrewrlaw.github.io/72-Black.ttf') format('truetype');
     --red:          #9D100F;
   }
 
+/* BASE BODY STYLE FOR ZEROHEIGHT DEMO CONTAINERS */
+
 body{
     background: var(--white);
     font-family: "72 Light";
@@ -39,15 +45,7 @@ body{
     padding: 1em; 
 }
 
-a{
-  color: var(--purpleHeavy);
-  text-decoration: underline;
-}
-a:hover{
-    color: var(--purple);
-    text-decoration: none;
-}
-
+/* TYPOGRAPHIC STYLES */
 
 h1{
   font-family: "72 Bold";
@@ -87,6 +85,17 @@ h3{
   color: var(--tealHeavy);
 }
 
+a{
+    color: var(--purpleHeavy);
+    text-decoration: underline;
+  }
+a:hover{
+      color: var(--purple);
+      text-decoration: none;
+}
+
+/* BUTTON STYLES */
+
 button{
     border-radius: 4px;
     padding: 16px 22px;
@@ -95,7 +104,7 @@ button{
     transition: 100ms ease-in-out;
     cursor: pointer;
   }
-  button i
+button i
     {
   margin-right: 6px;
 }
@@ -115,45 +124,133 @@ button{
   }
   button.primary:disabled
   {
-    background: #CDCDCD;
+    background:  var(--grey);
     color: var(--black);
     cursor:not-allowed;
   }
   button.secondary
   {
-    background: #ffffff;
+    background: var(--white);
     padding: 14px 20px;
-    color: #6A2875;
-    border: 2px solid #6A2875;
+    color: var(--purpleHeavy);
+    border: 2px solid var(--purpleHeavy);
     transition: none;
   }
   button.secondary:hover
   {
     background: #ffffff;
-    border: 3px solid #8631A8;
+    border: 3px solid var(--purple);
     padding: 13px 19px;
-    color: #8631A8;
+    color: var(--purple);
   }
   button.secondary:active
   {
     padding: 13px 19px;
-    border: 3px solid #000000;
-    color: #000000
+    border: 3px solid var(--black);
+    color:  var(--black);
   }
   button.secondary:disabled, button.secondary:disabled:hover
   {
-    background: #F6F6F7;
-    color: #CDCDCD;
+    background:  var(--purpleLight);
+    color: var(--grey);
     padding: 14px 20px;
     cursor:not-allowed;
-    border: 2px solid #CDCDCD;
+    border: 2px solid var(--grey);
   }
 
-  .NDISdrawer__title:focus
+
+  /* CARD STYLES */
+
+  .NDIScardBasic {
+    max-width:1200px;
+    width: auto;
+    padding: 36px;
+    border: 1px solid var(--grey);
+    border-radius: 12px;
+    background-color: var(--white);
+    box-shadow: 0px 2px 10px rgb(0,0,0,0.2)
+  }
+  .NDIScardBasic i
+  {
+    font-size: 24px;
+  }
+
+  /* DRAWER STYLES */
+
+  .NDIScardBasic {
+    width: auto;
+    position: relative;
+    padding:32px;
+    border:1px solid #cdcdcd;
+    border-radius: 12px;
+    background-color:#fff;
+    box-shadow: 0px 2px 10px rgb(0,0,0,0.2);
+    z-index: 100;
+  }
+  
+  .NDISdrawer { 
+    width: auto;
+    position: relative;
+    margin-top: -24px;
+    line-height: 1.6;
+    background: #F2E7F4;
+    border: 1px solid #cdcdcd;
+    border-radius: 16px;
+    padding-bottom: 32px;
+    box-shadow: 0px 2px 10px rgb(0,0,0,0.2);
+    z-index: 0;
+  }
+  
+  .NDISdrawer__title {
+      padding: 48px 32px 0px 32px;
+      display: block;
+      position: relative;
+      font-weight: 400;
+  }
+  
+  .NDISdrawer__title:before {
+      font-family: FontAwesome;
+      content: "\f078";
+      font-size: 16px;
+      position: absolute;
+      left: 32px;
+      top: 48px;
+  }
+     
+      .NDISdrawer__title:hover {
+        cursor: pointer;
+        outline: none;
+        text-decoration: underline;
+      }
+  
+      .NDISdrawer__item.is-expanded .NDISdrawer__title:before {
+          content: "\f077";
+        }
+  
+  
+     .NDISdrawer__content-inner {
+          padding: 16px 32px 0px 64px;
+      }
+    
+    .NDISdrawer__title h3
+      {padding-left: 32px;}
+  
+    .NDISdrawer__content {
+      transition: height 0.3s ease-out;
+      height: 0;
+      overflow: hidden;
+    }
+
+  /* UNIVERSAL FOCUS STATE STYLES */
+
+.NDISdrawer__title:focus
+/* Firefox-specific - removing dotted focus state on parent container */
 {
   outline: 0;
 }
-  body a:focus, body button:focus, .NDISdrawer__title:focus .NDISdrawer__title h3 {
-    outline: 3px solid #9263DE;
+a:focus, button:focus, .NDISdrawer__title:focus .NDISdrawer__title h3 {
+    outline: 3px solid #8AC53F;
     outline-offset: 2px;
-    }
+    border-radius: 0px;
+    transition: none;
+}
