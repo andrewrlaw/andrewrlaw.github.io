@@ -152,7 +152,7 @@ button{
   .NDISdrawer__title:focus
 {
   outline: 0;
-
+}
   body a:focus, body button:focus, .NDISdrawer__title:focus .NDISdrawer__title h3 {
     outline: 3px solid #9263DE;
     outline-offset: 2px;
