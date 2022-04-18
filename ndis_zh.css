@@ -283,6 +283,8 @@ button:focus,
     transition    : none;
 }
 
+/* TABLE STYLES */
+
 .NDIStable {
     border-collapse: collapse;
 }
@@ -301,6 +303,11 @@ button:focus,
     border-bottom: 1px solid var(--grey);
 }
 
+.NDIStable tr.NDIStableTotal
+{
+    font-family: '72 Bold';
+}
+
 .NDIStable th {
     font-family: '72 Bold';
     border-bottom: 2px solid var(--purpleHeavy);
@@ -314,4 +321,15 @@ padding-left: 0px;
 .NDIStable tr:last-child td
 {
     border-bottom: none;
+}
+
+/* LOZENGE STYLES */
+
+.NDISlozenge
+{
+    padding: 8px;
+    background-color: var(--tealLight);
+    color: var(--tealHeavy);
+    font-family: '72 Bold';
+    border-radius: 4px;
 }
