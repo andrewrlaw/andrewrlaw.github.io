@@ -238,8 +238,6 @@ button.secondary:disabled:hover {
     content    : "\e5cf";
     font-size  : 18px;
     position   : absolute;
-    left       : 32px;
-    top        : 48px;
 }
 
 .NDISdrawer__title:hover {
