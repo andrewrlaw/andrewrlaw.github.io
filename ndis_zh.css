@@ -282,3 +282,36 @@ button:focus,
     border-radius : 0px;
     transition    : none;
 }
+
+.NDIStable {
+    border-collapse: collapse;
+}
+
+.NDIStable caption {
+    display: none;
+}
+
+.NDIStable th, .NDIStable td {
+    text-align: left;
+    padding: 16px;
+    border-bottom: 1px solid 
+}
+
+.NDIStable td {
+    border-bottom: 1px solid var(--grey);
+}
+
+.NDIStable th {
+    font-family: '72 Bold';
+    border-bottom: 2px solid var(--purpleHeavy);
+}
+
+.NDIStable th:first-child, .NDIStable td:first-child
+{
+padding-left: 0px;
+}
+
+.NDIStable tr:last-child td
+{
+    border-bottom: none;
+}
