@@ -37,7 +37,7 @@
 
 /* BASE BODY STYLE FOR ZEROHEIGHT DEMO CONTAINERS */
 body {
-    background : var(--white);
+    background : var(--white); 
     font-family: "72 Light";
     font-size  : 16px;
     line-height: 28px;
@@ -180,15 +180,21 @@ button.secondary:disabled:hover {
 
 
 /* CARD STYLES */
-
-.NDIScardBasic {
+.NDIScard
+{
     max-width       : 1200px;
     width           : auto;
     padding         : 36px;
     border          : 1px solid var(--grey);
     border-radius   : 12px;
-    background-color: var(--white);
     box-shadow      : 0px 2px 10px rgb(0, 0, 0, 0.2)
+}
+.NDIScardBasic {
+    background-color: var(--white);
+}
+
+.NDIScardSecondary {
+    background-color: var(--purpleLight);
 }
 
 .NDIScardBasic i {
@@ -215,10 +221,7 @@ button.secondary:disabled:hover {
     margin-top    : -24px;
     line-height   : 1.6;
     background    : var(--purpleLight);
-    border        : 1px solid var(--grey);
-    border-radius : 16px;
     padding-bottom: 32px;
-    box-shadow    : 0px 2px 10px rgb(0, 0, 0, 0.2);
     z-index       : 0;
 }
 
