@@ -252,7 +252,7 @@ button.secondary:disabled:hover {
 
 
 .NDISdrawer__content-inner {
-    padding: 0px 32px;
+    padding: 16px 32px 0px 32px;
 }
 
 .NDISdrawer__title h3 {
