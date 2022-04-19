@@ -129,13 +129,14 @@ button.primary {
 
 button.primary:hover {
     background        : var(--purple);
-    -webkit-box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow   : inset 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
-    box-shadow        : inset 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
 }
 
 button.primary:active {
-    background: var(--greyHeavy);
+    background: var(--purple);
+    -webkit-box-shadow: inset 0px 0px 5px 3px rgba(106,40,117, 1);
+    -moz-box-shadow   : inset 0px 0px 5px 3px rgba(106,40,117, 1);
+    box-shadow        : inset 0px 0px 5px 3px rgba(106,40,117, 1);
+    text-decoration:  none;
 }
 
 button.primary:disabled {
