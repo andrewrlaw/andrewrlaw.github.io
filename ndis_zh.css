@@ -195,10 +195,6 @@ button.secondary:disabled:hover {
     box-shadow   : 0px 2px 10px rgb(0, 0, 0, 0.2)
 }
 
-.NDIScard span {
-    font-size: 24px;
-}
-
 .NDIScardBasic {
     background-color: var(--white);
 }
@@ -340,6 +336,10 @@ button:focus {
 .NDIStable th {
     font-family  : '72 Bold';
     border-bottom: 2px solid var(--purpleHeavy);
+}
+
+.NDIScardCallout .NDIStable th {
+    border-bottom: 2px solid var(--black);
 }
 
 .NDIStable th:first-child,
