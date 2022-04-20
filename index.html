@@ -68,29 +68,35 @@
   <section class="NDIScardContainer">
 
     <section class="NDIScard NDIScardBasic">
-      <i class="fa-solid fa-clipboard"></i>
+      <span class="material-icons-outlined">
+        content_paste
+      </span>
       <h2>Title goes here</h2>
       <p class=“NDISparagraph”>This is a subheading</p>
     </section>
 
     <!-- Drawer -->
-    <section class="NDIScard NDISdrawer" role="tablist" aria-live="polite" data-behavior="NDISdrawer">
-      <article class="NDISdrawer__item js-show-item-default" data-binding="expand-NDISdrawer-item">
-        <span id="tab5" tabindex="0" class="NDISdrawer__title" aria-controls="panel5" role="tab" aria-selected="false"
-          aria-expanded="false" data-binding="expand-NDISdrawer-trigger">
-          <h3>Heading 1</h3>
-        </span>
+    <div id="NDISdrawerGroup" class="NDIScard NDISdrawer" data-allow-toggle="true">
+      <h3>
+        <button aria-expanded="false" class="NDISdrawer-trigger" aria-controls="sect1" id="NDISdrawer1id">
+          <span class="NDISdrawer-title">
+            Personal Information
+          </span>
+        </button>
+      </h3>
+      <div id="sect1" role="region" aria-labelledby="NDISdrawer1id" class="NDISdrawer-panel" hidden>
+        <!-- Variable content within section, may include any type of markup or interactive widgets. -->
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+          literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+          College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage,
+          and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem
+          Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
+          Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the
+          Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section
+          1.10.32.</p>
+      </div>
 
-        <div id="panel5" class="NDISdrawer__content" role="tabpanel" aria-hidden="true" aria-labelledby="tab5"
-          data-binding="expand-NDISdrawer-container">
-          <div class="NDISdrawer__content-inner">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam.</p>
-          </div>
-        </div>
-
-      </article>
-    </section>
+    </div>
 
   </section>
 
@@ -98,100 +104,172 @@
   <table class="NDIStable">
     <caption>A caption describing our table</caption>
     <tbody>
-    <tr>
-      <th scope="col">First column</th>
-      <th scope="col">Second column</th>
-      <th scope="col">Third column</th>
-      <th scope="col">Last column</th>
-    </tr>
-    <tr>
-      <td>Table data</td>
-      <td>More table data</td>
-      <td>Text table data</td>
-      <td><span class="NDISlozenge">$5.00</span></td>
-    </tr>
-    <tr>
-      <td>Table data</td>
-      <td>More table data</td>
-      <td>Text table data</td>
-      <td><span class="NDISlozenge">$200.00</span></td>
-    </tr>
-    <tr>
-      <td>Table data</td>
-      <td>More table data</td>
-      <td>Text table data</td>
-      <td><span class="NDISlozenge">$20.00</span></td>
-    </tr>
-    <tr class="NDIStableTotal">
-      <td>Table data</td>
-      <td>More table data</td>
-      <td>Text table data</td>
-      <td><span class="NDISlozenge">$225.00</span></td>
-    </tr>
-  </tbody>
+      <tr>
+        <th scope="col">First column</th>
+        <th scope="col">Second column</th>
+        <th scope="col">Third column</th>
+        <th scope="col">Last column</th>
+      </tr>
+      <tr>
+        <td>Table data</td>
+        <td>More table data</td>
+        <td>Text table data</td>
+        <td><span class="NDISlozenge">$5.00</span></td>
+      </tr>
+      <tr>
+        <td>Table data</td>
+        <td>More table data</td>
+        <td>Text table data</td>
+        <td><span class="NDISlozenge">$200.00</span></td>
+      </tr>
+      <tr>
+        <td>Table data</td>
+        <td>More table data</td>
+        <td>Text table data</td>
+        <td><span class="NDISlozenge">$20.00</span></td>
+      </tr>
+      <tr class="NDIStableTotal">
+        <td>Table data</td>
+        <td>More table data</td>
+        <td>Text table data</td>
+        <td><span class="NDISlozenge">$225.00</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="NDIStable">
+    <caption>A caption describing our table</caption>
+    <tbody>
+      <tr>
+        <th scope="col">Instalment</th>
+        <th scope="col">Rollover</th>
+        <th scope="col">Spent</th>
+        <th scope="col">Balance</th>
+      </tr>
+      <tr class="NDIStable_callout">
+        <td>$16,500.00</td>
+        <td>$0.00</td>
+        <td>-$8,496.40</td>
+        <td><span class="NDISlozenge">$8,003.60</span></td>
+      </tr>
+    </tbody>
   </table>
 
 </body>
 <script>
 
-  var NDISdrawer = $('body').find('[data-behavior="NDISdrawer"]');
-  var expandedClass = 'is-expanded';
+  'use strict';
 
-  $.each(NDISdrawer, function () { // loop through all NDISdrawers on the page
+  Array.prototype.slice.call(document.querySelectorAll('.NDISdrawer')).forEach(function (NDISdrawer) {
 
-    var NDISdrawerItems = $(this).find('[data-binding="expand-NDISdrawer-item"]');
+    // Allow for multiple NDISdrawer sections to be expanded at the same time
+    var allowMultiple = NDISdrawer.hasAttribute('data-allow-multiple');
+    // Allow for each toggle to both open and close individually
+    var allowToggle = (allowMultiple) ? allowMultiple : NDISdrawer.hasAttribute('data-allow-toggle');
+    // Create the array of toggle elements for the NDISdrawer group
+    var triggers = Array.prototype.slice.call(NDISdrawer.querySelectorAll('.NDISdrawer-trigger'));
+    var panels = Array.prototype.slice.call(NDISdrawer.querySelectorAll('.NDISdrawer-panel'));
 
-    $.each(NDISdrawerItems, function () { // loop through all NDISdrawer items of each accordion
-      var $this = $(this);
-      var triggerBtn = $this.find('[data-binding="expand-NDISdrawer-trigger"]');
 
-      var setHeight = function (nV) {
-        // set height of inner content for smooth animation
-        var innerContent = nV.find('.NDISdrawer__content-inner')[0],
-          maxHeight = $(innerContent).outerHeight(),
-          content = nV.find('.NDISdrawer__content')[0];
+    NDISdrawer.addEventListener('click', function (event) {
+      var target = event.target;
 
-        if (!content.style.height || content.style.height === '0px') {
-          $(content).css('height', maxHeight);
-        } else {
-          $(content).css('height', '0px');
+      if (target.classList.contains('NDISdrawer-trigger')) {
+        // Check if the current toggle is expanded.
+        var isExpanded = target.getAttribute('aria-expanded') == 'true';
+        var active = NDISdrawer.querySelector('[aria-expanded="true"]');
+
+        // without allowMultiple, close the open NDISdrawer
+        if (!allowMultiple && active && active !== target) {
+          // Set the expanded state on the triggering element
+          active.setAttribute('aria-expanded', 'false');
+          // Hide the NDISdrawer sections, using aria-controls to specify the desired section
+          document.getElementById(active.getAttribute('aria-controls')).setAttribute('hidden', '');
+
+
         }
-      };
 
-      var toggleClasses = function (event) {
-        var clickedItem = event.currentTarget;
-        var currentItem = $(clickedItem).parent();
-        var clickedContent = $(currentItem).find('.NDISdrawer__content')
-        $(currentItem).toggleClass(expandedClass);
-        setHeight(currentItem);
+        if (!isExpanded) {
+          // Set the expanded state on the triggering element
+          target.setAttribute('aria-expanded', 'true');
+          // Hide the NDISdrawer sections, using aria-controls to specify the desired section
+          document.getElementById(target.getAttribute('aria-controls')).removeAttribute('hidden');
 
-        if ($(currentItem).hasClass('is-expanded')) {
-          $(clickedItem).attr('aria-selected', 'true');
-          $(clickedItem).attr('aria-expanded', 'true');
-          $(clickedContent).attr('aria-hidden', 'false');
-
-        } else {
-          $(clickedItem).attr('aria-selected', 'false');
-          $(clickedItem).attr('aria-expanded', 'false');
-          $(clickedContent).attr('aria-hidden', 'true');
+          // If toggling is not allowed, set disabled state on trigger
+          if (!allowToggle) {
+            target.setAttribute('aria-disabled', 'true');
+          }
         }
+        else if (allowToggle && isExpanded) {
+          // Set the expanded state on the triggering element
+          target.setAttribute('aria-expanded', 'false');
+          // Hide the NDISdrawer sections, using aria-controls to specify the desired section
+          document.getElementById(target.getAttribute('aria-controls')).setAttribute('hidden', '');
+        }
+
+        event.preventDefault();
       }
+    });
 
-      triggerBtn.on('click', event, function (e) {
-        e.preventDefault();
-        toggleClasses(event);
-      });
+    // Bind keyboard behaviors on the main NDISdrawer container
+    NDISdrawer.addEventListener('keydown', function (event) {
+      var target = event.target;
+      var key = event.which.toString();
 
-      // open tabs if the spacebar or enter button is clicked whilst they are in focus
-      $(triggerBtn).on('keydown', event, function (e) {
-        if (e.keyCode === 13 || e.keyCode === 32) {
-          e.preventDefault();
-          toggleClasses(event);
+      var isExpanded = target.getAttribute('aria-expanded') == 'true';
+      var allowToggle = (allowMultiple) ? allowMultiple : NDISdrawer.hasAttribute('data-allow-toggle');
+
+      // 33 = Page Up, 34 = Page Down
+      var ctrlModifier = (event.ctrlKey && key.match(/33|34/));
+
+      // Is this coming from an NDISdrawer header?
+      if (target.classList.contains('NDISdrawer-trigger')) {
+        // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
+        // 38 = Up, 40 = Down
+        if (key.match(/38|40/) || ctrlModifier) {
+          var index = triggers.indexOf(target);
+          var direction = (key.match(/34|40/)) ? 1 : -1;
+          var length = triggers.length;
+          var newIndex = (index + length + direction) % length;
+
+          triggers[newIndex].focus();
+
+          event.preventDefault();
         }
+        else if (key.match(/35|36/)) {
+          // 35 = End, 36 = Home keyboard operations
+          switch (key) {
+            // Go to first NDISdrawer
+            case '36':
+              triggers[0].focus();
+              break;
+            // Go to last NDISdrawer
+            case '35':
+              triggers[triggers.length - 1].focus();
+              break;
+          }
+          event.preventDefault();
+
+        }
+
+      }
+    });
+
+    // These are used to style the NDISdrawer when one of the buttons has focus
+    NDISdrawer.querySelectorAll('.NDISdrawer-trigger').forEach(function (trigger) {
+
+      trigger.addEventListener('focus', function (event) {
+        NDISdrawer.classList.add('focus');
       });
+
+      trigger.addEventListener('blur', function (event) {
+        NDISdrawer.classList.remove('focus');
+      });
+
     });
 
   });
+
 </script>
 
 </html>
