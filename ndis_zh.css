@@ -48,6 +48,7 @@ body {
 /* TYPOGRAPHIC STYLES */
 h1 {
     font-family   : "72 Bold";
+    font-weight: 400;
     font-size     : 24px;
     letter-spacing: -0.063em;
     line-height   : 44px;
@@ -56,6 +57,7 @@ h1 {
 
 h2 {
     font-family   : "72 Bold";
+    font-weight: 400;
     font-size     : 18px;
     letter-spacing: -0.063em;
     line-height   : 36px;
@@ -64,6 +66,7 @@ h2 {
 
 h3 {
     font-family   : "72 Bold";
+    font-weight: 400;
     font-size     : 16px;
     letter-spacing: 0;
     line-height   : 28px;
@@ -204,7 +207,8 @@ button.secondary:disabled:hover {
 }
 
 a:focus,
-button:focus {
+button:focus,
+table.NDIStableSortable th button:focus {
     outline       : 3px solid #8AC53F;
     outline-offset: 2px;
     border-radius : 0px;
@@ -259,6 +263,7 @@ button:focus {
 
 .NDISdrawer button .NDISdrawer-title {
     font-family   : "72 Bold";
+    font-weight: 400;
     font-size     : 16px;
     letter-spacing: 0;
     line-height   : 28px;
@@ -319,22 +324,25 @@ button:focus {
 }
 
 .NDIStable th,
-.NDIStable td {
+.NDIStable td,
+table.NDIStableSortable th.no-sort,
+table.NDIStableSortable th button {
     text-align   : left;
     padding      : 16px;
-    border-bottom: 1px solid
 }
-
 .NDIStable td {
     border-bottom: 1px solid var(--grey);
 }
-
-.NDIStable tr.NDIStableTotal {
+table.NDIStableSortable th
+{
+    padding: 0px;
+}
+table.NDIStableSortable th button, .NDIStable tr.NDIStableTotal, .NDIStable th, table.NDIStableSortable th button {
     font-family: '72 Bold';
+    font-weight: 400;
 }
 
-.NDIStable th {
-    font-family  : '72 Bold';
+.NDIStable th, table.NDIStableSortable th button {
     border-bottom: 2px solid var(--purpleHeavy);
 }
 
@@ -343,6 +351,7 @@ button:focus {
 }
 
 .NDIStable th:first-child,
+table.NDIStableSortable th:first-child button,
 .NDIStable td:first-child {
     padding-left: 0px;
 }
@@ -366,5 +375,6 @@ button:focus {
     background-color: var(--tealLight);
     color           : var(--tealHeavy);
     font-family     : '72 Bold';
+    font-weight: 400;
     border-radius   : 4px;
 }
