@@ -21,18 +21,20 @@
 
 /* COLOUR VARIABLES */
 :root {
-    --purpleHeavy: #6A2875;
-    --purpleLight: #F2E7F4;
-    --purple     : #8631A8;
-    --tealHeavy  : #007C89;
-    --tealLight  : #EDF6F7;
-    --white      : #FFFFFF;
-    --greyLight  : #F6F6F7;
-    --grey       : #CDCDCD;
-    --greyHeavy  : #333333;
-    --black      : #000000;
-    --yellow     : #FFCB04;
-    --red        : #9D100F;
+    --purpleHeavy : #6A2875;
+    --purpleLight : #F2E7F4;
+    --purple      : #8631A8;
+    --tealHeavy   : #007C89;
+    --tealLight   : #EDF6F7;
+    --white       : #FFFFFF;
+    --greyLight   : #F6F6F7;
+    --grey        : #CDCDCD;
+    --greyHeavy   : #333333;
+    --black       : #000000;
+    --warning     : #FFCB04;
+    --warningLight: #FFF5CF;
+    --alert       : #9D100F;
+    --alertLight  : #F5E5E8;
 }
 
 /* BASE BODY STYLE FOR ZEROHEIGHT DEMO CONTAINERS */
@@ -48,7 +50,7 @@ body {
 /* TYPOGRAPHIC STYLES */
 h1 {
     font-family   : "72 Bold";
-    font-weight: 400;
+    font-weight   : 400;
     font-size     : 24px;
     letter-spacing: -0.063em;
     line-height   : 44px;
@@ -57,7 +59,7 @@ h1 {
 
 h2 {
     font-family   : "72 Bold";
-    font-weight: 400;
+    font-weight   : 400;
     font-size     : 18px;
     letter-spacing: -0.063em;
     line-height   : 36px;
@@ -66,7 +68,7 @@ h2 {
 
 h3 {
     font-family   : "72 Bold";
-    font-weight: 400;
+    font-weight   : 400;
     font-size     : 16px;
     letter-spacing: 0;
     line-height   : 28px;
@@ -89,8 +91,7 @@ h3 {
     color         : var(--tealHeavy);
 }
 
-.status
-{
+.status {
     color: var(--tealHeavy);
 }
 
@@ -211,7 +212,6 @@ button:focus,
 table.NDIStableSortable th button:focus {
     outline       : 3px solid #8AC53F;
     outline-offset: 2px;
-    border-radius : 0px;
     transition    : none;
 }
 
@@ -263,7 +263,7 @@ table.NDIStableSortable th button:focus {
 
 .NDISdrawer button .NDISdrawer-title {
     font-family   : "72 Bold";
-    font-weight: 400;
+    font-weight   : 400;
     font-size     : 16px;
     letter-spacing: 0;
     line-height   : 28px;
@@ -327,22 +327,28 @@ table.NDIStableSortable th button:focus {
 .NDIStable td,
 table.NDIStableSortable th.no-sort,
 table.NDIStableSortable th button {
-    text-align   : left;
-    padding      : 16px;
+    text-align: left;
+    padding   : 16px;
 }
+
 .NDIStable td {
     border-bottom: 1px solid var(--grey);
 }
-table.NDIStableSortable th
-{
+
+table.NDIStableSortable th {
     padding: 0px;
 }
-table.NDIStableSortable th button, .NDIStable tr.NDIStableTotal, .NDIStable th, table.NDIStableSortable th button {
+
+table.NDIStableSortable th button,
+.NDIStable tr.NDIStableTotal,
+.NDIStable th,
+table.NDIStableSortable th button {
     font-family: '72 Bold';
     font-weight: 400;
 }
 
-.NDIStable th, table.NDIStableSortable th button {
+.NDIStable th,
+table.NDIStableSortable th button {
     border-bottom: 2px solid var(--purpleHeavy);
 }
 
@@ -364,8 +370,61 @@ table.NDIStableSortable th:first-child button,
     font-size: 24px;
 }
 
-.NDIStable.NDIStable_striped tr:nth-child(even)  {
+.NDIStable.NDIStable_striped tr:nth-child(even) {
     background-color: var(--greyLight);
+}
+
+/* PILL STYLES */
+
+.NDISpill {
+    padding      : 8px 16px;
+    color        : var(--black);
+    border       : 1px solid var(--black);
+    border-radius: 3em;
+    font-family  : '72 Bold';
+    font-weight  : 400;
+}
+
+.NDISpill.NDISpillSuccess {
+    color       : var(--tealHeavy);
+    border-color: var(--tealHeavy);
+    background  : var(--tealLight);
+}
+
+.NDISpill.NDISpillError {
+    color       : var(--alert);
+    border-color: var(--alert);
+    background  : var(--alertLight);
+}
+
+.NDISpill.NDISpillWarning {
+    border-color: var(--warning);
+    background  : var(--warningLight);
+}
+
+button.NDISpill
+{
+    border-color: var(--purpleHeavy);
+    color: var(--purpleHeavy);
+    background: var(--white);
+    transition: none;
+}
+
+button.NDISpill span{
+    margin: 0px;
+}
+
+button.NDISpill:hover{
+    border-width: 2px;
+    padding      : 7px 15px;
+}
+
+button.NDISpill:active{
+    border-width: 2px;
+    padding      : 7px 15px;
+    color: var(--purple);
+    border-color: var(--purple);
+    text-decoration: none;
 }
 
 /* LOZENGE STYLES */
@@ -375,6 +434,96 @@ table.NDIStableSortable th:first-child button,
     background-color: var(--tealLight);
     color           : var(--tealHeavy);
     font-family     : '72 Bold';
-    font-weight: 400;
+    font-weight     : 400;
     border-radius   : 4px;
+}
+
+
+/* TOGGLE STYLES */
+
+.NDIStoggle {
+    --width      : 70px;
+    --height     : 28px;
+    position     : absolute;
+    display      : inline-block;
+    width        : var(--width);
+    height       : var(--height);
+    border-radius: var(--height);
+    cursor       : pointer;
+    font-family  : '72 Bold';
+    font-weight  : 400;
+
+}
+
+.NDIStoggle input {
+    display: none;
+}
+
+.NDIStoggle .slider {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    border-radius   : var(--height);
+    background-color: var(--purpleHeavy);
+    transition      : all 0.4s ease-in-out;
+}
+
+.NDIStoggle .slider::before {
+    content         : '';
+    position        : absolute;
+    top             : -1px;
+    left            : 0;
+    width           : 30px;
+    height          : 30px;
+    border-radius   : 30px;
+    background-color: var(--white);
+    box-shadow      : 0px 1px 3px rgba(0, 0, 0, 0.5);
+    transition      : all 0.2s ease-in-out;
+}
+
+.NDIStoggle input:checked+.slider {
+    background-color: var(--black);
+}
+
+.NDIStoggle input:checked+.slider::before {
+    transform: translateX(calc(var(--width) - var(--height)));
+}
+
+.NDIStoggle .labels {
+    position  : absolute;
+    top       : 0;
+    left      : 0;
+    width     : 100%;
+    height    : 100%;
+    font-size : 16px;
+    transition: all 0.4s ease-in-out;
+}
+
+.NDIStoggle .labels::after {
+    content : attr(data-off);
+    position: absolute;
+    right   : 8px;
+    color   : var(--white);
+    ;
+    opacity   : 1;
+    transition: all 0.4s ease-in-out;
+}
+
+.NDIStoggle .labels::before {
+    content   : attr(data-on);
+    position  : absolute;
+    left      : 8px;
+    color     : var(--white);
+    opacity   : 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.NDIStoggle input:checked~.labels::after {
+    opacity: 0;
+}
+
+.NDIStoggle input:checked~.labels::before {
+    opacity: 1;
 }
