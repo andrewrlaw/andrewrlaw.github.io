@@ -20,6 +20,19 @@
   <p class="subheading">Subheading</p>
   <p class="display">Display</p>
   <p><a href="http://google.com">Hyperlink</a></p>
+  <p><a href="http://google.com"><span class="material-icons-outlined">face</span> Hyperlink with an icon </a></p>
+  <p><a href="http://google.com"><span class="material-icons-outlined">face</span> Hyperlink with an icon <span class="material-icons-outlined">face</span></a></p>
+  <p><a href="http://google.com">Hyperlink with an icon<span class="material-icons-outlined">face</span></a></p>
+
+
+  <fieldset class="NDISfieldset">
+    <p><label class="NDISlabel" for="NDISinputExample">A label for the form input</label><br>
+    <input class="NDIStextInput" name="NDISinputExample" type="text"></p>
+    <p><label class="NDISlabel" for="NDIStextareaExample">A label for the textarea input</label><br>
+      <textarea class="NDIStextAreaInput" name="NDIStextareaExample" rows="4" cols="50"></textarea></p>
+  </fieldset>
+
+
   <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
     its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
     to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and
@@ -27,19 +40,17 @@
     web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
     purpose (injected humour and the like).</p>
 
-  <button type="button" class="primary"><span class="material-icons-outlined">
-      face
-    </span>Primary button</i></button>
-  <button type="button" class="primary"><i class="fa-solid fa-house"></i>Primary button</i></button>
-  <button type="button" class="primary" disabled><i class="fa-solid fa-lock"></i>Primary button</button>
-  <button type="button" class="secondary"><i class="fa-solid fa-house"></i>Secondary button</button>
-  <button type="button" class="secondary" disabled><i class="fa-solid fa-lock"></i> Secondary button</button>
+  <p><button type="button" class="primary"><span class="material-icons-outlined">face</span>Primary button</button>
+  <button type="button" class="primary"><span class="material-icons-outlined">face</span>Primary button</button>
+  <button type="button" class="primary" disabled><span class="material-icons-outlined">face</span>Primary button</button>
+  <button type="button" class="secondary"><span class="material-icons-outlined">face</span>Secondary button</button>
+  <button type="button" class="secondary" disabled><span class="material-icons-outlined">face</span> Secondary button</button></p>
 
-<span class="NDISpill NDISpillSuccess">Success</span>
+<p><span class="NDISpill NDISpillSuccess">Success</span>
 <span class="NDISpill NDISpillError">Error</span>
-<span class="NDISpill NDISpillWarning">Warning</span>
+<span class="NDISpill NDISpillWarning">Warning</span></p>
 
-<button class="NDISpill"><span class="material-icons-outlined">cloud</span> Filter <span class="material-icons-outlined">close</span></button>
+<p><button class="NDISpill"><span class="material-icons-outlined">cloud</span> Filter <span class="material-icons-outlined">close</span></button></p>
 
   <section class="NDIScardContainer">
 
@@ -75,13 +86,6 @@
     </div>
 
   </section>
-
-  <label class="NDIStoggle">
-    <input type="checkbox" unchecked>
-    <span class="slider"></span>
-    <span class="labels" data-off="Off" data-on="On"></span>
-  </label>
-
 
   <table class="NDIStable">
     <caption>A caption describing our table</caption>
@@ -138,7 +142,11 @@
   </table>
 
 
-  
+  <p> <label class="NDIStoggle">
+    <input type="checkbox" unchecked>
+    <span class="slider"></span>
+    <span class="labels" data-off="Off" data-on="On"></span>
+  </label> </p>
 
 </body>
 <script>
