@@ -25,11 +25,21 @@
   <p><a href="http://google.com">Hyperlink with an icon<span class="material-icons-outlined">face</span></a></p>
 
 
+  <div class="NDISbuttonGroup">
+    <span><button class="button">GQL</button></span>
+    <span class="active"><button class="button">PSV</button></span>
+    <span><button class="button">WT2</button></span>
+    <span><button class="button">NBV</button></span>
+    <span><button class="button">MBD</button></span>
+</div>
+
+
   <fieldset class="NDISfieldset">
     <p><label class="NDISlabel" for="NDISinputExample">A label for the form input</label><br>
     <input class="NDIStextInput" name="NDISinputExample" type="text"></p>
     <p><label class="NDISlabel" for="NDIStextareaExample">A label for the textarea input</label><br>
-      <textarea class="NDIStextAreaInput" name="NDIStextareaExample" rows="4" cols="50"></textarea></p>
+      <textarea class="NDIStextAreaInput" name="NDIStextareaExample" rows="4" cols="50"></textarea>
+      <small>Format: 123-45-678</small></p>
   </fieldset>
 
 
@@ -263,6 +273,18 @@
 
   });
 
+</script>
+
+<script type="text/javascript">
+  function codeAddress() {
+const btnClick = function () {
+  this.parentNode.getElementsByClassName("active")[0].classList.remove("active");
+  this.classList.add("active");
+};
+document.querySelectorAll(".NDISbuttonGroup span").forEach(btn => btn.addEventListener('click', btnClick));
+
+}
+window.onload = codeAddress;
 </script>
 
 </html>
