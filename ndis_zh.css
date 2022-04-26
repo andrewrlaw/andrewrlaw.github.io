@@ -447,6 +447,7 @@ table.NDIStableSortable th {
 }
 
 table.NDIStableSortable th button,
+.NDIStable thead th,
 .NDIStable tfoot td, .NDIStable tfoot th,
 table.NDIStableSortable th button {
     font-family: '72 Bold';
