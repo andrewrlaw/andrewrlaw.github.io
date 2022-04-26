@@ -47,6 +47,11 @@ body {
     padding    : 1em;
 }
 
+body .statusText
+{
+    color: var(--tealHeavy);
+}
+
 /* TYPOGRAPHIC STYLES */
 h1 {
     font-family   : "72 Bold";
@@ -249,12 +254,6 @@ button.primary:disabled:hover {
     transition      : transform 0.15s ease-in-out;
 }
 
-.NDISbuttonGroup span:hover:after,
-.NDISbuttonGroup span.active:after {
-    transform       : scaleX(1);
-    transform-origin: bottom left;
-}
-
 
 
 button.secondary {
@@ -347,6 +346,7 @@ button:focus:not(:focus-visible) {
 
 .NDISdrawer h3 {
     margin: 0;
+    padding: 16px 12px 12px 12px;
 }
 
 .NDISdrawer-trigger {
@@ -356,12 +356,11 @@ button:focus:not(:focus-visible) {
     position  : relative;
     text-align: left;
     width     : 100%;
-    outline   : none;
 }
 
 .NDISdrawer h3 button {
     border-style: none;
-    padding     : 36px;
+    padding     : 24px 18px;
 }
 
 .NDISdrawer h3 button::-moz-focus-inner {
@@ -389,7 +388,7 @@ button:focus:not(:focus-visible) {
     content    : "\e5cf";
     font-size  : 24px;
     position   : absolute;
-    left       : 32px;
+    left       : 18px;
     transition : ease-in-out 100ms;
 }
 
