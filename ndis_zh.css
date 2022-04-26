@@ -447,8 +447,7 @@ table.NDIStableSortable th {
 }
 
 table.NDIStableSortable th button,
-.NDIStable tfoot td,
-.NDIStable th,
+.NDIStable tfoot td, .NDIStable tfoot th,
 table.NDIStableSortable th button {
     font-family: '72 Bold';
     font-weight: 400;
@@ -471,6 +470,8 @@ table.NDIStableSortable th:first-child button,
 
 .NDIStable td, .NDIStable th {
     border-bottom: 1px solid var(--grey);
+    font-family: '72 Regular';
+    font-weight: 400;
 }
 
 .NDIStable tfoot tr td, .NDIStable tfoot tr th{
