@@ -469,11 +469,6 @@ table.NDIStableSortable th:first-child button,
     padding-left: 0px;
 }
 
-.NDIStable th
-{
-    font-family: '72 Bold';
-}
-
 .NDIStable td, .NDIStable th {
     border-bottom: 1px solid var(--grey);
 }
