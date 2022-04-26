@@ -479,7 +479,7 @@ table.NDIStableSortable th:first-child button,
     border-bottom: none;
 }
 
-.NDIStable tr.NDIStable_callout td {
+.NDIStable tr.NDIStable_callout tfoot td, .NDIStable tr.NDIStable_callout tfoot th {
     font-size: 24px;
 }
 
