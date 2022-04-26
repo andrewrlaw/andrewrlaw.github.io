@@ -21,7 +21,8 @@
   <p class="display">Display</p>
   <p><a href="http://google.com">Hyperlink</a></p>
   <p><a href="http://google.com"><span class="material-icons-outlined">face</span> Hyperlink with an icon </a></p>
-  <p><a href="http://google.com"><span class="material-icons-outlined">face</span> Hyperlink with an icon <span class="material-icons-outlined">face</span></a></p>
+  <p><a href="http://google.com"><span class="material-icons-outlined">face</span> Hyperlink with an icon <span
+        class="material-icons-outlined">face</span></a></p>
   <p><a href="http://google.com">Hyperlink with an icon<span class="material-icons-outlined">face</span></a></p>
 
 
@@ -31,15 +32,17 @@
     <span><button class="button">WT2</button></span>
     <span><button class="button">NBV</button></span>
     <span><button class="button">MBD</button></span>
-</div>
+  </div>
 
 
   <fieldset class="NDISfieldset">
     <p><label class="NDISlabel" for="NDISinputExample">A label for the form input</label><br>
-    <input class="NDIStextInput" name="NDISinputExample" type="text"></p>
+      <input class="NDIStextInput" name="NDISinputExample" type="text">
+    </p>
     <p><label class="NDISlabel" for="NDIStextareaExample">A label for the textarea input</label><br>
       <textarea class="NDIStextAreaInput" name="NDIStextareaExample" rows="4" cols="50"></textarea>
-      <small>Format: 123-45-678</small></p>
+      <small>Format: 123-45-678</small>
+    </p>
   </fieldset>
 
 
@@ -51,16 +54,21 @@
     purpose (injected humour and the like).</p>
 
   <p><button type="button" class="primary"><span class="material-icons-outlined">face</span>Primary button</button>
-  <button type="button" class="primary"><span class="material-icons-outlined">face</span>Primary button</button>
-  <button type="button" class="primary" disabled><span class="material-icons-outlined">face</span>Primary button</button>
-  <button type="button" class="secondary"><span class="material-icons-outlined">face</span>Secondary button</button>
-  <button type="button" class="secondary" disabled><span class="material-icons-outlined">face</span> Secondary button</button></p>
+    <button type="button" class="primary"><span class="material-icons-outlined">face</span>Primary button</button>
+    <button type="button" class="primary" disabled><span class="material-icons-outlined">face</span>Primary
+      button</button>
+    <button type="button" class="secondary"><span class="material-icons-outlined">face</span>Secondary button</button>
+    <button type="button" class="secondary" disabled><span class="material-icons-outlined">face</span> Secondary
+      button</button>
+  </p>
 
-<p><span class="NDISpill NDISpillSuccess">Success</span>
-<span class="NDISpill NDISpillError">Error</span>
-<span class="NDISpill NDISpillWarning">Warning</span></p>
+  <p><span class="NDISpill NDISpillSuccess">Success</span>
+    <span class="NDISpill NDISpillError">Error</span>
+    <span class="NDISpill NDISpillWarning">Warning</span>
+  </p>
 
-<p><button class="NDISpill"><span class="material-icons-outlined">cloud</span> Filter <span class="material-icons-outlined">close</span></button></p>
+  <p><button class="NDISpill"><span class="material-icons-outlined">cloud</span> Filter <span
+        class="material-icons-outlined">close</span></button></p>
 
   <section class="NDIScardContainer">
 
@@ -99,37 +107,41 @@
 
   <table class="NDIStable">
     <caption>A caption describing our table</caption>
-    <tbody>
+    <thead>
       <tr>
         <th scope="col">First column</th>
         <th scope="col">Second column</th>
         <th scope="col">Third column</th>
         <th scope="col">Last column</th>
       </tr>
+    </thead>
+      <tbody>
       <tr>
-        <td>Table data</td>
+        <th>Table data</th>
         <td>More table data</td>
         <td>Text table data</td>
         <td><span class="NDISlozenge">$5.00</span></td>
       </tr>
       <tr>
-        <td>Table data</td>
+        <th>Table data</th>
         <td>More table data</td>
         <td>Text table data</td>
         <td><span class="NDISlozenge">$200.00</span></td>
       </tr>
       <tr>
-        <td>Table data</td>
+        <th>Table data</th>
         <td>More table data</td>
         <td>Text table data</td>
         <td><span class="NDISlozenge">$20.00</span></td>
       </tr>
-      <tr class="NDIStableTotal">
-        <td>Table data</td>
+      <tfoot>
+      <tr>
+        <th>Table data</th>
         <td>More table data</td>
         <td>Text table data</td>
         <td><span class="NDISlozenge">$225.00</span></td>
       </tr>
+    </tfoot>
     </tbody>
   </table>
 
@@ -153,10 +165,10 @@
 
 
   <p> <label class="NDIStoggle">
-    <input type="checkbox" unchecked>
-    <span class="slider"></span>
-    <span class="labels" data-off="Off" data-on="On"></span>
-  </label> </p>
+      <input type="checkbox" unchecked>
+      <span class="slider"></span>
+      <span class="labels" data-off="Off" data-on="On"></span>
+    </label> </p>
 
 </body>
 <script>
@@ -277,14 +289,14 @@
 
 <script type="text/javascript">
   function codeAddress() {
-const btnClick = function () {
-  this.parentNode.getElementsByClassName("active")[0].classList.remove("active");
-  this.classList.add("active");
-};
-document.querySelectorAll(".NDISbuttonGroup span").forEach(btn => btn.addEventListener('click', btnClick));
+    const btnClick = function () {
+      this.parentNode.getElementsByClassName("active")[0].classList.remove("active");
+      this.classList.add("active");
+    };
+    document.querySelectorAll(".NDISbuttonGroup span").forEach(btn => btn.addEventListener('click', btnClick));
 
-}
-window.onload = codeAddress;
+  }
+  window.onload = codeAddress;
 </script>
 
 </html>

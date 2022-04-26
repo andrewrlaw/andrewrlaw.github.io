@@ -389,7 +389,7 @@ button:focus:not(:focus-visible) {
     font-size  : 24px;
     position   : absolute;
     left       : 18px;
-    transition : ease-in-out 100ms;
+    transition : 300ms linear;
 }
 
 .NDISdrawer-trigger[aria-expanded="true"] .NDISdrawer-title:before {
@@ -398,11 +398,15 @@ button:focus:not(:focus-visible) {
 
 .NDISdrawer-panel {
     margin: 0 36px 36px 36px;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
 }
 
 /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
 .NDISdrawer-panel[hidden] {
     display: none;
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
 }
 
 .NDISdrawer-panel fieldset {
@@ -429,6 +433,7 @@ button:focus:not(:focus-visible) {
     display: none;
 }
 
+
 .NDIStable th,
 .NDIStable td,
 table.NDIStableSortable th.no-sort,
@@ -437,28 +442,24 @@ table.NDIStableSortable th button {
     padding   : 16px;
 }
 
-.NDIStable td {
-    border-bottom: 1px solid var(--grey);
-}
-
 table.NDIStableSortable th {
     padding: 0px;
 }
 
 table.NDIStableSortable th button,
-.NDIStable tr.NDIStableTotal,
+.NDIStable tfoot td,
 .NDIStable th,
 table.NDIStableSortable th button {
     font-family: '72 Bold';
     font-weight: 400;
 }
 
-.NDIStable th,
-table.NDIStableSortable th button {
+.NDIStable thead th,
+table.NDIStableSortable thead th button {
     border-bottom: 2px solid var(--purpleHeavy);
 }
 
-.NDIScardCallout .NDIStable th {
+.NDIScardCallout thead .NDIStable th {
     border-bottom: 2px solid var(--black);
 }
 
@@ -468,7 +469,16 @@ table.NDIStableSortable th:first-child button,
     padding-left: 0px;
 }
 
-.NDIStable tr:last-child td {
+.NDIStable th
+{
+    font-family: '72 Bold';
+}
+
+.NDIStable td, .NDIStable th {
+    border-bottom: 1px solid var(--grey);
+}
+
+.NDIStable tfoot tr td, .NDIStable tfoot tr th{
     border-bottom: none;
 }
 
