@@ -151,16 +151,19 @@ button span.material-icons-outlined {
 
 button.primary {
     background: var(--purpleHeavy);
+    border    : 1px solid var(--purpleHeavy);
     color     : var(--white);
 
 }
 
 button.primary:hover {
-    background: var(--purple);
+    background  : var(--purple);
+    border-color: var(--purple);
 }
 
 button.primary:active {
     background        : var(--purple);
+    border-color      : var(--purple);
     -webkit-box-shadow: inset 0px 0px 5px 3px rgba(106, 40, 117, 1);
     -moz-box-shadow   : inset 0px 0px 5px 3px rgba(106, 40, 117, 1);
     box-shadow        : inset 0px 0px 5px 3px rgba(106, 40, 117, 1);
@@ -176,55 +179,83 @@ button.primary:disabled {
 button.primary:disabled:hover {
     box-shadow: none;
 }
-.NDISbuttonGroup
-{
+
+.NDISbuttonGroup {
     display: inline-block;
 }
+
 .NDISbuttonGroup span {
     padding-bottom: 8px;
-    float: left;
-    margin-right: -1px;
+    float         : left;
+    margin-right  : -1px;
+    display       : inline-block;
+    position      : relative;
 }
-.NDISbuttonGroup span.active {
-    padding-bottom: 6px;
-    border-bottom: 2px solid var(--purpleHeavy);
-}
+
 .NDISbuttonGroup span button {
-    background: var(--white);
-    color: var(--purpleHeavy);
-    border: 1px solid var(--black);
-    font-size: 1em;
-    font-family: '72 Light';
-    font-weight: 100;
-    padding: 16px 32px;
-    transition: none;
+    background   : var(--white);
+    color        : var(--purpleHeavy);
+    border       : 1px solid var(--black);
+    font-size    : 1em;
+    font-family  : '72 Light';
+    font-weight  : 100;
+    padding      : 16px 32px;
+    transition   : none;
     border-radius: 0px;
-    margin: 0px 0px 0px 0px;
+    margin       : 0px 0px 0px 0px;
 }
+
 .NDISbuttonGroup span:first-child button {
-    border-top-left-radius: 4px;
+    border-top-left-radius   : 4px;
     border-bottom-left-radius: 4px;
 }
+
 .NDISbuttonGroup span:last-child button {
-    border-top-right-radius: 4px;
+    border-top-right-radius   : 4px;
     border-bottom-right-radius: 4px;
 }
+
 .NDISbuttonGroup button:hover {
-    background: var(--greyLight);
+    background  : var(--greyLight);
     border-color: var(--purpleHeavy);
-    color: var(--purpleHeavy);
+    color       : var(--purpleHeavy);
 }
-.NDISbuttonGroup button:active, .NDISbuttonGroup span.active button {
-    background: var(--purpleLight);
-    border-color: var(--purpleHeavy);
-    color: var(--black);
-    -webkit-box-shadow: inset 0px 0px 9px 0px rgba(106,40,117,0.7); 
-    box-shadow: inset 0px 0px 9px 0px rgba(106,40,117,0.7);
-    font-family: '72 Bold';
-    font-weight: 400;
-    padding: 16px 31px;
-    text-decoration: none;
+
+.NDISbuttonGroup button:active,
+.NDISbuttonGroup span.active button {
+    background        : var(--purpleLight);
+    border-color      : var(--purpleHeavy);
+    color             : var(--black);
+    -webkit-box-shadow: inset 0px 0px 9px 0px rgba(106, 40, 117, 0.7);
+    box-shadow        : inset 0px 0px 9px 0px rgba(106, 40, 117, 0.7);
+    font-family       : '72 Bold';
+    font-weight       : 400;
+    padding           : 16px 31px;
+    text-decoration   : none;
 }
+
+
+.NDISbuttonGroup span.active:after,
+.NDISbuttonGroup span:after {
+    content         : '';
+    position        : absolute;
+    width           : 100%;
+    transform       : scaleX(0);
+    height          : 2px;
+    bottom          : 0;
+    left            : 0;
+    background-color: var(--purpleHeavy);
+    transform-origin: bottom right;
+    transition      : transform 0.15s ease-in-out;
+}
+
+.NDISbuttonGroup span:hover:after,
+.NDISbuttonGroup span.active:after {
+    transform       : scaleX(1);
+    transform-origin: bottom left;
+}
+
+
 
 button.secondary {
     background: var(--white);
@@ -246,6 +277,7 @@ button.secondary:active {
     border : 3px solid var(--black);
     color  : var(--black);
 }
+
 
 button.secondary:disabled,
 button.secondary:disabled:hover {
@@ -285,8 +317,9 @@ textarea:focus {
     transition    : none;
 }
 
-.NDISbuttonGroup span button:focus:not(:focus-visible)
-{
+.NDISbuttonGroup span button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
     outline: 0;
 }
 
@@ -308,13 +341,12 @@ textarea:focus {
     margin-top : -24px;
     line-height: 1.6;
     background : var(--purpleLight);
-    padding-top: 48px;
+    padding    : 16px 0 0 0;
     z-index    : 0;
 }
 
 .NDISdrawer h3 {
-    margin : 0;
-    padding: 0;
+    margin: 0;
 }
 
 .NDISdrawer-trigger {
@@ -329,7 +361,7 @@ textarea:focus {
 
 .NDISdrawer h3 button {
     border-style: none;
-    padding     : 0px;
+    padding     : 36px;
 }
 
 .NDISdrawer h3 button::-moz-focus-inner {
@@ -357,7 +389,7 @@ textarea:focus {
     content    : "\e5cf";
     font-size  : 24px;
     position   : absolute;
-    left       : 0px;
+    left       : 32px;
     transition : ease-in-out 100ms;
 }
 
@@ -366,7 +398,7 @@ textarea:focus {
 }
 
 .NDISdrawer-panel {
-    margin: 16px 0 0 32px;
+    margin: 0 36px 36px 36px;
 }
 
 /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
@@ -611,8 +643,8 @@ fieldset.NDISfieldset {
 .NDISlabel {
     font-weight: 400;
     font-family: '72 Bold';
-    margin-top	: 16px;
-  	display: block;
+    margin-top : 16px;
+    display    : block;
 }
 
 .NDIStextInput,
@@ -620,16 +652,16 @@ fieldset.NDISfieldset {
     border       : 1px solid var(--black);
     border-radius: 4px;
     padding      : 13px 16px;
-  	margin-top	: 12px;
+    margin-top   : 12px;
 }
 
 .NDIStextInput:hover,
 .NDIStextAreaInput:hover {
-    border-color : var(--purple);
+    border-color: var(--purple);
 }
 
 .NDIStextInput:active,
 .NDIStextAreaInput:active {
-    border       : 2px solid var(--purpleHeavy);
-    padding      : 12px 15px;
+    border : 2px solid var(--purpleHeavy);
+    padding: 12px 15px;
 }
