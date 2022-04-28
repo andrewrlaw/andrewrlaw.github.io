@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ndis_zh.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+
+        .NDISinputGroup {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto 20px;
+            border-radius: 0;
+        }
+
+        .NDISinputGroup .NDISinputGroupButton {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .NDISinputGroup .NDISinputGroupLabel {
+            background: var(--white);
+            color: var(--purpleHeavy);
+            border: 1px solid var(--black);
+            font-size: 1em;
+            font-family: '72 Regular';
+            font-weight: 100;
+            padding: 16px 32px;
+            transition: none;
+            border-radius: 0px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .NDISinputGroup .NDISinputGroupWrapper:first-child .NDISinputGroupLabel {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .NDISinputGroup .NDISinputGroupWrapper:last-child .NDISinputGroupLabel {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .NDISinputGroup .NDISinputGroupLabel:hover {
+            background: var(--greyLight);
+            border-color: var(--purpleHeavy);
+            color: var(--purpleHeavy);
+            text-decoration: underline;
+        }
+
+        .NDISinputGroupButton:checked+.NDISinputGroupLabel {
+            background: var(--purpleLight);
+            border-color: var(--purpleHeavy);
+            color: var(--black);
+            -webkit-box-shadow: inset 0px 0px 9px 0px rgba(106, 40, 117, 0.7);
+            box-shadow: inset 0px 0px 9px 0px rgba(106, 40, 117, 0.7);
+            font-family: '72 Bold';
+            font-weight: 400;
+            text-decoration: none;
+            padding: 16px 30px;
+        }
+
+        .NDISinputGroupWrapper {
+            padding-bottom: 10px;
+            margin-right: -1px;
+            position: relative;
+        }
+
+        .NDISinputGroupWrapper.active {
+            padding-bottom: 8px;
+        }
+
+        .NDISinputGroupWrapper:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transition: transform 0.15s ease-in-out;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--purpleHeavy);
+            transform-origin: bottom right;
+        }
+
+        .NDISinputGroupWrapper.active:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <h1 tabindex="1">Pure CSS Accessible Tabs</h1>
+        <p tabindex="1">The tab component below is accessible via the keyboard and is built with pure HTML and CSS (no
+            JavaScript). Use the left/right or up/down arrow keys to move between the tabs after tabbing into or
+            otherwise focusing the component.</p>
+        <span class="NDISinputGroup">
+            <span class="NDISinputGroupWrapper">
+                <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button1">
+                <label class="NDISinputGroupLabel" for="Button1">Button One</label>
+            </span>
+            <span class="NDISinputGroupWrapper">
+                <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button2">
+                <label class="NDISinputGroupLabel" for="Button2">Button Two</label>
+            </span>
+            <span class="NDISinputGroupWrapper">
+                <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button3">
+                <label class="NDISinputGroupLabel" for="Button3">Button Three</label>
+            </span>
+        </span>
+
+        <span class="NDISinputGroup">
+            <span class="NDISinputGroupWrapper">
+                <input class="NDISinputGroupButton"  name="RadioButtons2" tabindex="1" type="radio" id="ButtonA">
+                <label class="NDISinputGroupLabel" for="ButtonA">Button One</label>
+            </span>
+            <span class="NDISinputGroupWrapper">
+                <input class="NDISinputGroupButton"  name="RadioButtons2" tabindex="1" type="radio" id="ButtonB">
+                <label class="NDISinputGroupLabel" for="ButtonB">Button Two</label>
+            </span>
+        </span>
+
+    </main>
+
+</body>
+
+</html>

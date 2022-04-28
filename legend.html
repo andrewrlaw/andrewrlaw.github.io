@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="ndis_zh.css">
+    <style>
+        @media only screen and (max-width : 1200px) {
+            /* Styles here */
+        }
+
+        @media only screen and (max-width : 1024px) {
+            /* Styles here */
+        }
+
+        @media only screen (min-width : 414px) and (max-width : 896px) {
+            /* Styles here */
+        }
+
+        @media only screen and (max-width : 414px) {
+            /* Styles here */
+        }
+
+        .NDISlegend {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            margin: 0 auto 20px;
+            border-radius: 0;
+            text-align: right;
+        }
+
+        .NDISlegend .NDISlegendInput {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .NDISlegend .NDISlegendLabel {
+            color: var(--purpleHeavy);
+            font-size: 1em;
+            font-family: '72 Regular';
+            font-weight: 100;
+            transition: none;
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .NDISlegendLabel:before {
+            font-family: 'Material Icons';
+            content: "\e5cb";
+            font-size: 24px;
+            position: absolute;
+            left: 4px;
+            transition: 300ms linear;
+        }
+
+        .NDISlegendInput:checked+.NDISlegendLabel:before {
+            transform: rotate(-180deg);
+        }
+
+        .NDISlegend .NDISlegendLabel:hover {
+            text-decoration: underline;
+            color: var(--purple);
+        }
+
+        .NDISlegendItem,
+        .NDISlegendLabel {
+            padding: 1em 1em 1em 0em;
+            font-size: 1em;
+            line-height: 1em;
+            display: inline-block;
+        }
+
+        .NDISlegendLabel {
+            padding: 1em 1em 1em 2em;
+        }
+
+        .NDISlegendItem span {
+            background: var(--purpleHeavy);
+            border-radius: 2em;
+            width: 2em;
+            height: 1em;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0.5em;
+        }
+
+        .NDISlegendItemWrapper {
+            overflow: hidden;
+        }
+
+        .NDISlegendItemWrapper .NDISlegendItemWrapperInternal {
+            text-align: right;
+            display: block;
+            transition: transform 300ms;
+        }
+
+        .NDISlegendInput:not(:checked)~.NDISlegendItemWrapper .NDISlegendItemWrapperInternal {
+            transform: translateX(1200px);
+        }
+
+        .NDISlegendInput:checked~.NDISlegendItemWrapper .NDISlegendItemWrapperInternal {
+            transform: translateX(0px);
+        }
+
+        @media only screen and (max-width : 896px) {
+            .NDISlegendInput:not(:checked)~.NDISlegendItemWrapper .NDISlegendItemWrapperInternal {
+                transform: translateY(-600px);
+            }
+
+            .NDISlegendInput:checked~.NDISlegendItemWrapper .NDISlegendItemWrapperInternal {
+                transform: translateY(0px);
+            }
+
+            .NDISlegend {
+                display: inline-block;
+            }
+
+            .NDISlegendLabel {
+                float: right;
+            }
+
+            .NDISlegend,
+            .NDISlegendLabel,
+            .NDISlegendInput {
+                float: right
+            }
+
+            .NDISlegendItem,
+            .NDISlegendItemWrapper {
+                float: right;
+                clear: both;
+            }
+
+            .NDISlegendLabel:before {
+                content: "\e5cf";
+            }
+
+            .NDISlegendInput:checked+.NDISlegendLabel:before {
+                transform: rotate(-180deg);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+
+<body class="preload">
+    <h1>Heading 1</h1>
+
+    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+        its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+        opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
+        packages
+        and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
+        uncover
+        many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident,
+        sometimes
+        on purpose (injected humour and the like).</p>
+
+    <span class="NDISlegend">
+        <input class="NDISlegendInput" name="LegendTrigger" tabindex="1" type="checkbox" id="Legend">
+        <label class="NDISlegendLabel" for="Legend">Legend</label>
+
+        <span class="NDISlegendItemWrapper">
+            <span class="NDISlegendItemWrapperInternal">
+                <span class="NDISlegendItem">Legend item 1<span></span></span>
+                <span class="NDISlegendItem">Legend item 2<span></span></span>
+                <span class="NDISlegendItem">Legend item 3<span></span></span>
+                <span class="NDISlegendItem">Legend item 4<span></span></span>
+            </span>
+        </span>
+
+    </span>
+
+    <script> </script>
+
+</body>
+
+</html>

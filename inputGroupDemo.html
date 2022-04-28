@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ndis_zh.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        .NDISinputGroup {
+            list-style-type: none;
+            padding: 0;
+            display: inline;
+            white-space: normal;
+        }
+
+        .NDISinputGroup li.NDISinputGroupButton {
+            position: relative;
+            float: left;
+            transition: none;
+            border-radius: 0px;
+            margin: 0px -1px 0px 0px;
+            padding-bottom: 10px;
+        }
+
+        .NDISinputGroup .NDISinputGroupButton:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transition: transform 0.15s ease-in-out;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--purpleHeavy);
+            transform-origin: bottom right;
+        }
+
+        .NDISinputGroup .NDISinputGroupButton.active:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .NDISinputGroup label {
+            background: var(--white);
+            color: var(--purpleHeavy);
+            border: 1px solid var(--black);
+            font-size: 1em;
+            font-family: '72 Regular';
+            font-weight: 100;
+            padding: 16px 32px;
+            transition: none;
+            border-radius: 0px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .NDISinputGroup li:first-child label {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .NDISinputGroup li:last-child label {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .NDISinputGroup label:hover {
+            background: var(--greyLight);
+            border-color: var(--purpleHeavy);
+            color: var(--purpleHeavy);
+            text-decoration: underline;
+        }
+
+        .NDISinputGroup input {
+            position: absolute;
+        }
+
+        .NDISinputGroup input[type="radio"] {
+            opacity: 0.011;
+            z-index: 100;
+        }
+
+        .NDISinputGroup input[type="radio"]:checked+label {
+            background: var(--purpleLight);
+            border-color: var(--purpleHeavy);
+            color: var(--black);
+            -webkit-box-shadow: inset 0px 0px 9px 0px rgba(106, 40, 117, 0.7);
+            box-shadow: inset 0px 0px 9px 0px rgba(106, 40, 117, 0.7);
+            font-family: '72 Bold';
+            font-weight: 400;
+            padding: 16px 31px;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul class="NDISinputGroup">
+        <li class="NDISinputGroupButton">
+            <input type="radio" id="a25" name="amount"  tabindex="0"/><label for="a25">$25</label>
+        </li>
+        <li class="NDISinputGroupButton">
+            <input type="radio" id="a50" name="amount"  tabindex="0"/><label for="a50">$50</label>
+        </li>
+        <li class="NDISinputGroupButton">
+            <input type="radio" id="a75" name="amount"  tabindex="0"/><label for="a75">$75</label>
+        </li>
+        <li class="NDISinputGroupButton">
+            <input type="radio" id="a100" name="amount"  tabindex="0"/><label for="a100">$100</label>
+    </ul>
+    <script>
+        $('input').click(function () {
+            $('.NDISinputGroupButton:has(:checked)').addClass('active');
+            $('.NDISinputGroupButton:not(:has(:checked))').removeClass('active');
+        });
+    </script>
+</body>
+
+</html>

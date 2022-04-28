@@ -53,14 +53,31 @@
     web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
     purpose (injected humour and the like).</p>
 
-  <p><button type="button" class="primary"><span class="material-icons-outlined">face</span>Primary button</button>
-    <button type="button" class="primary"><span class="material-icons-outlined">face</span>Primary button</button>
-    <button type="button" class="primary" disabled><span class="material-icons-outlined">face</span>Primary
-      button</button>
-    <button type="button" class="secondary"><span class="material-icons-outlined">face</span>Secondary button</button>
-    <button type="button" class="secondary" disabled><span class="material-icons-outlined">face</span> Secondary
-      button</button>
-  </p>
+    <span class="NDISinputGroup">
+      <span class="NDISinputGroupWrapper">
+          <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button1">
+          <label class="NDISinputGroupLabel" for="Button1">Button One</label>
+      </span>
+      <span class="NDISinputGroupWrapper">
+          <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button2">
+          <label class="NDISinputGroupLabel" for="Button2">Button Two</label>
+      </span>
+      <span class="NDISinputGroupWrapper">
+          <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button3">
+          <label class="NDISinputGroupLabel" for="Button3">Button Three</label>
+      </span>
+  </span>
+
+  <span class="NDISinputGroup">
+      <span class="NDISinputGroupWrapper">
+          <input class="NDISinputGroupButton"  name="RadioButtons2" tabindex="1" type="radio" id="ButtonA">
+          <label class="NDISinputGroupLabel" for="ButtonA">Button One</label>
+      </span>
+      <span class="NDISinputGroupWrapper">
+          <input class="NDISinputGroupButton"  name="RadioButtons2" tabindex="1" type="radio" id="ButtonB">
+          <label class="NDISinputGroupLabel" for="ButtonB">Button Two</label>
+      </span>
+  </span>
 
   <p><span class="NDISpill NDISpillSuccess">Success</span>
     <span class="NDISpill NDISpillError">Error</span>
@@ -287,16 +304,11 @@
 
 </script>
 
-<script type="text/javascript">
-  function codeAddress() {
-    const btnClick = function () {
-      this.parentNode.getElementsByClassName("active")[0].classList.remove("active");
-      this.classList.add("active");
-    };
-    document.querySelectorAll(".NDISbuttonGroup span").forEach(btn => btn.addEventListener('click', btnClick));
-
-  }
-  window.onload = codeAddress;
+<script>
+  $('input').click(function () {
+      $('.NDISinputGroupWrapper:has(:checked)').addClass('active');
+      $('.NDISinputGroupWrapper:not(:has(:checked))').removeClass('active');
+  });
 </script>
 
 </html>
