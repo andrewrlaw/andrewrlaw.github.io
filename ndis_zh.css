@@ -111,12 +111,12 @@ a {
     grid-gap       : 4px;
 }
 
-a .material-icons-outlined {
+a .material-symbols-outlined {
     font-size     : 1em;
     vertical-align: text-bottom;
 }
 
-a .material-icons-outlined {
+a .material-symbols-outlined {
     font-size     : 1em;
     vertical-align: text-bottom;
 }
@@ -145,7 +145,7 @@ button:disabled:hover {
     text-decoration: none;
 }
 
-button span.material-icons-outlined {
+button span.material-symbols-outlined {
     margin-right  : 8px;
     font-size     : 18px;
     vertical-align: text-bottom;
@@ -331,7 +331,7 @@ textarea:focus,
 }
 
 .NDISinputGroup input:focus+label {
-    outline-offset: -4px;
+   
 }
 
 .NDISbuttonGroup span button:focus:not(:focus-visible),
@@ -406,7 +406,7 @@ button:focus:not(:focus-visible),
 }
 
 .NDISdrawer-title:before {
-    font-family: 'Material Icons';
+    font-family: 'Material Symbols Outlined';
     content    : "\e5cf";
     font-size  : 24px;
     position   : absolute;
@@ -722,7 +722,7 @@ fieldset.NDISfieldset {
 }
 
 .NDISlegendLabel:before {
-    font-family: 'Material Icons';
+    font-family: 'Material Symbols Outlined';
     content: "\e5cb";
     font-size: 24px;
     position: absolute;
