@@ -1,0 +1,48 @@
+/* TYPOGRAPHIC STYLES */
+h1 {
+    font-family   : "72 Bold";
+    font-weight   : 400;
+    font-size     : 24px;
+    letter-spacing: -0.063em;
+    line-height   : 44px;
+    color         : var(--black);
+}
+
+h2 {
+    font-family   : "72 Bold";
+    font-weight   : 400;
+    font-size     : 18px;
+    letter-spacing: -0.063em;
+    line-height   : 36px;
+    color         : var(--black);
+}
+
+h3 {
+    font-family   : "72 Bold";
+    font-weight   : 400;
+    font-size     : 16px;
+    letter-spacing: 0;
+    line-height   : 28px;
+    color         : var(--black);
+}
+
+.subheading {
+    font-family   : "72 Regular";
+    font-size     : 18px;
+    letter-spacing: 0;
+    line-height   : 28px;
+    color         : var(--black);
+}
+
+.display {
+    font-family   : "72 Light";
+    font-size     : 49px;
+    letter-spacing: 0;
+    line-height   : 42px;
+    color         : var(--tealHeavy);
+}
+
+body .statusText
+{
+    color: var(--tealHeavy);
+}

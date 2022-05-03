@@ -1,0 +1,22 @@
+/* FOCUS STATES: Collective focus states for keyboard and mouse interactivity */
+a:focus,
+button:focus,
+table.NDIStableSortable th button:focus,
+input:focus,
+textarea:focus,
+.NDISinputGroupButton.active input+label,
+.NDISinputGroup input:focus+label,
+.NDISlegendInput:focus+.NDISlegendLabel {
+    outline       : 3px solid var(--focus);
+    outline-offset: 2px;
+    transition    : none;
+}
+
+.NDISbuttonGroup span button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+.NDISinputGroupButton.active input+label:focus:not(:focus-visible),
+.NDISinputGroup input:focus:not(:focus-visible)+label,
+.NDISlegendInput:focus:not(:focus-visible)+.NDISlegendLabel {
+    outline: 0;
+}

@@ -1,0 +1,31 @@
+fieldset.NDISfieldset {
+    border : 0;
+    padding: 0;
+    width  : 400px;
+}
+
+.NDISlabel {
+    font-weight: 400;
+    font-family: '72 Bold';
+    margin-top : 16px;
+    display    : block;
+}
+
+.NDIStextInput,
+.NDIStextAreaInput {
+    border       : 1px solid var(--black);
+    border-radius: 4px;
+    padding      : 13px 16px;
+    margin-top   : 12px;
+}
+
+.NDIStextInput:hover,
+.NDIStextAreaInput:hover {
+    border-color: var(--purple);
+}
+
+.NDIStextInput:active,
+.NDIStextAreaInput:active {
+    border : 2px solid var(--purpleHeavy);
+    padding: 12px 15px;
+}

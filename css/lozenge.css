@@ -1,0 +1,10 @@
+/* LOZENGE STYLES */
+
+.NDISlozenge {
+    padding         : 8px;
+    background-color: var(--tealLight);
+    color           : var(--tealHeavy);
+    font-family     : '72 Bold';
+    font-weight     : 400;
+    border-radius   : 4px;
+}

@@ -1,0 +1,66 @@
+/* TABLE STYLES */
+
+.NDIStable {
+    border-collapse: collapse;
+}
+
+.NDIStable caption {
+    display: none;
+}
+
+.NDIStable th,
+.NDIStable td,
+table.NDIStableSortable th.no-sort,
+table.NDIStableSortable th button {
+    text-align: left;
+    padding   : 16px;
+}
+
+table.NDIStableSortable th {
+    padding: 0px;
+}
+
+table.NDIStableSortable th button,
+.NDIStable thead th,
+.NDIStable tfoot td,
+.NDIStable tfoot th,
+table.NDIStableSortable th button {
+    font-family: '72 Bold';
+    font-weight: 400;
+}
+
+.NDIStable thead th,
+table.NDIStableSortable thead th button {
+    border-bottom: 2px solid var(--purpleHeavy);
+}
+
+.NDIScardCallout thead th {
+    border-bottom: 2px solid var(--black);
+}
+
+.NDIStable th:first-child,
+table.NDIStableSortable th:first-child button,
+.NDIStable td:first-child {
+    padding-left: 0px;
+}
+
+.NDIStable td,
+.NDIStable th {
+    border-bottom: 1px solid var(--grey);
+    font-family  : '72 Regular';
+    font-weight  : 400;
+}
+
+.NDIStable tfoot tr td,
+.NDIStable tfoot tr th {
+    border-bottom: none;
+}
+
+.NDIStable tr.NDIStable_callout tfoot td,
+.NDIStable tr.NDIStable_callout tfoot th {
+    font-size: 24px;
+}
+
+.NDIStable.NDIStable_striped tr:nth-child(even) {
+    background-color: var(--greyLight);
+}

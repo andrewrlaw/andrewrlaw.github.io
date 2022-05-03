@@ -1,0 +1,41 @@
+@import url(https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0);
+
+/* IMPORT FONTS */
+@font-face {
+    font-family: "72 Regular";
+    src        : url('https://andrewrlaw.github.io/72-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "72 Light";
+    src        : url('https://andrewrlaw.github.io/72-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "72 Bold";
+    src        : url('https://andrewrlaw.github.io/72-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "72 Black";
+    src        : url('https://andrewrlaw.github.io/72-Black.ttf') format('truetype');
+}
+
+/* COLOUR VARIABLES */
+:root {
+    --purpleHeavy : #6A2875;
+    --purpleLight : #F2E7F4;
+    --purple      : #8631A8;
+    --tealHeavy   : #007C89;
+    --tealLight   : #EDF6F7;
+    --white       : #FFFFFF;
+    --greyLight   : #F6F6F7;
+    --grey        : #CDCDCD;
+    --greyHeavy   : #333333;
+    --black       : #000000;
+    --warning     : #FFCB04;
+    --warningLight: #FFF5CF;
+    --alert       : #9D100F;
+    --alertLight  : #F5E5E8;
+    --focus       : #0c99ff;
+}

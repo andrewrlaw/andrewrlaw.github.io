@@ -1,0 +1,25 @@
+a {
+    color          : var(--purpleHeavy);
+    text-decoration: underline;
+    display        : inline-grid;
+    grid-auto-flow : column;
+    align-items    : center;
+    justify-content: center;
+    /* Sets the spacing between child grid items */
+    grid-gap       : 4px;
+}
+
+a .material-symbols-rounded {
+    font-size     : 1em;
+    vertical-align: text-bottom;
+}
+
+a .material-symbols-rounded {
+    font-size     : 1em;
+    vertical-align: text-bottom;
+}
+
+a:hover {
+    color          : var(--purple);
+    text-decoration: none;
+}

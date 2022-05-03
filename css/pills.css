@@ -1,0 +1,51 @@
+/* PILL STYLES */
+
+.NDISpill {
+    padding      : 8px 16px;
+    color        : var(--black);
+    border       : 1px solid var(--black);
+    border-radius: 3em;
+    font-family  : '72 Bold';
+    font-weight  : 400;
+}
+
+.NDISpill.NDISpillSuccess {
+    color       : var(--tealHeavy);
+    border-color: var(--tealHeavy);
+    background  : var(--tealLight);
+}
+
+.NDISpill.NDISpillError {
+    color       : var(--alert);
+    border-color: var(--alert);
+    background  : var(--alertLight);
+}
+
+.NDISpill.NDISpillWarning {
+    border-color: var(--warning);
+    background  : var(--warningLight);
+}
+
+button.NDISpill {
+    border-color: var(--purpleHeavy);
+    color       : var(--purpleHeavy);
+    background  : var(--white);
+    transition  : none;
+}
+
+button.NDISpill span {
+    margin: 0px;
+}
+
+button.NDISpill:hover {
+    border-width: 2px;
+    padding     : 7px 15px;
+}
+
+button.NDISpill:active {
+    border-width   : 2px;
+    padding        : 7px 15px;
+    color          : var(--purple);
+    border-color   : var(--purple);
+    text-decoration: none;
+}
