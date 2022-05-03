@@ -4,9 +4,11 @@
 @import url(css/typography.css);
 /* Import Button component styles */
 @import url(css/buttons.css);
+/* Import Button Group component styles */
+@import url(css/buttonGroup.css);
 /* Import Cards component styles */
 @import url(css/cards.css);
-/* Import Focus component styles */
+/* Import global Focus state styles */
 @import url(css/focus.css);
 /* Import Inputs component styles */
 @import url(css/inputs.css);

@@ -1,5 +1,6 @@
 /* FOCUS STATES: Collective focus states for keyboard and mouse interactivity */
 a:focus,
+a.standaloneLink:focus,
 button:focus,
 table.NDIStableSortable th button:focus,
 input:focus,
@@ -12,6 +13,8 @@ textarea:focus,
     transition    : none;
 }
 
+a:focus:not(:focus-visible),
+a.standaloneLink:focus:not(:focus-visible),
 .NDISbuttonGroup span button:focus:not(:focus-visible),
 input:focus:not(:focus-visible),
 button:focus:not(:focus-visible),

@@ -1,25 +1,33 @@
 a {
     color          : var(--purpleHeavy);
     text-decoration: underline;
-    display        : inline-grid;
-    grid-auto-flow : column;
-    align-items    : center;
-    justify-content: center;
-    /* Sets the spacing between child grid items */
-    grid-gap       : 4px;
-}
-
-a .material-symbols-rounded {
-    font-size     : 1em;
-    vertical-align: text-bottom;
-}
-
-a .material-symbols-rounded {
-    font-size     : 1em;
-    vertical-align: text-bottom;
 }
 
 a:hover {
     color          : var(--purple);
     text-decoration: none;
+}
+
+a[target="_blank"]:after {
+    font-family   : 'Material Symbols Rounded';
+    content       : "\e89e";
+    display       : inline-block;
+    font-size     : 1.25em;
+    margin-left   : 0.125em;
+    vertical-align: middle;
+}
+
+a.standaloneLink {
+    display: inline-block;
+    padding: 16px 22px;
+}
+
+a.standaloneLink[target="_blank"]:after
+{
+    display: none;
+}
+
+a.standaloneLink span {
+    vertical-align: middle;
+    margin-left   : 0.125em;
 }
