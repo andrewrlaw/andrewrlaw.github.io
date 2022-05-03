@@ -325,7 +325,7 @@ textarea:focus,
 .NDISinputGroupButton.active input+label,
 .NDISinputGroup input:focus+label,
 .NDISlegendInput:focus+.NDISlegendLabel  {
-    outline       : 3px solid #8AC53F;
+    outline       : 3px solid #0c99ff;
     outline-offset: 2px;
     transition    : none;
 }
