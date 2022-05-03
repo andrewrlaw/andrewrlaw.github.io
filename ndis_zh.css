@@ -35,6 +35,7 @@
     --warningLight: #FFF5CF;
     --alert       : #9D100F;
     --alertLight  : #F5E5E8;
+    --focus       : #0c99ff;
 }
 
 /* BASE BODY STYLE FOR ZEROHEIGHT DEMO CONTAINERS */
@@ -325,13 +326,9 @@ textarea:focus,
 .NDISinputGroupButton.active input+label,
 .NDISinputGroup input:focus+label,
 .NDISlegendInput:focus+.NDISlegendLabel  {
-    outline       : 3px solid #0c99ff;
+    outline       : 3px solid var(--focus);
     outline-offset: 2px;
     transition    : none;
-}
-
-.NDISinputGroup input:focus+label {
-   
 }
 
 .NDISbuttonGroup span button:focus:not(:focus-visible),
