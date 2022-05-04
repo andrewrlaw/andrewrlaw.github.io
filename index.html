@@ -36,52 +36,62 @@
 
 
   <fieldset class="NDISfieldset">
-    <p><label class="NDISlabel" for="NDISinputExample">A label for the form input</label><br>
+    <p><label class="NDISlabel" for="NDISinputExample">A label for the form input</label>
       <input class="NDIStextInput" name="NDISinputExample" type="text">
     </p>
-    <p><label class="NDISlabel" for="NDIStextareaExample">A label for the textarea input</label><br>
+    <p><label class="NDISlabel" for="NDIStextareaExample">A label for the textarea input</label>
       <textarea class="NDIStextAreaInput" name="NDIStextareaExample" rows="4" cols="50"></textarea>
       <small>Format: 123-45-678</small>
     </p>
   </fieldset>
 
 
-  <p>It is a <a href="https://google.com" target="_blank">established fact</a> that a reader will be distracted by the readable content of a page when looking at
+  <p>It is a <a href="https://google.com" target="_blank">established fact</a> that a reader will be distracted by the
+    readable content of a page when looking at
     its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
     to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and
     web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many
     web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
     purpose (injected humour and the like).</p>
 
-    <a href="https://google.com" tabindex="0" class="standaloneLink" target="_blank">Standalone link<span class="material-symbols-rounded">
-      open_in_new
-      </span>
-    </a>
+<a href="https://google.com" tabindex="0" class="standaloneLink IconLeft" target="_blank">
+  <span class="material-symbols-rounded" aria-hidden="true">
+    calculate
+  </span>Standalone link
+</a>
 
-    <span class="NDISinputGroup">
-      <span class="NDISinputGroupWrapper">
-          <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button1">
-          <label class="NDISinputGroupLabel" for="Button1">Button One</label>
-      </span>
-      <span class="NDISinputGroupWrapper">
-          <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button2">
-          <label class="NDISinputGroupLabel" for="Button2">Button Two</label>
-      </span>
-      <span class="NDISinputGroupWrapper">
-          <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button3">
-          <label class="NDISinputGroupLabel" for="Button3">Button Three</label>
-      </span>
+<a href="https://google.com" tabindex="0" class="standaloneLink" target="_blank">Standalone
+  link<span class="material-symbols-rounded">
+    <span class="material-symbols-rounded" aria-hidden="true">
+      arrow_forward_ios
+    </span>
+  </span>
+</a>
+
+  <span class="NDISinputGroup">
+    <span class="NDISinputGroupWrapper">
+      <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button1">
+      <label class="NDISinputGroupLabel" for="Button1">Button One</label>
+    </span>
+    <span class="NDISinputGroupWrapper">
+      <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button2">
+      <label class="NDISinputGroupLabel" for="Button2">Button Two</label>
+    </span>
+    <span class="NDISinputGroupWrapper">
+      <input class="NDISinputGroupButton" name="RadioButtons1" tabindex="1" type="radio" id="Button3">
+      <label class="NDISinputGroupLabel" for="Button3">Button Three</label>
+    </span>
   </span>
 
   <span class="NDISinputGroup">
-      <span class="NDISinputGroupWrapper">
-          <input class="NDISinputGroupButton"  name="RadioButtons2" tabindex="1" type="radio" id="ButtonA">
-          <label class="NDISinputGroupLabel" for="ButtonA">Button One</label>
-      </span>
-      <span class="NDISinputGroupWrapper">
-          <input class="NDISinputGroupButton"  name="RadioButtons2" tabindex="1" type="radio" id="ButtonB">
-          <label class="NDISinputGroupLabel" for="ButtonB">Button Two</label>
-      </span>
+    <span class="NDISinputGroupWrapper">
+      <input class="NDISinputGroupButton" name="RadioButtons2" tabindex="1" type="radio" id="ButtonA">
+      <label class="NDISinputGroupLabel" for="ButtonA">Button One</label>
+    </span>
+    <span class="NDISinputGroupWrapper">
+      <input class="NDISinputGroupButton" name="RadioButtons2" tabindex="1" type="radio" id="ButtonB">
+      <label class="NDISinputGroupLabel" for="ButtonB">Button Two</label>
+    </span>
   </span>
 
   <p><span class="NDISpill NDISpillSuccess">Success</span>
@@ -137,7 +147,7 @@
         <th scope="col">Last column</th>
       </tr>
     </thead>
-      <tbody>
+    <tbody>
       <tr>
         <th>Table data</th>
         <td>More table data</td>
@@ -156,7 +166,7 @@
         <td>Text table data</td>
         <td><span class="NDISlozenge">$20.00</span></td>
       </tr>
-      <tfoot>
+    <tfoot>
       <tr>
         <th>Table data</th>
         <td>More table data</td>
@@ -311,8 +321,8 @@
 
 <script>
   $('input').click(function () {
-      $('.NDISinputGroupWrapper:has(:checked)').addClass('active');
-      $('.NDISinputGroupWrapper:not(:has(:checked))').removeClass('active');
+    $('.NDISinputGroupWrapper:has(:checked)').addClass('active');
+    $('.NDISinputGroupWrapper:not(:has(:checked))').removeClass('active');
   });
 </script>
 

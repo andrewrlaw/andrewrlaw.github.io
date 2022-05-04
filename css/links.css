@@ -18,16 +18,20 @@ a[target="_blank"]:after {
 }
 
 a.standaloneLink {
-    display: inline-block;
-    padding: 16px 22px;
+    display      : inline-block;
+    padding      : 16px 22px;
+    margin-bottom: 32px;
 }
 
-a.standaloneLink[target="_blank"]:after
-{
+a.standaloneLink[target="_blank"]:after {
     display: none;
 }
 
 a.standaloneLink span {
     vertical-align: middle;
     margin-left   : 0.125em;
+}
+
+a.standaloneLink.IconLeft span {
+    padding-right: 8px;
 }
