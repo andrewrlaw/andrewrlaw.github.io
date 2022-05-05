@@ -20,17 +20,14 @@ table.NDIStableSortable th {
     padding: 0px;
 }
 
-table.NDIStableSortable th button,
 .NDIStable thead th,
 .NDIStable tfoot td,
-.NDIStable tfoot th,
-table.NDIStableSortable th button {
+.NDIStable tfoot th {
     font-family: '72 Bold';
     font-weight: 400;
 }
 
-.NDIStable thead th,
-table.NDIStableSortable thead th button {
+.NDIStable thead th {
     border-bottom: 2px solid var(--purpleHeavy);
 }
 
