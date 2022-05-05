@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="ndis_zh.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+        table.NDIStableSortable th {
+            position: relative;
+        }
+
+        table.NDIStableSortable th button {
+            background: transparent;
+            border: none;
+            display: inline;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            cursor: pointer;
+            white-space: nowrap;
+            padding-right: 32px;
+            color: var(--purpleHeavy);
+            text-decoration: none;
+            border-radius: 0;
+            font-family: '72 Regular';
+        }
+        table.NDIStableSortable th button span {
+            text-decoration: none;
+        }
+        table.NDIStableSortable th button:hover {
+            color: var(--purple);
+            text-decoration: none;
+        }
+
+        table.NDIStableSortable th button span:first-of-type {
+            width: 24px;
+            font-family: 'Material Icons';
+            position: absolute;
+            right: 0;
+        }
+
+        table.NDIStableSortable th span:first-of-type::after {
+            content: "\e5d7";
+            color: currentColor;
+            font-size: 100%;
+            top: 0;
+        }
+
+        table.NDIStableSortable th[aria-sort="descending"] span:first-of-type::after {
+            content: "\e5cf";
+            color: currentColor;
+            font-size: 100%;
+            top: 0;
+        }
+
+        table.NDIStableSortable th button {
+            min-width: 175px;
+            min-height: 70px;
+        }
+
+        table.NDIStableSortable th[aria-sort="ascending"] span:first-of-type::after {
+            content: "\e5ce";
+            color: currentColor;
+            font-size: 100%;
+        }
+
+        .NDIStable.NDIStableSortable thead th
+        {
+            font-family: '72 Regular';
+        }
+
+        table.NDIStableSortable th[aria-sort="ascending"] span:nth-of-type(2), table.NDIStableSortable th[aria-sort="ascending"] span:nth-of-type(2):hover,
+        table.NDIStableSortable th[aria-sort="descending"] span:nth-of-type(3), table.NDIStableSortable th[aria-sort="descending"] span:nth-of-type(3):hover
+        {
+            display: block;
+        }
+
+        table.NDIStableSortable td.num {
+            text-align: right;
+        }
+
+        /* Focus and hover styling */
+
+        table.NDIStableSortable th:not([aria-sort]) button:focus span:first-of-type::after,
+        table.NDIStableSortable th:not([aria-sort]) button:hover span:first-of-type::after {
+            content: "\e5cf";
+            color: currentColor;
+            font-size: 100%;
+            top: 0;
+        }
+
+        table.NDIStableSortable th[aria-sort="ascending"] button,
+        table.NDIStableSortable th[aria-sort="descending"] button {
+            color: var(--black);
+            font-family: '72 Bold';
+        }
+
+
+
+        table.NDIStableSortable th span:nth-of-type(2), table.NDIStableSortable th span:nth-of-type(2):hover,
+        table.NDIStableSortable th span:nth-of-type(3), table.NDIStableSortable th span:nth-of-type(3):hover
+        {
+            display: none;
+            color: var(--black);
+            font-family: '72 Regular';
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<table class="NDIStable NDIStableSortable">
+    <caption>
+        Students currently enrolled in WAI-ARIA 101
+        <span class="sr-only">, column headers with buttons are NDIStableSortable.</span>
+    </caption>
+    <thead>
+        <tr>
+            <th>
+                <button>
+                    First Name
+                    <span aria-hidden="true"></span>
+                    <span>Sorted (ascending)</span>
+                    <span>Sorted (descending)</span>
+                </button>
+            </th>
+            <th>
+                <button>
+                    Last Name
+                    <span aria-hidden="true"></span>
+                    <span>Sorted (ascending)</span>
+                    <span>Sorted (descending)</span>
+                </button>
+            </th>
+            <th>
+                <button>
+                    Company
+                    <span aria-hidden="true"></span>
+                    <span>Sorted (ascending)</span>
+                    <span>Sorted (descending)</span>
+                </button>
+            </th>
+            <th class="no-sort">Address</th>
+            <th class="num">
+                <button>
+                    Favorite Number
+                    <span aria-hidden="true"></span>
+                    <span>Sorted (ascending)</span>
+                    <span>Sorted (descending)</span>
+                </button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Fred</td>
+            <td>Jackson</td>
+            <td>Canary, Inc.</td>
+            <td>123 Broad St.</td>
+            <td class="num">56</td>
+        </tr>
+        <tr>
+            <td>Sara</td>
+            <td>James</td>
+            <td>Cardinal, Inc.</td>
+            <td>457 First St.</td>
+            <td class="num">7</td>
+        </tr>
+        <tr>
+            <td>Ralph</td>
+            <td>Jefferson</td>
+            <td>Robin, Inc.</td>
+            <td>456 Main St.</td>
+            <td class="num">513</td>
+        </tr>
+        <tr>
+            <td>Nancy</td>
+            <td>Jensen</td>
+            <td>Eagle, Inc.</td>
+            <td>2203 Logan Dr.</td>
+            <td class="num">3.5</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+<script>
+
+    /*
+   *   This content is licensed according to the W3C Software License at
+   *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+   *
+   *   File:   NDIStableSortable-table.js
+   *
+   *   Desc:   Adds sorting to a HTML data table that implements ARIA Authoring Practices
+   */
+
+    'use strict';
+
+    class NDIStableSortableTable {
+        constructor(tableNode) {
+            this.tableNode = tableNode;
+
+            this.columnHeaders = tableNode.querySelectorAll('thead th');
+
+            this.sortColumns = [];
+
+            for (var i = 0; i < this.columnHeaders.length; i++) {
+                var ch = this.columnHeaders[i];
+                var buttonNode = ch.querySelector('button');
+                if (buttonNode) {
+                    this.sortColumns.push(i);
+                    buttonNode.setAttribute('data-column-index', i);
+                    buttonNode.addEventListener('click', this.handleClick.bind(this));
+                }
+            }
+
+            this.optionCheckbox = document.querySelector(
+                'input[type="checkbox"][value="show-unsorted-icon"]'
+            );
+
+            if (this.optionCheckbox) {
+                this.optionCheckbox.addEventListener(
+                    'change',
+                    this.handleOptionChange.bind(this)
+                );
+                if (this.optionCheckbox.checked) {
+                    this.tableNode.classList.add('show-unsorted-icon');
+                }
+            }
+        }
+
+        setColumnHeaderSort(columnIndex) {
+            if (typeof columnIndex === 'string') {
+                columnIndex = parseInt(columnIndex);
+            }
+
+            for (var i = 0; i < this.columnHeaders.length; i++) {
+                var ch = this.columnHeaders[i];
+                var buttonNode = ch.querySelector('button');
+                if (i === columnIndex) {
+                    var value = ch.getAttribute('aria-sort');
+                    if (value === 'descending') {
+                        ch.setAttribute('aria-sort', 'ascending');
+                        this.sortColumn(
+                            columnIndex,
+                            'ascending',
+                            ch.classList.contains('num')
+                        );
+                    } else {
+                        ch.setAttribute('aria-sort', 'descending');
+                        this.sortColumn(
+                            columnIndex,
+                            'descending',
+                            ch.classList.contains('num')
+                        );
+                    }
+                } else {
+                    if (ch.hasAttribute('aria-sort') && buttonNode) {
+                        ch.removeAttribute('aria-sort');
+                    }
+                }
+            }
+        }
+
+        sortColumn(columnIndex, sortValue, isNumber) {
+            function compareValues(a, b) {
+                if (sortValue === 'ascending') {
+                    if (a.value === b.value) {
+                        return 0;
+                    } else {
+                        if (isNumber) {
+                            return a.value - b.value;
+                        } else {
+                            return a.value < b.value ? -1 : 1;
+                        }
+                    }
+                } else {
+                    if (a.value === b.value) {
+                        return 0;
+                    } else {
+                        if (isNumber) {
+                            return b.value - a.value;
+                        } else {
+                            return a.value > b.value ? -1 : 1;
+                        }
+                    }
+                }
+            }
+
+            if (typeof isNumber !== 'boolean') {
+                isNumber = false;
+            }
+
+            var tbodyNode = this.tableNode.querySelector('tbody');
+            var rowNodes = [];
+            var dataCells = [];
+
+            var rowNode = tbodyNode.firstElementChild;
+
+            var index = 0;
+            while (rowNode) {
+                rowNodes.push(rowNode);
+                var rowCells = rowNode.querySelectorAll('th, td');
+                var dataCell = rowCells[columnIndex];
+
+                var data = {};
+                data.index = index;
+                data.value = dataCell.textContent.toLowerCase().trim();
+                if (isNumber) {
+                    data.value = parseFloat(data.value);
+                }
+                dataCells.push(data);
+                rowNode = rowNode.nextElementSibling;
+                index += 1;
+            }
+
+            dataCells.sort(compareValues);
+
+            // remove rows
+            while (tbodyNode.firstChild) {
+                tbodyNode.removeChild(tbodyNode.lastChild);
+            }
+
+            // add sorted rows
+            for (var i = 0; i < dataCells.length; i += 1) {
+                tbodyNode.appendChild(rowNodes[dataCells[i].index]);
+            }
+        }
+
+        /* EVENT HANDLERS */
+
+        handleClick(event) {
+            var tgt = event.currentTarget;
+            this.setColumnHeaderSort(tgt.getAttribute('data-column-index'));
+        }
+
+        handleOptionChange(event) {
+            var tgt = event.currentTarget;
+
+            if (tgt.checked) {
+                this.tableNode.classList.add('show-unsorted-icon');
+            } else {
+                this.tableNode.classList.remove('show-unsorted-icon');
+            }
+        }
+    }
+
+    // Initialize NDIStableSortable table buttons
+    window.addEventListener('load', function () {
+        var NDIStableSortableTables = document.querySelectorAll('table.NDIStableSortable');
+        for (var i = 0; i < NDIStableSortableTables.length; i++) {
+            new NDIStableSortableTable(NDIStableSortableTables[i]);
+        }
+    });
+
+</script>
+
+</html>
