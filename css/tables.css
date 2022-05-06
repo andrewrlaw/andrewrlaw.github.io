@@ -4,10 +4,6 @@
     border-collapse: collapse;
 }
 
-.NDIStable caption {
-    display: none;
-}
-
 .NDIStable th,
 .NDIStable td,
 table.NDIStableSortable th.no-sort,
