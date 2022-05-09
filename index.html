@@ -36,13 +36,11 @@
 
 
   <fieldset class="NDISfieldset">
-    <p><label class="NDISlabel" for="NDISinputExample">A label for the form input</label>
-      <input class="NDIStextInput" name="NDISinputExample" type="text">
-    </p>
-    <p><label class="NDISlabel" for="NDIStextareaExample">A label for the textarea input</label>
-      <textarea class="NDIStextAreaInput" name="NDIStextareaExample" rows="4" cols="50"></textarea>
-      <small>Format: 123-45-678</small>
-    </p>
+    <label class="NDISlabel" for="NDISinputExample">A label for the form input</label>
+    <input class="NDIStextInput" name="NDISinputExample" type="text">
+    <label class="NDISlabel" for="NDIStextareaExample">A label for the textarea input</label>
+      <textarea class="NDIStextAreaInput" name="NDIStextareaExample" maxlength="400" rows="4" cols="50"></textarea>
+  <small><span id="characterCount"></span> characters remaining</small>
   </fieldset>
 
 
@@ -67,6 +65,8 @@
     </span>
   </span>
 </a>
+
+
 
   <span class="NDISinputGroup">
     <span class="NDISinputGroupWrapper">

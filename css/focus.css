@@ -13,6 +13,11 @@ textarea:focus,
     transition    : none;
 }
 
+.NDISinputGroupButton.active input+label,
+.NDISinputGroup input:focus+label {
+    outline-offset: -4px;
+}
+
 a:focus:not(:focus-visible),
 a.standaloneLink:focus:not(:focus-visible),
 .NDISbuttonGroup span button:focus:not(:focus-visible),

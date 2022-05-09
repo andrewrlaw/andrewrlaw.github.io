@@ -5,20 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="ndis_zh.css">
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <title>Sortable tables</title>
+    <link rel="stylesheet" href="https://andrewrlaw.github.io/ndis_zh.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
+        /* TABLE STYLES */
+
+        .NDIStable {
+            border-collapse: collapse;
+        }
+
+        .NDIStable th,
+        .NDIStable td,
+        table.NDIStableSortable th.no-sort,
+        table.NDIStableSortable th button {
+            text-align: left;
+            padding: 16px;
+        }
+
+        table.NDIStableSortable th {
+            padding: 0px;
+        }
+
+        .NDIStable thead th,
+        .NDIStable tfoot td,
+        .NDIStable tfoot th {
+            font-family: '72 Bold';
+            font-weight: 400;
+        }
+
+        .NDIStable thead th {
+            border-bottom: 2px solid var(--purpleHeavy);
+        }
+
+        .NDIScardCallout thead th {
+            border-bottom: 2px solid var(--black);
+        }
+
+        .NDIStable th:first-child,
+        table.NDIStableSortable th:first-child button,
+        .NDIStable td:first-child {
+            padding-left: 0px;
+        }
+
+        .NDIStable td,
+        .NDIStable th {
+            border-bottom: 1px solid var(--grey);
+            font-family: '72 Regular';
+            font-weight: 400;
+        }
+
+        .NDIStable tfoot tr td,
+        .NDIStable tfoot tr th {
+            border-bottom: none;
+        }
+
+        .NDIStable tr.NDIStable_callout tfoot td,
+        .NDIStable tr.NDIStable_callout tfoot th {
+            font-size: 24px;
+        }
+
+        .NDIStable.NDIStable_striped tr:nth-child(even) {
+            background-color: var(--greyLight);
+        }
 
         table.NDIStableSortable th {
             position: relative;
         }
 
+        table.NDIStableSortable th.no-sort {
+            vertical-align: top;
+            line-height: 24px;
+        }
+
         table.NDIStableSortable th button {
             background: transparent;
             border: none;
-            display: inline;
             width: 100%;
             text-align: left;
             outline: none;
@@ -30,55 +92,45 @@
             border-radius: 0;
             font-family: '72 Regular';
         }
-        table.NDIStableSortable th button span {
+
+        table.NDIStableSortable th button {
             text-decoration: none;
         }
+
+        table.NDIStableSortable th button span.thWrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 40px;
+            min-width: 125px;
+        }
+
         table.NDIStableSortable th button:hover {
             color: var(--purple);
             text-decoration: underline;
         }
 
-        table.NDIStableSortable th button span:first-of-type {
-            width: 24px;
-            font-family: 'Material Icons';
-            position: absolute;
-            right: 0;
-        }
-
-        table.NDIStableSortable th span:first-of-type::after {
+        table.NDIStableSortable th button span.thLabel span.thIcon:after {
+            margin-left: 4px;
+            display: inline-block;
             content: "\e5d7";
+            font-family: 'Material Symbols Rounded';
             color: currentColor;
-            font-size: 100%;
-            top: 0;
+            font-size: 16px;
+            vertical-align: text-bottom;
         }
-
-        table.NDIStableSortable th[aria-sort="descending"] span:first-of-type::after {
+        /*
+        table.NDIStableSortable th[aria-sort="descending"] button span.thLabel span.thIcon:after {
             content: "\e5cf";
-            color: currentColor;
-            font-size: 100%;
-            top: 0;
         }
 
-        table.NDIStableSortable th button {
-            min-width: 175px;
-            min-height: 70px;
-        }
-
-        table.NDIStableSortable th[aria-sort="ascending"] span:first-of-type::after {
+        table.NDIStableSortable th[aria-sort="descending"] button span.thLabel span.thIcon:after {
             content: "\e5ce";
-            color: currentColor;
-            font-size: 100%;
         }
-
-        .NDIStable.NDIStableSortable thead th
-        {
+        */
+        .NDIStable.NDIStableSortable thead th {
             font-family: '72 Regular';
-        }
-
-        table.NDIStableSortable th[aria-sort="ascending"] span:nth-of-type(2), table.NDIStableSortable th[aria-sort="ascending"] span:nth-of-type(2):hover,
-        table.NDIStableSortable th[aria-sort="descending"] span:nth-of-type(3), table.NDIStableSortable th[aria-sort="descending"] span:nth-of-type(3):hover
-        {
-            display: block;
         }
 
         table.NDIStableSortable td.num {
@@ -87,13 +139,6 @@
 
         /* Focus and hover styling */
 
-        table.NDIStableSortable th:not([aria-sort]) button:focus span:first-of-type::after,
-        table.NDIStableSortable th:not([aria-sort]) button:hover span:first-of-type::after {
-            content: "\e5cf";
-            color: currentColor;
-            font-size: 100%;
-            top: 0;
-        }
 
         table.NDIStableSortable th[aria-sort="ascending"] button,
         table.NDIStableSortable th[aria-sort="descending"] button {
@@ -101,12 +146,11 @@
             font-family: '72 Bold';
         }
 
-
-
-        table.NDIStableSortable th span:nth-of-type(2), table.NDIStableSortable th span:nth-of-type(2):hover,
-        table.NDIStableSortable th span:nth-of-type(3), table.NDIStableSortable th span:nth-of-type(3):hover
-        {
-            display: none;
+        table.NDIStableSortable th span:nth-of-type(2),
+        table.NDIStableSortable th span:nth-of-type(2):hover,
+        table.NDIStableSortable th span:nth-of-type(3),
+        table.NDIStableSortable th span:nth-of-type(3):hover {
+            display: block;
             color: var(--black);
             font-family: '72 Regular';
             font-size: 14px;
@@ -116,78 +160,70 @@
 
 <body>
 
-<table class="NDIStable NDIStableSortable">
-    <caption class="sr-only">
-        Students currently enrolled in WAI-ARIA 101, column headers with buttons are NDIStableSortable.
-    </caption>
-    <thead>
-        <tr>
-            <th>
-                <button>
-                    First Name
-                    <span aria-hidden="true"></span>
-                    <span>Sorted (ascending)</span>
-                    <span>Sorted (descending)</span>
-                </button>
-            </th>
-            <th>
-                <button>
-                    Last Name
-                    <span aria-hidden="true"></span>
-                    <span>Sorted (ascending)</span>
-                    <span>Sorted (descending)</span>
-                </button>
-            </th>
-            <th>
-                <button>
-                    Company
-                    <span aria-hidden="true"></span>
-                    <span>Sorted (ascending)</span>
-                    <span>Sorted (descending)</span>
-                </button>
-            </th>
-            <th class="no-sort">Address</th>
-            <th class="num">
-                <button>
-                    Favorite Number
-                    <span aria-hidden="true"></span>
-                    <span>Sorted (ascending)</span>
-                    <span>Sorted (descending)</span>
-                </button>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Fred</td>
-            <td>Jackson</td>
-            <td>Canary, Inc.</td>
-            <td>123 Broad St.</td>
-            <td class="num">56</td>
-        </tr>
-        <tr>
-            <td>Sara</td>
-            <td>James</td>
-            <td>Cardinal, Inc.</td>
-            <td>457 First St.</td>
-            <td class="num">7</td>
-        </tr>
-        <tr>
-            <td>Ralph</td>
-            <td>Jefferson</td>
-            <td>Robin, Inc.</td>
-            <td>456 Main St.</td>
-            <td class="num">513</td>
-        </tr>
-        <tr>
-            <td>Nancy</td>
-            <td>Jensen</td>
-            <td>Eagle, Inc.</td>
-            <td>2203 Logan Dr.</td>
-            <td class="num">3.5</td>
-        </tr>
-    </tbody>
-</table>
+    <table class="NDIStable NDIStableSortable">
+        <caption class="sr-only">
+            Students currently enrolled in WAI-ARIA 101, column headers with buttons are NDIStableSortable.
+        </caption>
+        <thead>
+            <tr>
+                <th>
+                    <button><span class="thWrapper">
+                            <span class="thLabel">First Name<span class="thIcon" aria-hidden="true"></span></span>
+                            <span class="sr-only info">, sortable</span>
+                        </span></button>
+                </th>
+                <th>
+                    <button><span class="thWrapper">
+                            <span class="thLabel">Last Name<span class="thIcon" aria-hidden="true"></span></span>
+                            <span class="sr-only info">, sortable</span>
+                        </span></button>
+                </th>
+                <th>
+                    <button><span class="thWrapper">
+                            <span class="thLabel">Company<span class="thIcon" aria-hidden="true"></span></span>
+                            <span class="sr-only info">, sortable</span>
+                        </span></button>
+                </th>
+                <th class="no-sort">Address</th>
+                <th class="num">
+                    <button><span class="thWrapper">
+                            <span class="thLabel">Favorite Number<span class="thIcon" aria-hidden="true"></span></span>
+                            <span class="sr-only info">, sortable</span>
+                        </span></button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fred</td>
+                <td>Jackson</td>
+                <td>Canary, Inc.</td>
+                <td>123 Broad St.</td>
+                <td class="num">56</td>
+            </tr>
+            <tr>
+                <td>Sara</td>
+                <td>James</td>
+                <td>Cardinal, Inc.</td>
+                <td>457 First St.</td>
+                <td class="num">7</td>
+            </tr>
+            <tr>
+                <td>Ralph</td>
+                <td>Jefferson</td>
+                <td>Robin, Inc.</td>
+                <td>456 Main St.</td>
+                <td class="num">513</td>
+            </tr>
+            <tr>
+                <td>Nancy</td>
+                <td>Jensen</td>
+                <td>Eagle, Inc.</td>
+                <td>2203 Logan Dr.</td>
+                <td class="num">3.5</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 <script>
@@ -337,8 +373,22 @@
         /* EVENT HANDLERS */
 
         handleClick(event) {
-            var tgt = event.currentTarget;
+            let tgt = event.currentTarget;
             this.setColumnHeaderSort(tgt.getAttribute('data-column-index'));
+            const info = tgt.querySelector(".info");
+            const th = tgt.parentElement;
+            const infos = document.querySelectorAll('.info');
+            infos.forEach(item => {
+                item.classList.add('sr-only');
+                item.removeAttribute('aria-live');
+                item.innerHTML = ', sortable';
+            });
+            if (info && th) {
+                const ariaSort = th.getAttribute('aria-sort');
+                info.classList.remove('sr-only');
+                info.setAttribute('aria-live', 'assertive');
+                info.innerHTML = 'Sorted (' + ariaSort + ')';
+            }
         }
 
         handleOptionChange(event) {

@@ -57,3 +57,104 @@ table.NDIStableSortable th:first-child button,
 .NDIStable.NDIStable_striped tr:nth-child(even) {
     background-color: var(--greyLight);
 }
+
+table.NDIStableSortable th {
+    position: relative;
+}
+
+table.NDIStableSortable th button {
+    background: transparent;
+    border: none;
+    display: inline;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    cursor: pointer;
+    white-space: nowrap;
+    padding-right: 32px;
+    color: var(--purpleHeavy);
+    text-decoration: none;
+    border-radius: 0;
+    font-family: '72 Regular';
+}
+table.NDIStableSortable th button span {
+    text-decoration: none;
+}
+table.NDIStableSortable th button:hover {
+    color: var(--purple);
+    text-decoration: underline;
+}
+
+table.NDIStableSortable th button span:first-of-type {
+    width: 24px;
+    font-family: 'Material Symbols Rounded';
+    position: absolute;
+    right: 0;
+}
+
+table.NDIStableSortable th span:first-of-type::after {
+    content: "\e5d7";
+    color: currentColor;
+    font-size: 100%;
+    top: 0;
+}
+
+table.NDIStableSortable th[aria-sort="descending"] span:first-of-type::after {
+    content: "\e5cf";
+    color: currentColor;
+    font-size: 100%;
+    top: 0;
+}
+
+table.NDIStableSortable th button {
+    min-width: 175px;
+    min-height: 70px;
+}
+
+table.NDIStableSortable th[aria-sort="ascending"] span:first-of-type::after {
+    content: "\e5ce";
+    color: currentColor;
+    font-size: 100%;
+}
+
+.NDIStable.NDIStableSortable thead th
+{
+    font-family: '72 Regular';
+}
+
+table.NDIStableSortable th[aria-sort="ascending"] span:nth-of-type(2), table.NDIStableSortable th[aria-sort="ascending"] span:nth-of-type(2):hover,
+table.NDIStableSortable th[aria-sort="descending"] span:nth-of-type(3), table.NDIStableSortable th[aria-sort="descending"] span:nth-of-type(3):hover
+{
+    display: block;
+}
+
+table.NDIStableSortable td.num {
+    text-align: right;
+}
+
+/* Focus and hover styling */
+
+table.NDIStableSortable th:not([aria-sort]) button:focus span:first-of-type::after,
+table.NDIStableSortable th:not([aria-sort]) button:hover span:first-of-type::after {
+    content: "\e5cf";
+    color: currentColor;
+    font-size: 100%;
+    top: 0;
+}
+
+table.NDIStableSortable th[aria-sort="ascending"] button,
+table.NDIStableSortable th[aria-sort="descending"] button {
+    color: var(--black);
+    font-family: '72 Bold';
+}
+
+
+
+table.NDIStableSortable th span:nth-of-type(2), table.NDIStableSortable th span:nth-of-type(2):hover,
+table.NDIStableSortable th span:nth-of-type(3), table.NDIStableSortable th span:nth-of-type(3):hover
+{
+    display: none;
+    color: var(--black);
+    font-family: '72 Regular';
+    font-size: 14px;
+}
