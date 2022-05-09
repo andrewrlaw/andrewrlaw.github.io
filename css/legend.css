@@ -1,5 +1,3 @@
-/* LEGEND STYLES */
-
 .NDISlegend {
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +24,7 @@
 }
 
 .NDISlegendLabel:before {
-    font-family: 'Material Symbols Rounded';
+    font-family: 'Material Symbols Outlined';
     content: "\e5cb";
     font-size: 24px;
     position: absolute;
@@ -55,18 +53,13 @@
     padding: 1em 1em 1em 2em;
 }
 
-.NDISlegendItem span {
-    background: var(--purpleHeavy);
-    border-radius: 2em;
-    width: 2em;
-    height: 1em;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 0.5em;
-}
-
 .NDISlegendItemWrapper {
     overflow: hidden;
+}
+
+.NDISlegendItemWrapper img {
+    vertical-align: middle;
+    margin-left: 8px
 }
 
 .NDISlegendItemWrapper .NDISlegendItemWrapperInternal {
@@ -76,47 +69,9 @@
 }
 
 .NDISlegendInput:not(:checked)~.NDISlegendItemWrapper .NDISlegendItemWrapperInternal {
-    transform: translateX(1200px);
+    transform: translateX(600px);
 }
 
 .NDISlegendInput:checked~.NDISlegendItemWrapper .NDISlegendItemWrapperInternal {
     transform: translateX(0px);
-}
-
-@media only screen and (max-width : 414px) {
-    .NDISlegendInput:not(:checked)~.NDISlegendItemWrapper .NDISlegendItemWrapperInternal {
-        transform: translateY(-600px);
-    }
-
-    .NDISlegendInput:checked~.NDISlegendItemWrapper .NDISlegendItemWrapperInternal {
-        transform: translateY(0px);
-    }
-
-    .NDISlegend {
-        display: inline-block;
-    }
-
-    .NDISlegendLabel {
-        float: right;
-    }
-
-    .NDISlegend,
-    .NDISlegendLabel,
-    .NDISlegendInput {
-        float: right
-    }
-
-    .NDISlegendItem,
-    .NDISlegendItemWrapper {
-        float: right;
-        clear: both;
-    }
-
-    .NDISlegendLabel:before {
-        content: "\e5cf";
-    }
-
-    .NDISlegendInput:checked+.NDISlegendLabel:before {
-        transform: rotate(-180deg);
-    }
 }
