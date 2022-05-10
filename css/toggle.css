@@ -1,6 +1,8 @@
 fieldset.NDIStoggleFieldset
 {
     display: flex;
+    border: 0;
+    padding: 0;
 }  
   .NDIStoggle[aria-pressed] {
     display: block;
@@ -15,6 +17,7 @@ fieldset.NDIStoggleFieldset
     cursor: pointer;
     position: relative;
     margin-left: 1em;
+    margin-top: -0.25em;
   }
   
   .NDIStoggle[aria-pressed][disabled],
@@ -28,11 +31,21 @@ fieldset.NDIStoggleFieldset
     outline: none;
   }
   
-  .NDIStoggle[aria-pressed]:focus::before,
   .NDIStoggle[aria-pressed]:hover::before {
     box-shadow: 0 0 0.5em #333;
   }
-  
+  .NDIStoggle[aria-pressed]:focus::before
+  {
+    outline       : 3px solid var(--focus);
+    outline-offset: 5px;
+    transition    : none;
+}
+
+.NDIStoggle[aria-pressed]:focus:not(:focus-visible)::before
+  {
+    outline: 0;
+}
+
   .NDIStoggle[aria-pressed]:focus::after,
   .NDIStoggle[aria-pressed]:hover::after {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='rgba(0,0,0,.25)'/%3E%3C/svg%3E");
@@ -59,8 +72,8 @@ fieldset.NDIStoggleFieldset
   }
   
   .NDIStoggle[aria-pressed]::after {
-    left: -0.5em;
-    top: 0em;
+    left: -0.225em;
+    top: 0.05em;
     background-color: #fff;
     background-position: center center;
     border-radius: 50%;
@@ -70,7 +83,7 @@ fieldset.NDIStoggleFieldset
   }
   
   .NDIStoggle[aria-pressed=true]::after {
-    left: 2.5em;
+    left: 2.4em;
     border-color: var(--purpleHeavy);
     color: var(--purpleHeavy);
   }
@@ -86,10 +99,11 @@ fieldset.NDIStoggleFieldset
     color: white;
     transition: opacity 300ms ease;
     top: 0.3em;
+    font-family: '72 Bold';
   }
   .NDIStoggle span:first-of-type
   {
-    right: 0.2em;
+    right: 0.4em;
   }
   .NDIStoggle span:last-of-type
   {
