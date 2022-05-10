@@ -1,5 +1,3 @@
-/* TABLE STYLES */
-
 .NDIStable {
     border-collapse: collapse;
 }
@@ -9,7 +7,7 @@
 table.NDIStableSortable th.no-sort,
 table.NDIStableSortable th button {
     text-align: left;
-    padding   : 16px;
+    padding: 16px;
 }
 
 table.NDIStableSortable th {
@@ -40,8 +38,8 @@ table.NDIStableSortable th:first-child button,
 .NDIStable td,
 .NDIStable th {
     border-bottom: 1px solid var(--grey);
-    font-family  : '72 Regular';
-    font-weight  : 400;
+    font-family: '72 Regular';
+    font-weight: 400;
 }
 
 .NDIStable tfoot tr td,
@@ -62,10 +60,14 @@ table.NDIStableSortable th {
     position: relative;
 }
 
+table.NDIStableSortable th.no-sort {
+    vertical-align: top;
+    line-height: 24px;
+}
+
 table.NDIStableSortable th button {
     background: transparent;
     border: none;
-    display: inline;
     width: 100%;
     text-align: left;
     outline: none;
@@ -77,55 +79,45 @@ table.NDIStableSortable th button {
     border-radius: 0;
     font-family: '72 Regular';
 }
-table.NDIStableSortable th button span {
+
+table.NDIStableSortable th button {
     text-decoration: none;
 }
+
+table.NDIStableSortable th button span.thWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 40px;
+    min-width: 125px;
+}
+
 table.NDIStableSortable th button:hover {
     color: var(--purple);
     text-decoration: underline;
 }
 
-table.NDIStableSortable th button span:first-of-type {
-    width: 24px;
-    font-family: 'Material Symbols Rounded';
-    position: absolute;
-    right: 0;
-}
-
-table.NDIStableSortable th span:first-of-type::after {
+table.NDIStableSortable th button span.thLabel span.thIcon:after {
+    margin-left: 4px;
+    display: inline-block;
     content: "\e5d7";
+    font-family: 'Material Symbols Rounded';
     color: currentColor;
-    font-size: 100%;
-    top: 0;
+    font-size: 16px;
+    vertical-align: text-bottom;
 }
-
-table.NDIStableSortable th[aria-sort="descending"] span:first-of-type::after {
+/*
+table.NDIStableSortable th[aria-sort="descending"] button span.thLabel span.thIcon:after {
     content: "\e5cf";
-    color: currentColor;
-    font-size: 100%;
-    top: 0;
 }
 
-table.NDIStableSortable th button {
-    min-width: 175px;
-    min-height: 70px;
-}
-
-table.NDIStableSortable th[aria-sort="ascending"] span:first-of-type::after {
+table.NDIStableSortable th[aria-sort="descending"] button span.thLabel span.thIcon:after {
     content: "\e5ce";
-    color: currentColor;
-    font-size: 100%;
 }
-
-.NDIStable.NDIStableSortable thead th
-{
+*/
+.NDIStable.NDIStableSortable thead th {
     font-family: '72 Regular';
-}
-
-table.NDIStableSortable th[aria-sort="ascending"] span:nth-of-type(2), table.NDIStableSortable th[aria-sort="ascending"] span:nth-of-type(2):hover,
-table.NDIStableSortable th[aria-sort="descending"] span:nth-of-type(3), table.NDIStableSortable th[aria-sort="descending"] span:nth-of-type(3):hover
-{
-    display: block;
 }
 
 table.NDIStableSortable td.num {
@@ -134,13 +126,6 @@ table.NDIStableSortable td.num {
 
 /* Focus and hover styling */
 
-table.NDIStableSortable th:not([aria-sort]) button:focus span:first-of-type::after,
-table.NDIStableSortable th:not([aria-sort]) button:hover span:first-of-type::after {
-    content: "\e5cf";
-    color: currentColor;
-    font-size: 100%;
-    top: 0;
-}
 
 table.NDIStableSortable th[aria-sort="ascending"] button,
 table.NDIStableSortable th[aria-sort="descending"] button {
@@ -148,12 +133,11 @@ table.NDIStableSortable th[aria-sort="descending"] button {
     font-family: '72 Bold';
 }
 
-
-
-table.NDIStableSortable th span:nth-of-type(2), table.NDIStableSortable th span:nth-of-type(2):hover,
-table.NDIStableSortable th span:nth-of-type(3), table.NDIStableSortable th span:nth-of-type(3):hover
-{
-    display: none;
+table.NDIStableSortable th span:nth-of-type(2),
+table.NDIStableSortable th span:nth-of-type(2):hover,
+table.NDIStableSortable th span:nth-of-type(3),
+table.NDIStableSortable th span:nth-of-type(3):hover {
+    display: block;
     color: var(--black);
     font-family: '72 Regular';
     font-size: 14px;
