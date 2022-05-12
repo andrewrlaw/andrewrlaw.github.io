@@ -1,10 +1,6 @@
-/* fieldset.NDISfieldset {
+.NDISfieldset {
     border : 0;
     padding: 0;
-    width  : 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
 }
 
 .NDISlabel {
@@ -39,4 +35,4 @@ fieldset.NDISfieldset small
 {
  	
     text-align: right
-} */
+} 

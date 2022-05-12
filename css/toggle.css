@@ -1,4 +1,4 @@
-fieldset.NDIStoggleFieldset
+.NDIStoggleWrapper
 {
     display: flex;
     border: 0;
@@ -92,27 +92,20 @@ fieldset.NDIStoggleFieldset
     background-color: var(--purpleHeavy);
     border-color: var(--purpleHeavy);
   }
-  .NDIStoggle span
+  .NDIStoggle span#LabelID
   {
     position: absolute;
-    opacity: 1;
     color: white;
-    transition: opacity 300ms ease;
     top: 0.3em;
     font-family: '72 Bold';
   }
-  .NDIStoggle span:first-of-type
-  {
-    right: 0.4em;
+  .NDIStoggle[aria-pressed=false] span#LabelID {
+    left: auto !important;
+    right: 0.4em !important;
   }
-  .NDIStoggle span:last-of-type
-  {
-    left: 0.65em;
-  }
-  
-  .NDIStoggle[aria-pressed=true] span:first-of-type, .NDIStoggle[aria-pressed=false] span:last-of-type
-  {
-    opacity: 0;
+  .NDIStoggle[aria-pressed=true] span#LabelID {
+    left: 0.65em !important;
+    right: auto !important;
   }
   
   .NDIStoggle[aria-pressed][disabled]::before {
