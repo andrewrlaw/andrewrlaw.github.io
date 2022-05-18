@@ -1,0 +1,59 @@
+.NDIStabs {
+    font-family: '72 Regular';
+    font-size: 1em;
+    text-decoration: none;
+    width: auto;
+}
+
+.NDIStabs [role="tablist"] {
+    margin: 0 0 0.5em 0;
+    overflow: visible;
+}
+
+.NDIStabs [role="tab"] {
+    position: relative;
+    font-family: '72 Regular';
+    font-size: 1em;
+    line-height: 1em;
+    text-decoration: none;
+    padding: 12px 32px 16px;
+    cursor: pointer;
+    overflow: visible;
+    border-radius: 0;
+    background: none;
+    border-bottom: 0;
+    color: var(--purpleHeavy);
+    transition: none;
+}
+
+.NDIStabs [role="tab"]:hover {
+    outline: 0;
+    border-radius: 0;
+    color: var(--purple);
+    border-bottom: 4px solid var(--purple);
+}
+
+.NDIStabs [role="tab"][aria-selected="true"], .NDIStabs [role="tab"][aria-selected="true"]:hover {
+    text-decoration: none;
+    color: var(--black);
+    border-bottom: 4px solid var(--purpleHeavy);
+    cursor: default;
+}
+
+.NDIStabs [role="tabpanel"] {
+    position: relative;
+    z-index: 2;
+    padding: 1em 0em;
+}
+
+.NDIStabs [role="tabpanel"].is-hidden {
+    display: none;
+}
+
+.NDIStabs [role="tabpanel"] p {
+    margin: 0;
+}
+
+.NDIStabs [role="tabpanel"] *+p {
+    margin-top: 1em;
+}

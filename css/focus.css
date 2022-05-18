@@ -7,7 +7,8 @@ input:focus,
 textarea:focus,
 .NDISinputGroupButton.active input+label,
 .NDISinputGroup input:focus+label,
-.NDISlegendInput:focus+.NDISlegendLabel {
+.NDISlegendInput:focus+.NDISlegendLabel,
+.NDIStabs [role="tab"]:focus {
     outline       : 3px solid var(--focus);
     outline-offset: 2px;
     transition    : none;
@@ -25,6 +26,7 @@ input:focus:not(:focus-visible),
 button:focus:not(:focus-visible),
 .NDISinputGroupButton.active input+label:focus:not(:focus-visible),
 .NDISinputGroup input:focus:not(:focus-visible)+label,
-.NDISlegendInput:focus:not(:focus-visible)+.NDISlegendLabel {
+.NDISlegendInput:focus:not(:focus-visible)+.NDISlegendLabel,
+.NDIStabs [role="tabpanel"]:focus:not(:focus-visible) {
     outline: 0;
 }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pagination</title>
+    <link rel="stylesheet" href="https://andrewrlaw.github.io/ndis_zh.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .NDISinputGroup.NDISpagination {
+            display: flex;
+            align-items: baseline;
+            flex-direction: row;
+            margin-left: 0;
+        }
+
+        .NDISpagination .NDISlabel,
+        .NDISpagination .NDISinputGroupPagination {
+            display: contents;
+        }
+
+        .NDISpagination .NDISinputGroupPagination .NDISinputGroupWrapper:first-of-type
+        {
+            padding-left: 1em;
+        }
+
+        .NDISpagination .NDISinputGroupLabel,
+        .NDISpagination .NDISinputGroupButton:checked+.NDISinputGroupLabel {
+            padding: 6px 12px;
+            min-width: 1em;
+            text-align: center;
+            border-color: var(--purpleHeavy);
+        }
+    </style>
+</head>
+
+<body>
+
+    <fieldset class="NDISinputGroup NDISpagination">
+        <legend class="NDISlabel">Claims per page</legend>
+        <span class="NDISinputGroupPagination">
+            <span class="NDISinputGroupWrapper">
+                <input class="NDISinputGroupButton" name="RadioButtons1" type="radio" id="Button1">
+                <label class="NDISinputGroupLabel" for="Button1">5</label>
+            </span>
+            <span class="NDISinputGroupWrapper">
+                <input class="NDISinputGroupButton" name="RadioButtons1" type="radio" id="Button2">
+                <label class="NDISinputGroupLabel" for="Button2">10</label>
+            </span>
+            <span class="NDISinputGroupWrapper">
+                <input class="NDISinputGroupButton" name="RadioButtons1" type="radio" id="Button3">
+                <label class="NDISinputGroupLabel" for="Button3">20</label>
+            </span>
+        </span>
+    </fieldset>
+
+</body>
+
+</html>

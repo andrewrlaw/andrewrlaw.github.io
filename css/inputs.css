@@ -7,17 +7,24 @@
     font-weight: 400;
     font-family: '72 Bold';
     margin-top	: 16px;
+    display: block;
 }
-
 
 .NDIStextInput,
 .NDIStextAreaInput {
     border       : 1px solid var(--black);
     border-radius: 4px;
-    padding      : 13px 2%;
+    padding      : 13px 16px;
   	margin-top	: 12px;
     font-family: '72 Light';
     font-weight: 100;
+    font-size: 16px;
+}
+
+.NDIStextAreaInput
+{
+ min-width: 200px; 
+ overflow:auto;
 }
 
 .NDIStextInput:hover,
@@ -31,8 +38,44 @@
     padding      : 12px 15px;
 }
 
-fieldset.NDISfieldset small
+.NDIStextInputIconDollar
 {
- 	
-    text-align: right
-} 
+   position: relative; 
+}
+.NDIStextInputIconDollar::before
+{
+left: 12px;
+top: -4px;
+font-family: 'Material Symbols Rounded';
+content: '\e227';
+position: absolute;
+font-size: 24px;
+color: var(--black);
+}
+
+.NDIStextInputIconDollar .NDIStextInput
+{
+    padding-left: 38px;
+}
+
+
+.NDIStextInputIconDollar .NDIStextInput:active
+{
+    padding-left: 37px;
+}
+
+
+.NDIStextAreaInput {
+	width: 400px;
+	min-height: 100px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+small
+{
+    text-align: right;
+  position: absolute;  
+  bottom: -24px;
+  right: 0px;
+}

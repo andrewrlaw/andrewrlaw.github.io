@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Inputs</title>
+<link rel="stylesheet" href="https://andrewrlaw.github.io/ndis_zh.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<style>
+.NDISlabel {
+    font-weight: 400;
+    font-family: '72 Bold';
+    margin-top	: 16px;
+    display: block;
+}
+
+.NDIStextInput,
+.NDIStextAreaInput {
+    border       : 1px solid var(--black);
+    border-radius: 4px;
+    padding      : 13px 16px;
+  	margin-top	: 12px;
+    font-family: '72 Light';
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.NDIStextAreaInput
+{
+ min-width: 200px; 
+ overflow:auto;
+}
+
+.NDIStextInput:hover,
+.NDIStextAreaInput:hover {
+    border-color : var(--purple);
+}
+
+.NDIStextInput:active,
+.NDIStextAreaInput:active {
+    border       : 2px solid var(--purpleHeavy);
+    padding      : 12px 15px;
+}
+
+.NDIStextInputIconDollar
+{
+   position: relative; 
+}
+.NDIStextInputIconDollar::before
+{
+left: 12px;
+top: -4px;
+font-family: 'Material Symbols Rounded';
+content: '\e227';
+position: absolute;
+font-size: 24px;
+color: var(--black);
+}
+
+.NDIStextInputIconDollar .NDIStextInput
+{
+    padding-left: 38px;
+}
+
+
+.NDIStextInputIconDollar .NDIStextInput:active
+{
+    padding-left: 37px;
+}
+
+
+.NDIStextAreaInput {
+	width: 400px;
+	min-height: 100px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+small
+{
+    text-align: right;
+  position: absolute;  
+  bottom: -24px;
+  right: 0px;
+}
+
+
+</style>
+</head>
+
+<body>
+    <a href="#">Link</a>
+    <label class="NDISlabel" for="NDISinputExample">A label for the form input</label>
+    <span class="NDIStextInputIconDollar"><input class="NDIStextInput" name="NDISinputExample" type="text"></span>
+
+    <label class="NDISlabel" for="NDISinputExample">A label for the form input</label>
+    <input class="NDIStextInput iconDollar" name="NDISinputExample" type="text">
+
+    <label class="NDISlabel" for="NDIStextareaExample" id="textareaDesciption">A label for the textarea input</label>
+    <textarea aria-describedby="textareaDesciption" class="NDIStextAreaInput"></textarea>
+    <small><span id="characterCount"></span> characters remaining</small>
+</body>
+
+</html>
