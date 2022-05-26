@@ -1,0 +1,106 @@
+.NDISinstalmentSummary {
+    font-weight: 400;
+    font-family: '72 Light';
+    color: var(--black);
+    font-size: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.NDISinstalmentSummary li {
+    margin-left: 0px;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.NDISinstalmentSummary li span.text {
+    font-family: '72 Bold';
+    font-size: 16px;
+    display: flex;
+    padding-bottom: 1em;
+    padding-right: 2em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid var(--purpleHeavy);
+    line-height: 1.25em;
+}
+
+.NDISinstalmentSummary.calloutCard li span.text {
+    border-bottom: 2px solid var(--black);
+}
+
+.NDISinstalmentSummary li span.text.plus::after,
+.NDISinstalmentSummary li span.text.equals::after {
+    content: '\002B';
+    padding-left: 1em;
+    display: flex;
+    align-items: end;
+}
+
+.NDISinstalmentSummary li span.text.equals::after {
+    content: '\003D';
+}
+
+.NDISinstalmentSummary li span.numbers {
+    white-space: nowrap;
+    line-height: 2em;
+    padding-right: 1em;
+}
+
+.NDISinstalmentSummary li span span.small {
+    font-style: italic;
+    font-size: 16px;
+    white-space: nowrap;
+    line-height: 2em;
+}
+
+.NDISinstalmentSummary li span .hide {
+    display: none;
+}
+
+@media only screen and (max-width : 896px) {
+    .NDISinstalmentSummary {
+        display: inline-block;
+        font-size: 18px;
+    }
+
+    .NDISinstalmentSummary li,
+    .NDISinstalmentSummary.calloutCard li {
+        display: inline-block;
+        width: 47%;
+        margin-right: 2%;
+        margin-bottom: 0.5em;
+    }
+
+    .NDISinstalmentSummary li span.text,
+    .NDISinstalmentSummary.calloutCard li span.text {
+        padding-bottom: 0em;
+        padding-right: 0em;
+        margin-bottom: 0em;
+        border-bottom: none;
+    }
+}
+
+@media only screen and (max-width : 414px) {
+
+    .NDISinstalmentSummary {
+        font-size: 18px;
+    }
+
+    .NDISinstalmentSummary li,
+    .NDISinstalmentSummary.calloutCard li {
+        width: 100%;
+    }
+
+    .NDISinstalmentSummary li span .hide {
+        display:contents;
+    }
+
+    .NDISinstalmentSummary li span.text.plus::after,
+.NDISinstalmentSummary li span.text.equals::after {
+    display: none;
+}
+}

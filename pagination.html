@@ -8,53 +8,100 @@
     <title>Pagination</title>
     <link rel="stylesheet" href="https://andrewrlaw.github.io/ndis_zh.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <style>
-        .NDISinputGroup.NDISpagination {
-            display: flex;
-            align-items: baseline;
-            flex-direction: row;
-            margin-left: 0;
-        }
 
-        .NDISpagination .NDISlabel,
-        .NDISpagination .NDISinputGroupPagination {
-            display: contents;
-        }
+.NDISpagination {
+    display  : inline-block;
+}
 
-        .NDISpagination .NDISinputGroupPagination .NDISinputGroupWrapper:first-of-type
-        {
-            padding-left: 1em;
-        }
+.NDISpagination button{
+    background: var(--white);
+    font-size: 1em;
+    line-height: 1em;
+    border: 1px solid var(--purpleHeavy);
+    padding: 0.55em 0.75em;
+    text-align: center;
+    display: inline-block;
+}
 
-        .NDISpagination .NDISinputGroupLabel,
-        .NDISpagination .NDISinputGroupButton:checked+.NDISinputGroupLabel {
-            padding: 6px 12px;
-            min-width: 1em;
-            text-align: center;
-            border-color: var(--purpleHeavy);
-        }
+.NDISpagination button span{
+    font-size: 0.75em;
+    vertical-align: baseline;
+}
+
+.NDISinputGroup .NDISinputGroupLabel {
+    background   : var(--white);
+    color        : var(--purpleHeavy);
+    border       : 1px solid var(--black);
+    font-size    : 1em;
+    font-family  : '72 Regular';
+    font-weight  : 100;
+    padding      : 16px 32px;
+    transition   : none;
+    border-radius: 0px;
+    display      : inline-block;
+    cursor       : pointer;
+}
+
+.NDISinputGroup .NDISinputGroupLabel:hover {
+    background     : var(--greyLight);
+    border-color   : var(--purpleHeavy);
+    color          : var(--purpleHeavy);
+    text-decoration: underline;
+}
+
+.NDISinputGroupButton:checked+.NDISinputGroupLabel {
+    background        : var(--purpleLight);
+    border-color      : var(--purpleHeavy);
+    color             : var(--black);
+    -webkit-box-shadow: inset 0px 0px 9px 0px rgba(106, 40, 117, 0.7);
+    box-shadow        : inset 0px 0px 9px 0px rgba(106, 40, 117, 0.7);
+    font-family       : '72 Bold';
+    font-weight       : 400;
+    text-decoration   : none;
+    padding           : 16px 30px;
+}
+
+.NDISinputGroupWrapper {
+    padding-bottom: 10px;
+    margin-right  : -1px;
+    position      : relative;
+}
+
+.NDISinputGroupWrapper.active {
+    padding-bottom: 8px;
+}
+
+.NDISinputGroupWrapper:after {
+    content         : '';
+    position        : absolute;
+    width           : 100%;
+    transition      : transform 0.15s ease-in-out;
+    transform       : scaleX(0);
+    height          : 2px;
+    bottom          : 0;
+    left            : 0;
+    background-color: var(--purpleHeavy);
+    transform-origin: bottom right;
+}
+
+.NDISinputGroupWrapper.active:after {
+    transform       : scaleX(1);
+    transform-origin: bottom left;
+}
     </style>
 </head>
 
 <body>
-
-    <fieldset class="NDISinputGroup NDISpagination">
-        <legend class="NDISlabel">Claims per page</legend>
-        <span class="NDISinputGroupPagination">
-            <span class="NDISinputGroupWrapper">
-                <input class="NDISinputGroupButton" name="RadioButtons1" type="radio" id="Button1">
-                <label class="NDISinputGroupLabel" for="Button1">5</label>
-            </span>
-            <span class="NDISinputGroupWrapper">
-                <input class="NDISinputGroupButton" name="RadioButtons1" type="radio" id="Button2">
-                <label class="NDISinputGroupLabel" for="Button2">10</label>
-            </span>
-            <span class="NDISinputGroupWrapper">
-                <input class="NDISinputGroupButton" name="RadioButtons1" type="radio" id="Button3">
-                <label class="NDISinputGroupLabel" for="Button3">20</label>
-            </span>
-        </span>
-    </fieldset>
+    <span class="NDISpagination">
+        <button><span class="material-symbols-rounded">arrow_back_ios_new</span>First</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>Last<span class="material-symbols-rounded">arrow_forward_ios</span></button>
+    </span>
 
 </body>
 
