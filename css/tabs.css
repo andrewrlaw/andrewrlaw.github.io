@@ -2,61 +2,69 @@
     font-family: '72 Regular';
     font-size: 1em;
     text-decoration: none;
-    width: auto;
 }
 
 .NDIStabs [role="tablist"] {
-    margin: 0 0 0.5em 0;
-    overflow: visible;
+  min-width: 550px;
+  border-bottom: 1px solid var(--grey)
 }
 
-.NDIStabs [role="tab"] {
-    position: relative;
-    font-family: '72 Regular';
-    font-size: 1em;
-    line-height: 1em;
-    text-decoration: none;
-    padding: 12px 32px 16px;
-    cursor: pointer;
-    overflow: visible;
-    border-radius: 0;
-    background: none;
-    border-bottom: 0;
+.NDIStabs [role="tab"]
+{
     color: var(--purpleHeavy);
-    transition: none;
+    background: none;
+    border-radius: 0;
+    /* position: relative; */
+  z-index: 2;
+  margin: 0;
+  margin-top: 4px;
+  padding: 8px 12px 12px 12px;
+  overflow: visible;
+  color: var(--purpleHeavy);
+  transition: none;
+}
+
+.NDIStabs [role="tab"]:focus,
+.NDIStabs [role="tab"]:hover {
+  color: var(--purple);
+  border-bottom: 4px solid var(--purple);
 }
 
 .NDIStabs [role="tab"][aria-selected="true"] {
-    text-decoration: none;
-    color: var(--black);
-    border-bottom: 4px solid var(--purpleHeavy);
-    cursor: default;
+  margin-top: 0;
+  border-bottom: 4px solid var(--purpleHeavy);
+  padding-bottom: 8px;
+  color: var(--black);
 }
 
-.NDIStabs [role="tab"]:hover {
-    outline: 0;
-    border-radius: 0;
-    color: var(--purple);
-    border-bottom: 4px solid var(--purple);
+.NDIStabs [role="tab"][aria-selected="false"] {
+  border-bottom: none;
+  color: var(--purpleHeavy);
 }
-.NDIStabs [aria-selected="true"]:hover {
-    color: var(--black);
+
+.NDIStabs [role="tab"][aria-selected="false"]:hover {
+    border-bottom: 4px solid var(--purple);
+    padding-bottom: 8px;
+    color: var(--purple);
+}
+
+.NDIStabs [role="tab"] span.focus {
+  display: inline-block;
+  margin: 2px;
+  padding: 4px 6px;
 }
 
 .NDIStabs [role="tabpanel"] {
-    position: relative;
-    z-index: 2;
-    padding: 1em 0em;
+  padding: 1em 0;
+  min-height: 5em;
+  min-width: 550px;
+  overflow: visible;
 }
 
 .NDIStabs [role="tabpanel"].is-hidden {
-    display: none;
+  display: none;
 }
 
 .NDIStabs [role="tabpanel"] p {
-    margin: 0;
-}
-
-.NDIStabs [role="tabpanel"] *+p {
-    margin-top: 1em;
+  margin: 0;
 }

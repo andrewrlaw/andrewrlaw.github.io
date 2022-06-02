@@ -9,10 +9,16 @@ textarea:focus,
 .NDISinputGroup input:focus+label,
 .NDISlegendInput:focus+.NDISlegendLabel,
 .NDIStabs [role="tab"]:focus,
-.NDIStabs [role="tabpanel"]:focus {
+.NDIStabs [role="tab"]:active
+ {
     outline       : 3px solid var(--focus);
     outline-offset: 2px;
     transition    : none;
+}
+
+.NDIStabs [role="tab"]:focus,
+.NDIStabs [role="tab"]:active {
+    outline-offset: 0px;
 }
 
 .NDISinputGroupButton.active input+label,
@@ -28,6 +34,6 @@ button:focus:not(:focus-visible),
 .NDISinputGroupButton.active input+label:focus:not(:focus-visible),
 .NDISinputGroup input:focus:not(:focus-visible)+label,
 .NDISlegendInput:focus:not(:focus-visible)+.NDISlegendLabel,
-.NDIStabs [role="tabpanel"]:focus:not(:focus-visible) {
+[role="tab"]:focus:not(:focus-visible) {
     outline: 0;
 }

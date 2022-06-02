@@ -13,7 +13,7 @@
 /* Import Inputs component styles */
 @import url(css/inputs.css);
 /* Import Instalment Summary component styles */
-@import url(css/instalmentSummary.css);
+@import url(css/instalmentSummary.cssq);
 /* Import Legend component styles */
 @import url(css/legend.css);
 /* Import Link component styles */
@@ -24,6 +24,8 @@
 @import url(css/pills.css);
 /* Import Tables component styles */
 @import url(css/tables.css);
+/* Import Tabs component styles */
+@import url(css/tabs.css);
 /* Import Toggle component styles */
 @import url(css/toggle.css);
 
