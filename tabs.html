@@ -2,186 +2,201 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Tabs</title>
-<link rel="stylesheet" href="ndis_zh.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabs</title>
+    <link rel="stylesheet" href="ndis_zh.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
 
-    <div class="NDIStabs">
-        <h3 id="tablist-1">Tab list title</h3>
-        <div role="tablist" aria-labelledby="tablist-1" class="manual">
-          <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1">
-            <span class="focus">First tab</span>
-          </button>
-          <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2" tabindex="-1">
-            <span class="focus">Second tab</span>
-          </button>
-          <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabindex="-1">
-            <span class="focus">The third tab</span>
-          </button>
-          <button id="tab-4" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-4" tabindex="-1">
-            <span class="focus">Final tab</span>
-          </button>
-        </div>
-      
-        <div id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
-          <p>Tab (stylized as TaB) was a diet cola soft drink created and produced by <a href="https://www.wikiwand.com/en/The_Coca-Cola_Company" target="_blank">The Coca-Cola Company</a>, introduced in 1963 and discontinued in 2020. Coca-Cola's first diet drink,[2] Tab was popular throughout the 1960s and 1970s. Several variations were made, including a number of fruit-flavored, root beer, and ginger ale versions. Caffeine-free and clear variations were released in the late 1980s and early 1990s. </p>
-        </div>
-        <div id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2" class="is-hidden">
-          <p>Tab's popularity declined after the Coca-Cola company's introduction of <a href="https://www.wikiwand.com/en/Diet_Coke" target="_blank">Diet Coke</a> in 1982, though it remained the best-selling diet soda of that year.[4] Coca-Cola continued to produce Tab in the United States, though in considerably smaller quantities than its more popular mainstay beverages, such as Coca-Cola and Diet Coke. </p>
-        </div>
-        <div id="tabpanel-3" role="tabpanel" aria-labelledby="tab-3" class="is-hidden">
-          <p>According to the company, three million cases of Tab were made in 2011, and the beverage retained a cult following. In 2006, a <a href="https://www.wikiwand.com/en/Tab_Energy" target="_blank">Tab-branded energy drink</a> was released, though it used a different formula from the standard cola. Coca-Cola discontinued Tab at the end of 2020.</p>
-        </div>
-        <div id="tabpanel-4" role="tabpanel" aria-labelledby="tab-4" class="is-hidden">
-          <p>Tab was created in 1963 by Coca-Cola after the successful sales and marketing of <a href="https://www.wikiwand.com/en/Diet_Rite" target="_blank">Diet Rite</a> cola, owned by The Royal Crown Company. Previously, Diet Rite had been the only sugarless soda on the market. Tab was marketed to consumers who wanted to "keep tabs" on their weight.</p>
-        </div>
-      </div>
-              
-<script>
-/*
- *   This content is licensed according to the W3C Software License at
- *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
- *
- *   File:   tabs-manual.js
- *
- *   Desc:   Tablist widget that implements ARIA Authoring Practices
- */
+<div class="NDIStabs">
+    <h3 id="tablist-1">Tab list title</h3>
+    <div role="tablist" aria-labelledby="tablist-1" class="manual">
+        <button type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1">
+            <span class="focus">First tab</span></button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2" tabindex="-1">
+            <span class="focus">Second tab</span></button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabindex="-1">
+            <span class="focus">The third tab</span></button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="tabpanel-4" tabindex="-1">
+            <span class="focus">Final tab</span></button>
+    </div>
 
- 'use strict';
+    <div id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
+        <h2 id="tab-1">First tab</h2>
+        <p>Tab (stylized as TaB) was a diet cola soft drink created and produced by <a
+                href="https://www.wikiwand.com/en/The_Coca-Cola_Company" target="_blank">The Coca-Cola Company</a>,
+            introduced in 1963 and discontinued in 2020. Coca-Cola's first diet drink, Tab was popular throughout
+            the 1960s and 1970s. Several variations were made, including a number of fruit-flavored, root beer, and
+            ginger ale versions. Caffeine-free and clear variations were released in the late 1980s and early 1990s.
+        </p>
+    </div>
+    <div id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2" class="is-hidden" tabindex="0">
+        <h2 id="tab-2">Second tab</h2>
+        <p>Tab's popularity declined after the Coca-Cola company's introduction of <a
+                href="https://www.wikiwand.com/en/Diet_Coke" target="_blank">Diet Coke</a> in 1982, though it
+            remained the best-selling diet soda of that year. Coca-Cola continued to produce Tab in the United
+            States, though in considerably smaller quantities than its more popular mainstay beverages, such as
+            Coca-Cola and Diet Coke. </p>
+    </div>
+    <div id="tabpanel-3" role="tabpanel" aria-labelledby="tab-3" class="is-hidden" tabindex="0">
+        <h2 id="tab-3">The third tab</h2>
+        <p>According to the company, three million cases of Tab were made in 2011, and the beverage retained a cult
+            following. In 2006, a <a href="https://www.wikiwand.com/en/Tab_Energy" target="_blank">Tab-branded
+                energy drink</a> was released, though it used a different formula from the standard cola. Coca-Cola
+            discontinued Tab at the end of 2020.</p>
+    </div>
+    <div id="tabpanel-4" role="tabpanel" aria-labelledby="tab-4" class="is-hidden" tabindex="0">
+        <h2 id="tab-4">Final tab</h2>
+        <p>Tab was created in 1963 by Coca-Cola after the successful sales and marketing of <a
+                href="https://www.wikiwand.com/en/Diet_Rite" target="_blank">Diet Rite</a> cola, owned by The Royal
+            Crown Company. Previously, Diet Rite had been the only sugarless soda on the market. Tab was marketed to
+            consumers who wanted to "keep tabs" on their weight.</p>
+    </div>
+</div>
 
-class TabsManual {
-  constructor(groupNode) {
-    this.tablistNode = groupNode;
+    <script>
+        /*
+            *   This content is licensed according to the W3C Software License at
+            *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+            *
+            *   File:   tabs-manual.js
+            *
+            *   Desc:   Tablist widget that implements ARIA Authoring Practices
+            */
 
-    this.tabs = [];
+        'use strict';
 
-    this.firstTab = null;
-    this.lastTab = null;
+        class TabsManual {
+            constructor(groupNode) {
+                this.tablistNode = groupNode;
 
-    this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
-    this.tabpanels = [];
+                this.tabs = [];
 
-    for (var i = 0; i < this.tabs.length; i += 1) {
-      var tab = this.tabs[i];
-      var tabpanel = document.getElementById(tab.getAttribute('aria-controls'));
+                this.firstTab = null;
+                this.lastTab = null;
 
-      tab.tabIndex = -1;
-      tab.setAttribute('aria-selected', 'false');
-      this.tabpanels.push(tabpanel);
+                this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
+                this.tabpanels = [];
 
-      tab.addEventListener('keydown', this.onKeydown.bind(this));
-      tab.addEventListener('click', this.onClick.bind(this));
+                for (var i = 0; i < this.tabs.length; i += 1) {
+                    var tab = this.tabs[i];
+                    var tabpanel = document.getElementById(tab.getAttribute('aria-controls'));
 
-      if (!this.firstTab) {
-        this.firstTab = tab;
-      }
-      this.lastTab = tab;
-    }
+                    tab.tabIndex = -1;
+                    tab.setAttribute('aria-selected', 'false');
+                    this.tabpanels.push(tabpanel);
 
-    this.setSelectedTab(this.firstTab);
-  }
+                    tab.addEventListener('keydown', this.onKeydown.bind(this));
+                    tab.addEventListener('click', this.onClick.bind(this));
 
-  setSelectedTab(currentTab) {
-    for (var i = 0; i < this.tabs.length; i += 1) {
-      var tab = this.tabs[i];
-      if (currentTab === tab) {
-        tab.setAttribute('aria-selected', 'true');
-        tab.removeAttribute('tabindex');
-        this.tabpanels[i].classList.remove('is-hidden');
-      } else {
-        tab.setAttribute('aria-selected', 'false');
-        tab.tabIndex = -1;
-        this.tabpanels[i].classList.add('is-hidden');
-      }
-    }
-  }
+                    if (!this.firstTab) {
+                        this.firstTab = tab;
+                    }
+                    this.lastTab = tab;
+                }
 
-  moveFocusToTab(currentTab) {
-    currentTab.focus();
-  }
+                this.setSelectedTab(this.firstTab);
+            }
 
-  moveFocusToPreviousTab(currentTab) {
-    var index;
+            setSelectedTab(currentTab) {
+                for (var i = 0; i < this.tabs.length; i += 1) {
+                    var tab = this.tabs[i];
+                    if (currentTab === tab) {
+                        tab.setAttribute('aria-selected', 'true');
+                        tab.removeAttribute('tabindex');
+                        this.tabpanels[i].classList.remove('is-hidden');
+                    } else {
+                        tab.setAttribute('aria-selected', 'false');
+                        tab.tabIndex = -1;
+                        this.tabpanels[i].classList.add('is-hidden');
+                    }
+                }
+            }
 
-    if (currentTab === this.firstTab) {
-      this.moveFocusToTab(this.lastTab);
-    } else {
-      index = this.tabs.indexOf(currentTab);
-      this.moveFocusToTab(this.tabs[index - 1]);
-    }
-  }
+            moveFocusToTab(currentTab) {
+                currentTab.focus();
+            }
 
-  moveFocusToNextTab(currentTab) {
-    var index;
+            moveFocusToPreviousTab(currentTab) {
+                var index;
 
-    if (currentTab === this.lastTab) {
-      this.moveFocusToTab(this.firstTab);
-    } else {
-      index = this.tabs.indexOf(currentTab);
-      this.moveFocusToTab(this.tabs[index + 1]);
-    }
-  }
+                if (currentTab === this.firstTab) {
+                    this.moveFocusToTab(this.lastTab);
+                } else {
+                    index = this.tabs.indexOf(currentTab);
+                    this.moveFocusToTab(this.tabs[index - 1]);
+                }
+            }
 
-  /* EVENT HANDLERS */
+            moveFocusToNextTab(currentTab) {
+                var index;
 
-  onKeydown(event) {
-    var tgt = event.currentTarget,
-      flag = false;
+                if (currentTab === this.lastTab) {
+                    this.moveFocusToTab(this.firstTab);
+                } else {
+                    index = this.tabs.indexOf(currentTab);
+                    this.moveFocusToTab(this.tabs[index + 1]);
+                }
+            }
 
-    switch (event.key) {
-      case 'ArrowLeft':
-        this.moveFocusToPreviousTab(tgt);
-        flag = true;
-        break;
+            /* EVENT HANDLERS */
 
-      case 'ArrowRight':
-        this.moveFocusToNextTab(tgt);
-        flag = true;
-        break;
+            onKeydown(event) {
+                var tgt = event.currentTarget,
+                    flag = false;
 
-      case 'Home':
-        this.moveFocusToTab(this.firstTab);
-        flag = true;
-        break;
+                switch (event.key) {
+                    case 'ArrowLeft':
+                        this.moveFocusToPreviousTab(tgt);
+                        flag = true;
+                        break;
 
-      case 'End':
-        this.moveFocusToTab(this.lastTab);
-        flag = true;
-        break;
+                    case 'ArrowRight':
+                        this.moveFocusToNextTab(tgt);
+                        flag = true;
+                        break;
 
-      default:
-        break;
-    }
+                    case 'Home':
+                        this.moveFocusToTab(this.firstTab);
+                        flag = true;
+                        break;
 
-    if (flag) {
-      event.stopPropagation();
-      event.preventDefault();
-    }
-  }
+                    case 'End':
+                        this.moveFocusToTab(this.lastTab);
+                        flag = true;
+                        break;
 
-  // Since this example uses buttons for the tabs, the click onr also is activated
-  // with the space and enter keys
-  onClick(event) {
-    this.setSelectedTab(event.currentTarget);
-  }
-}
+                    default:
+                        break;
+                }
 
-// Initialize tablist
+                if (flag) {
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            }
 
-window.addEventListener('load', function () {
-  var tablists = document.querySelectorAll('[role=tablist].manual');
-  for (var i = 0; i < tablists.length; i++) {
-    new TabsManual(tablists[i]);
-  }
-});
+            // Since this example uses buttons for the tabs, the click onr also is activated
+            // with the space and enter keys
+            onClick(event) {
+                this.setSelectedTab(event.currentTarget);
+            }
+        }
 
-</script>
+        // Initialize tablist
+
+        window.addEventListener('load', function () {
+            var tablists = document.querySelectorAll('[role=tablist].manual');
+            for (var i = 0; i < tablists.length; i++) {
+                new TabsManual(tablists[i]);
+            }
+        });
+
+    </script>
 </body>
 
 </html>
