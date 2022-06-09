@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Instalment summary</title>
+    <link rel="stylesheet" href="ndis_zh.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        .NDISinstalmentSummary {
+            font-weight: 400;
+            font-family: '72 Light';
+            color: var(--black);
+            font-size: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .NDISinstalmentSummary li {
+            margin-left: 0px;
+            display: flex;
+            align-self: start;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .NDISinstalmentSummary li span.text {
+            font-family: '72 Bold';
+            font-size: 16px;
+            display: flex;
+            padding-bottom: 1em;
+            padding-right: 2em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid var(--purpleHeavy);
+            line-height: 1.25em;
+        }
+
+        .NDISinstalmentSummary.calloutCard li span.text {
+            border-bottom: 2px solid var(--black);
+        }
+
+        /* .NDISinstalmentSummary li span.text .symbol{
+    padding-left: 1em;
+    display: flex;
+    align-items: start;
+} */
+
+        .NDISinstalmentSummary li span.numbers {
+            padding-right: 1em;
+            line-height: 1em
+        }
+
+        .NDISinstalmentSummary li span span.small {
+            font-style: italic;
+            font-size: 16px;
+            line-height: 1em;
+            white-space: nowrap;
+        }
+
+
+
+
+
+        @media only screen and (min-width : 896px) and (max-width : 1096px) {
+            .NDISinstalmentSummary.calloutCard li span.text {
+                min-height: 2.5em;
+            }
+
+        }
+
+        @media only screen and (min-width : 0px) and (max-width : 895px) {
+            .NDISinstalmentSummary {
+                display: inline-block;
+                font-size: 18px;
+            }
+
+            .NDISinstalmentSummary li
+            {
+                margin-bottom: 1em;
+            }
+
+            .NDISinstalmentSummary li span.text, .NDISinstalmentSummary.calloutCard li span.text{
+            font-size: 16px;
+            padding-bottom: 0;
+            padding-right: 0;
+            margin-bottom: 0;
+            line-height: 1.25em;
+            border-bottom: none;
+            }
+
+            .NDISinstalmentSummary li,
+            .NDISinstalmentSummary.calloutCard li {
+                width: 100%;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="NDIScard">
+        <ul class="NDISinstalmentSummary">
+            <li><span class="text">Instalment</span> <span class="numbers">&#36;16,500.00</span></li>
+            <li><span class="text">Rollover</span> <span class="numbers">&#36;0.00</span></li>
+            <li><span class="text">Spent</span> <span class="numbers">&#36;8,496.40</span></li>
+            <li><span class="text">Balance</span> <span class="numbers"><span class="NDISlozenge">&#36;8,003.60</span></span></li>
+        </ul>
+    </section>
+
+    <p>&nbsp;</p>
+
+    <section class="NDIScard NDIScardCallout">
+        <ul class="NDISinstalmentSummary calloutCard">
+            <li><span class="text">Next instalment date</span> <span class="numbers">3 April 2022 <span class="small">(in 11 days)</span></span></li>
+            <li><span class="text">Next instalment release</span> <span class="numbers">&#36;16,500.00</span></li>
+            <li><span class="text">&#43; Current flexible funds</span> <span class="numbers">&#36;8,003.60</span></li>
+            <li><span class="text">&#61; Next instalment opening balance</span> <span class="numbers">&#36;24,996.40</span></li>
+        </ul>
+    </section>
+
+</body>
+
+</html>

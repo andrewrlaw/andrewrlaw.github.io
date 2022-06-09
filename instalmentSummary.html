@@ -11,137 +11,136 @@
 
     <style>
         .NDISinstalmentSummary {
-            font-weight: 400;
-            font-family: '72 Light';
-            color: var(--black);
-            font-size: 24px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
+    font-weight: 400;
+    font-family: '72 Light';
+    color: var(--black);
+    font-size: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
 
-        .NDISinstalmentSummary li {
-            margin-left: 0px;
-            display: flex;
-            align-self: flex-end;
-            flex-direction: column;
-            flex-grow: 1;
-        }
+.NDISinstalmentSummary li {
+    margin-left: 0px;
+    display: flex;
+    align-self: start;
+    flex-direction: column;
+    flex-grow: 1;
+}
 
-        .NDISinstalmentSummary li span.text {
-            font-family: '72 Bold';
-            font-size: 16px;
-            display: flex;
-            padding-bottom: 1em;
-            padding-right: 2em;
-            margin-bottom: 1em;
-            border-bottom: 2px solid var(--purpleHeavy);
-            line-height: 1.25em;
-        }
+.NDISinstalmentSummary li span.text {
+    font-family: '72 Bold';
+    font-size: 16px;
+    display: flex;
+    padding-bottom: 1em;
+    padding-right: 2em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid var(--purpleHeavy);
+    line-height: 1.25em;
+}
 
-        .NDISinstalmentSummary.calloutCard li span.text {
-            border-bottom: 2px solid var(--black);
-        }
+.NDISinstalmentSummary.calloutCard li span.text {
+    border-bottom: 2px solid var(--black);
+}
 
-        .NDISinstalmentSummary li span.text.plus::after,
-        .NDISinstalmentSummary li span.text.equals::after {
-            content: '\002B';
-            padding-left: 1em;
-            display: flex;
-            align-items: end;
-        }
+.NDISinstalmentSummary li span.text .symbol{
+    padding-left: 1em;
+    display: flex;
+    align-items: start;
+}
 
-        .NDISinstalmentSummary li span.text.equals::after {
-            content: '\003D';
-        }
+.NDISinstalmentSummary li span.numbers {
+    padding-right: 1em;
+    line-height: 1em
+}
 
-        .NDISinstalmentSummary li span.numbers {
-            white-space: nowrap;
-            line-height: 2em;
-            padding-right: 1em;
-        }
+.NDISinstalmentSummary li span span.small {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1em;
+    white-space: nowrap;
+}
 
-        .NDISinstalmentSummary li span span.small {
-            font-style: italic;
-            font-size: 16px;
-            white-space: nowrap;
-            line-height: 2em;
-        }
 
-        .NDISinstalmentSummary li span .hide {
-            display: none;
-        }
 
-        @media only screen and (max-width : 896px) {
-            .NDISinstalmentSummary {
-                display: inline-block;
-                font-size: 18px;
-            }
 
-            .NDISinstalmentSummary li,
-            .NDISinstalmentSummary.calloutCard li {
-                display: inline-block;
-                width: 47%;
-                margin-right: 2%;
-                margin-bottom: 0.5em;
-            }
 
-            .NDISinstalmentSummary li span.text,
-            .NDISinstalmentSummary.calloutCard li span.text {
-                padding-bottom: 0em;
-                padding-right: 0em;
-                margin-bottom: 0em;
-                border-bottom: none;
-            }
-        }
+@media only screen and (min-width : 896px) and (max-width : 1096px) {
+.NDISinstalmentSummary.calloutCard li span.text {
+   min-height: 2.5em;
+}
+    
+}
 
-        @media only screen and (max-width : 414px) {
+@media only screen and (min-width : 0px) and (max-width : 895px) {
+    .NDISinstalmentSummary {
+        display: inline-block;
+        font-size: 18px;
+    }
 
-            .NDISinstalmentSummary {
-                font-size: 18px;
-            }
+    .NDISinstalmentSummary li,
+    .NDISinstalmentSummary.calloutCard li {
+        display: inline-block;
+        width: 47%;
+        margin-right: 2%;
+        margin-bottom: 0.5em;
+    }
 
-            .NDISinstalmentSummary li,
-            .NDISinstalmentSummary.calloutCard li {
-                width: 100%;
-            }
+    .NDISinstalmentSummary li span.text,
+    .NDISinstalmentSummary.calloutCard li span.text {
+        padding-bottom: 0em;
+        padding-right: 0em;
+        margin-bottom: 0em;
+        border-bottom: none;
+    }
+  
+  .NDISinstalmentSummary.calloutCard li span.text {
+   min-height: 1em;
+}
+}
 
-            .NDISinstalmentSummary li span .hide {
-                display:contents;
-            }
+@media only screen and (min-width : 0px) and (max-width : 599px) {
 
-            .NDISinstalmentSummary li span.text.plus::after,
-        .NDISinstalmentSummary li span.text.equals::after {
-            display: none;
-        }
-        }
+    .NDISinstalmentSummary {
+        font-size: 18px;
+    }
+  
+  .NDISinstalmentSummary.calloutCard li span.text {
+  min-height: 1em;
+}
+
+    .NDISinstalmentSummary li,
+    .NDISinstalmentSummary.calloutCard li {
+        width: 100%;
+      display: inline-block;
+    }
+}
     </style>
 </head>
 
 <body>
     <section class="NDIScard">
-    <ul class="NDISinstalmentSummary">
-        <li><span class="text">Instalment</span> <span class="numbers">&#36;16,500.00</span></li>
-        <li><span class="text">Rollover</span> <span class="numbers">&#36;0.00</span></li>
-        <li><span class="text">Spent</span> <span class="numbers">&#36;8,496.40</span></li>
-        <li><span class="text">Balance</span> <span class="numbers"><span
-                    class="NDISlozenge">&#36;8,003.60</span></span></li>
-    </ul></section>
-
-    <p>&nbsp;</p>
-
-    <section class="NDIScard NDIScardCallout">
-    <ul class="NDISinstalmentSummary calloutCard">
-        <li><span class="text">Next instalment date</span> <span class="numbers">3 April 2022 <span class="small">(in 11
-                    days)</span></span></li>
-        <li><span class="text plus">Next instalment release</span> <span class="numbers">&#36;16,500.00</span></li>
-        <li><span class="text equals"><span class="hide">&#43; </span>Current flexible funds</span> <span
-                class="numbers">&#36;8,003.60</span></li>
-        <li><span class="text"><span class="hide">&#61; </span>Next instalment opening balance</span> <span
-                class="numbers">&#36;24,996.40</span></li>
-    </ul>
-    </section>
+        <ul class="NDISinstalmentSummary">
+            <li><span class="text">Instalment</span> <span class="numbers">&#36;16,500.00</span></li>
+            <li><span class="text">Rollover</span> <span class="numbers">&#36;0.00</span></li>
+            <li><span class="text">Spent</span> <span class="numbers">&#36;8,496.40</span></li>
+            <li><span class="text">Balance</span> <span class="numbers"><span
+                        class="NDISlozenge">&#36;8,003.60</span></span></li>
+        </ul></section>
+    
+        <p>&nbsp;</p>
+    
+        <section class="NDIScard NDIScardCallout">
+        <ul class="NDISinstalmentSummary calloutCard">
+            <li><span class="text">Next instalment date</span> <span class="numbers">3 April 2022 <span class="small">(in 11
+                        days)</span></span></li>
+          <li><span class="text">Next instalment release <span class="symbol" aria-hidden="true">&#43;</span></span> <span class="numbers">&#36;16,500.00</span></li>
+            <li><span class="text"><span class="sr-only">&#43; </span>Current flexible funds <span class="symbol" aria-hidden="true">&#61;</span></span> <span class="numbers">&#36;8,003.60</span></li>
+            <li><span class="text"><span class="sr-only">&#61; </span>Next instalment opening balance</span> <span
+                    class="numbers">&#36;24,996.40</span></li>
+        </ul>
+        </section>
 
 </body>
 
