@@ -56,6 +56,64 @@ table.NDIStableSortable th:first-child button,
     background-color: var(--greyLight);
 }
 
+.NDIStable {
+    border-collapse: collapse;
+}
+
+.NDIStable th,
+.NDIStable td,
+table.NDIStableSortable th.no-sort,
+table.NDIStableSortable th button {
+    text-align: left;
+    padding: 16px;
+}
+
+table.NDIStableSortable th {
+    padding: 0px;
+}
+
+.NDIStable thead th,
+.NDIStable tfoot td,
+.NDIStable tfoot th {
+    font-family: '72 Bold';
+    font-weight: 400;
+}
+
+.NDIStable thead th {
+    border-bottom: 2px solid var(--purpleHeavy);
+}
+
+.NDIScardCallout thead th {
+    border-bottom: 2px solid var(--black);
+}
+
+.NDIStable th:first-child,
+table.NDIStableSortable th:first-child button,
+.NDIStable td:first-child {
+    padding-left: 0px;
+}
+
+.NDIStable td,
+.NDIStable th {
+    border-bottom: 1px solid var(--grey);
+    font-family: '72 Regular';
+    font-weight: 400;
+}
+
+.NDIStable tfoot tr td,
+.NDIStable tfoot tr th {
+    border-bottom: none;
+}
+
+.NDIStable tr.NDIStable_callout tfoot td,
+.NDIStable tr.NDIStable_callout tfoot th {
+    font-size: 24px;
+}
+
+.NDIStable.NDIStable_striped tr:nth-child(even) {
+    background-color: var(--greyLight);
+}
+
 table.NDIStableSortable th {
     position: relative;
 }
@@ -74,7 +132,7 @@ table.NDIStableSortable th button {
     cursor: pointer;
     white-space: nowrap;
     padding-right: 32px;
-    color: var(--purpleHeavy);
+    color: var(--black);
     text-decoration: none;
     border-radius: 0;
     font-family: '72 Regular';
@@ -94,7 +152,7 @@ table.NDIStableSortable th button span.thWrapper {
 }
 
 table.NDIStableSortable th button:hover {
-    color: var(--purple);
+    color: var(--black);
     text-decoration: underline;
 }
 
@@ -103,25 +161,36 @@ table.NDIStableSortable th button span.thLabel span.thIcon:after {
     display: inline-block;
     content: "\e5d7";
     font-family: 'Material Symbols Rounded';
-    color: currentColor;
+    color: var(--purpleHeavy);
     font-size: 16px;
     vertical-align: text-bottom;
 }
-/*
-table.NDIStableSortable th[aria-sort="descending"] button span.thLabel span.thIcon:after {
-    content: "\e5cf";
-}
 
-table.NDIStableSortable th[aria-sort="descending"] button span.thLabel span.thIcon:after {
-    content: "\e5ce";
-}
-*/
 .NDIStable.NDIStableSortable thead th {
     font-family: '72 Regular';
 }
 
 table.NDIStableSortable td.num {
     text-align: right;
+}
+
+/* Focus and hover styling */
+
+
+table.NDIStableSortable th.ascending button,
+table.NDIStableSortable th.descending button {
+    color: var(--black);
+    font-family: '72 Bold';
+}
+
+table.NDIStableSortable th span:nth-of-type(2),
+table.NDIStableSortable th span:nth-of-type(2):hover,
+table.NDIStableSortable th span:nth-of-type(3),
+table.NDIStableSortable th span:nth-of-type(3):hover {
+    display: block;
+    color: var(--black);
+    font-family: '72 Regular';
+    font-size: 14px;
 }
 
 /* Focus and hover styling */

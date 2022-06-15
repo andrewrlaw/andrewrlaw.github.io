@@ -87,7 +87,7 @@ table.NDIStableSortable th button {
     cursor: pointer;
     white-space: nowrap;
     padding-right: 32px;
-    color: var(--purpleHeavy);
+    color: var(--black);
     text-decoration: none;
     border-radius: 0;
     font-family: '72 Regular';
@@ -107,7 +107,7 @@ table.NDIStableSortable th button span.thWrapper {
 }
 
 table.NDIStableSortable th button:hover {
-    color: var(--purple);
+    color: var(--black);
     text-decoration: underline;
 }
 
@@ -116,20 +116,11 @@ table.NDIStableSortable th button span.thLabel span.thIcon:after {
     display: inline-block;
     content: "\e5d7";
     font-family: 'Material Symbols Rounded';
-    color: currentColor;
+    color: var(--purpleHeavy);
     font-size: 16px;
     vertical-align: text-bottom;
 }
 
-/*
-table.NDIStableSortable th[aria-sort="descending"] button span.thLabel span.thIcon:after {
-    content: "\e5cf";
-}
-
-table.NDIStableSortable th[aria-sort="descending"] button span.thLabel span.thIcon:after {
-    content: "\e5ce";
-}
-*/
 .NDIStable.NDIStableSortable thead th {
     font-family: '72 Regular';
 }
