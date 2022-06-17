@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sortable tables</title>
-    <link rel="stylesheet" href="https://andrewrlaw.github.io/ndis_zh.css">
+    <link rel="stylesheet" href="ndis_zh.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
 /* TABLE STYLES */
@@ -73,9 +73,15 @@ table.NDIStableSortable th {
     position: relative;
 }
 
+.NDIStable.NDIStableSortable thead th {
+    font-family: '72 Regular';
+}
+
 table.NDIStableSortable th.no-sort {
     vertical-align: top;
     line-height: 24px;
+    font-family: '72 Bold';
+    font-weight: 400;
 }
 
 table.NDIStableSortable th button {
@@ -90,7 +96,8 @@ table.NDIStableSortable th button {
     color: var(--black);
     text-decoration: none;
     border-radius: 0;
-    font-family: '72 Regular';
+    font-family: '72 Bold';
+    font-weight: 400;
 }
 
 table.NDIStableSortable th button {
@@ -119,10 +126,6 @@ table.NDIStableSortable th button span.thLabel span.thIcon:after {
     color: var(--purpleHeavy);
     font-size: 16px;
     vertical-align: text-bottom;
-}
-
-.NDIStable.NDIStableSortable thead th {
-    font-family: '72 Regular';
 }
 
 table.NDIStableSortable td.num {
@@ -154,7 +157,7 @@ table.NDIStableSortable th span:nth-of-type(3):hover {
 
     <table class="NDIStable NDIStableSortable">
         <caption class="sr-only">
-            Students currently enrolled in WAI-ARIA 101, column headers with buttons are NDIStableSortable.
+            Students currently enrolled in WAI-ARIA 101, column headers with buttons are sortable.
         </caption>
         <thead>
             <tr>

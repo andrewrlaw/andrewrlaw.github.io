@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Input with word count</title>
+    <link rel="stylesheet" href="ndis_zh.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        :host {
+  display: block;
+}
+textarea {
+  appearance: none;
+  border: 1px solid #959595;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: var(--black);
+  display: block;
+  font-family: var(--font-family-regular);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  height: 106px;
+  line-height: 28px;
+  outline: 0;
+  padding: 10px 16px;
+  transition: all 200ms ease-out;
+  width: 100%;
+  /* To prevent users from expanding the textarea horizontally */
+  min-height: 106px;
+  max-width: 100%;
+  min-width: 100%;
+}
+textarea:hover {
+  border-color: #6a2875;
+}
+textarea:active,
+textarea:focus {
+  border-color: #6a2875;
+  box-shadow: inset #6a2875 0px 0px 0px 1px;
+}
+textarea:disabled {
+  appearance: none;
+  background-color: var(--greyLight);
+  background-image: url(/sfsites/c/resource/images/lock.svg);
+  background-position: right 15px center;
+  background-size: 13px 16px;
+  border: 1px solid #cdcdcd;
+  color: var(--black);
+  cursor: not-allowed;
+  opacity: 1;
+}
+select.has-error {
+  border: 2px solid var(--ndis-error-red);
+}
+p.count {
+  margin-top: 8px;
+  text-align: right;
+}
+.announce-this {
+  height: 0;
+  overflow: hidden;
+}
+    </style>
+</head>
+
+<body>
+    <textarea class="NDIStextAreaInput"></textarea>
+<p class="count" id="remaining-chars-display"></p>
+<p class="announce-this" aria-live="polite" aria-atomic="true"></p>
+
+
+<script>
+    let announceThis = document.querySelector('.announce-this')
+let count = document.querySelector('.count')
+let textArea = document.querySelector('textarea')
+  const delay = (ms) => {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
+
+  minLength = 1;
+  maxLength = 80;
+
+//Remaining characters, and announcement handling
+  remainingCharAnnounceDelay = 500;
+  announceLimitPercentage = 50;
+
+  lastKeyStrokeTime = 0;
+  timeOfRemainingCharAnnouncement = 0;
+
+  function remainingCharacters() {
+    return textArea.value.length
+      ? maxLength - textArea.value.length
+      : maxLength
+      ? maxLength
+      : 0;
+  }
+  remainingCharMessage();
+  function remainingCharMessage() {
+    count.innerHTML = remainingCharacters() + ' characters remaining.';
+    // return `${remainingCharacters} characters remaining.`;
+  }
+  remainingCharMessageAnnounced = null;
+
+  function percentageToAnnounce() {
+    return Math.floor((textArea.value.length / maxLength) * 100);
+  }
+
+  async function throttleCharsRemainingAnnouncement() {
+    // await delay(10);
+    // Timestamp
+    lastKeyStrokeTime = Date.now();
+    timeOfRemainingCharAnnouncement =
+      Date.now() + remainingCharAnnounceDelay;
+
+    //Announcing message if wait time has elapsed
+    await delay(remainingCharAnnounceDelay);
+    const wasLastKeyStroke = Date.now() >= timeOfRemainingCharAnnouncement;
+    if (wasLastKeyStroke) {
+      // remainingCharMessageAnnounced = remainingCharMessage();
+      announceThis.innerHTML = remainingCharacters() + ' characters remaining.'
+    }
+
+    //Remove message after another second, since we don't want it to stay in the DOM
+    await delay(1000);
+    const wasStillLastKeyStroke =
+      Date.now() >= timeOfRemainingCharAnnouncement + 1000;
+    if (wasStillLastKeyStroke) {
+      // remainingCharMessageAnnounced = "";
+      announceThis.innerHTML = '';
+    }
+  }
+document.querySelector('textarea').onkeyup = function () {
+  if(percentageToAnnounce() >= announceLimitPercentage) {
+    throttleCharsRemainingAnnouncement();
+  }
+  remainingCharMessage();
+};
+
+</script>
+</body>
+
+</html>

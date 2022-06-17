@@ -96,8 +96,8 @@ table.NDIStableSortable th:first-child button,
 .NDIStable td,
 .NDIStable th {
     border-bottom: 1px solid var(--grey);
-    font-family: '72 Regular';
-    font-weight: 400;
+    font-family: '72 Bold';
+    font-weight: 600;
 }
 
 .NDIStable tfoot tr td,
