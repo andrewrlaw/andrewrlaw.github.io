@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accordion</title>
+    <link rel="stylesheet" href="ndis_zh.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .Accordion {}
+
+        .Accordion>*+* {
+            border-top: 1px solid hsl(0, 0%, 82%);
+        }
+
+        .Accordion-trigger {
+            background: none;
+            border: 0;
+            color: hsl(0, 0%, 13%);
+            display: block;
+            font-size: 1rem;
+            font-weight: normal;
+            margin: 1.5em 0 0 0;
+            padding: 0em 1.5em 1.5em 2.5em;
+            line-height: 1.5em;
+            position: relative;
+            text-align: left;
+            width: 100%;
+        }
+
+        .Accordion dt:first-child .Accordion-trigger {
+            border-radius: 0;
+        }
+
+        .Accordion-title span {
+            display: block;
+            font-family: '72 Regular';
+            font-weight: 400;
+        }
+
+        .Accordion-trigger:focus,
+        .Accordion-trigger:hover {
+            /* background: hsl(0, 0%, 93%); */
+            text-decoration: underline;
+        }
+
+        .Accordion-trigger:focus .Accordion-title span,
+        .Accordion-trigger:hover .Accordion-title span {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .Accordion h3 {
+            margin: 0;
+        }
+
+        .Accordion-title {
+            display: block;
+            /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8295099/ */
+            pointer-events: none;
+            font-family: '72 Bold';
+            font-weight: 400;
+        }
+
+        .Accordion-title::before {
+            font-family: 'Material Symbols Rounded';
+            content: '\e5cf';
+            font-size: 1.5em;
+            color: var(--purpleHeavy);
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: 200ms linear;
+        }
+
+        .Accordion-trigger[aria-expanded="true"] .Accordion-title::before {
+            transform: rotate(180deg);
+        }
+
+        .Accordion-panel {
+            margin: 0;
+            padding: 0em 1em 1em 2.5em;
+        }
+
+        .Accordion-panel.teal {
+            background-color: var(--tealLight);
+        }
+
+        .Accordion-panel.purple {
+            background-color: var(--purpleLight);
+        }
+
+        /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+        .Accordion-panel[hidden] {
+            display: none;
+        }
+
+        fieldset {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            border: 1px solid hsl(0, 0%, 62%);
+            border-radius: .3em;
+            display: block;
+            font-size: inherit;
+            padding: .3em .5em;
+        }
+
+        .Accordion.card {
+            border: 1px solid var(--grey);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .Accordion.card .Accordion-panel,
+        .Accordion.card .Accordion-trigger {
+            padding-left: 4em;
+            padding-right: 3em;
+        }
+
+        .Accordion.card .Accordion-title::before {
+            left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="NDISaccordion-3" data-accordion="">
+        <div class="demo-block">
+
+            <dl id="accordionGroup" role="presentation" class="Accordion card" data-allow-toggle>
+                <h3 role="heading" aria-level="3">
+                    <button aria-expanded="true" class="Accordion-trigger" aria-controls="card1" id="accordionCard1id"
+                        type="button">
+                        <span class="Accordion-title">An accordion with a teal card <span>Network of wormholes Flatland
+                                as a
+                                patch of light cosmos Jean-François Champollion extraordinary claims require
+                                extraordinary evidence.</span>
+                    </button>
+                </h3>
+                <dd id="card1" role="region" aria-labelledby="accordionCard1id" class="Accordion-panel teal">
+                    <div>
+                        <!-- Variable content within section, may include any type of markup or interactive widgets. -->
+                        <p><b>Network of wormholes Flatland</b><br /> as a patch of light cosmos Jean-François
+                            Champollion
+                            extraordinary claims require extraordinary evidence. Laws of physics cosmic ocean gathered
+                            by gravity birth the only home we've ever known at the edge of forever. A very small stage
+                            in a vast cosmic arena invent the universe something incredible is waiting to be known from
+                            which we spring hearts of the stars extraplanetary. Circumnavigated Sea of Tranquility laws
+                            of physics muse about with pretty stories for which there's little good evidence stirred by
+                            starlight and billions upon billions upon billions upon billions upon billions upon billions
+                            upon billions.</p>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div id="NDISaccordion-3" data-accordion="">
+        <div class="demo-block">
+
+            <dl id="accordionGroup" role="presentation" class="Accordion card" data-allow-toggle>
+                <h3 role="heading" aria-level="3">
+                    <button aria-expanded="true" class="Accordion-trigger" aria-controls="card2" id="accordionCard2id"
+                        type="button">
+                        <span class="Accordion-title">An accordion with a purple card <span>Network of wormholes Flatland
+                                as a
+                                patch of light cosmos Jean-François Champollion extraordinary claims require
+                                extraordinary evidence.</span>
+                    </button>
+                </h3>
+                <dd id="card2" role="region" aria-labelledby="accordionCard2id" class="Accordion-panel purple">
+                    <div>
+                        <!-- Variable content within section, may include any type of markup or interactive widgets. -->
+                        <p><b>Network of wormholes Flatland</b><br /> as a patch of light cosmos Jean-François
+                            Champollion
+                            extraordinary claims require extraordinary evidence. Laws of physics cosmic ocean gathered
+                            by gravity birth the only home we've ever known at the edge of forever. A very small stage
+                            in a vast cosmic arena invent the universe something incredible is waiting to be known from
+                            which we spring hearts of the stars extraplanetary. Circumnavigated Sea of Tranquility laws
+                            of physics muse about with pretty stories for which there's little good evidence stirred by
+                            starlight and billions upon billions upon billions upon billions upon billions upon billions
+                            upon billions.</p>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+
+
+
+    <div id="NDISaccordion-3" data-accordion="">
+        <div class="demo-block">
+            <!-- Accordion Configuration Options
+            
+            data-allow-toggle
+              Allow for each toggle to both open and close individually
+            
+            data-allow-multiple
+              Allow for multiple accordion sections to be expanded at the same time. Assumes data-allow-toggle otherwise you would not be able to close any of the accordions
+            __________
+            
+            Ex:
+              <dl id="accordionGroup" role="presentation" class="Accordion" data-allow-multiple>
+            
+              <dl id="accordionGroup" role="presentation" class="Accordion" data-allow-toggle>
+            
+            -->
+            <dl id="accordionGroup-single" role="presentation" class="Accordion" data-allow-multiple>
+                <h3 role="heading" aria-level="3">
+                    <button aria-expanded="true" class="Accordion-trigger" aria-controls="sect1-1" id="accordion1i-1d"
+                        type="button">
+                        <span class="Accordion-title">Personal Information <span>Network of wormholes Flatland as a
+                                patch of light cosmos Jean-François Champollion extraordinary claims require
+                                extraordinary evidence.</span>
+                    </button>
+                </h3>
+                <dd id="sect1-1" role="region" aria-labelledby="accordion1id-1" class="Accordion-panel">
+                    <div>
+                        <!-- Variable content within section, may include any type of markup or interactive widgets. -->
+
+                        <p>Network of wormholes Flatland as a patch of light cosmos Jean-François Champollion
+                            extraordinary claims require extraordinary evidence. Laws of physics cosmic ocean gathered
+                            by gravity birth the only home we've ever known at the edge of forever. A very small stage
+                            in a vast cosmic arena invent the universe something incredible is waiting to be known from
+                            which we spring hearts of the stars extraplanetary. Circumnavigated Sea of Tranquility laws
+                            of physics muse about with pretty stories for which there's little good evidence stirred by
+                            starlight and billions upon billions upon billions upon billions upon billions upon billions
+                            upon billions.</p>
+
+                    </div>
+                </dd>
+                <dt role="heading" aria-level="3">
+                    <button aria-expanded="false" class="Accordion-trigger" aria-controls="sect2" id="accordion2id"
+                        type="button">
+                        <span class="Accordion-title">
+                            Billing Address
+                        </span>
+                        <span class="Accordion-icon"></span>
+                    </button>
+                </dt>
+                <dd id="sect2" role="region" aria-labelledby="accordion2id" class="Accordion-panel" hidden="">
+                    <div>
+                        <fieldset>
+                            <p>
+                                <label for="b-add1">Address 1:
+                                </label>
+                                <input type="text" name="b-add1" id="b-add1">
+                            </p>
+                            <p>
+                                <label for="b-add2">Address 2:
+                                </label>
+                                <input type="text" name="b-add2" id="b-add2">
+                            </p>
+                            <p>
+                                <label for="b-city">City:
+                                </label>
+                                <input type="text" name="b-city" id="b-city">
+                            </p>
+                            <p>
+                                <label for="b-state">State:
+                                </label>
+                                <input type="text" name="b-state" id="b-state">
+                            </p>
+                            <p>
+                                <label for="b-zip">Zip Code:
+                                </label>
+                                <input type="text" name="b-zip" id="b-zip">
+                            </p>
+                        </fieldset>
+                    </div>
+                </dd>
+                <dt role="heading" aria-level="3">
+                    <button aria-expanded="false" class="Accordion-trigger" aria-controls="sect3" id="accordion3id"
+                        type="button">
+                        <span class="Accordion-title">
+                            Shipping Address
+                        </span>
+                        <span class="Accordion-icon"></span>
+                    </button>
+                </dt>
+                <dd id="sect3" role="region" aria-labelledby="accordion3id" class="Accordion-panel" hidden="">
+                    <div>
+                        <fieldset>
+                            <p>
+                                <label for="m-add1">Address 1:
+                                </label>
+                                <input type="text" name="m-add1" id="m-add1">
+                            </p>
+                            <p>
+                                <label for="m-add2">Address 2:
+                                </label>
+                                <input type="text" name="m-add2" id="m-add2">
+                            </p>
+                            <p>
+                                <label for="m-city">City:
+                                </label>
+                                <input type="text" name="m-city" id="m-city">
+                            </p>
+                            <p>
+                                <label for="m-state">State:
+                                </label>
+                                <input type="text" name="m-state" id="m-state">
+                            </p>
+                            <p>
+                                <label for="m-zip">Zip Code:
+                                </label>
+                                <input type="text" name="m-zip" id="m-zip">
+                            </p>
+                        </fieldset>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+
+
+
+
+
+</body>
+<script>
+    /*
+    *   This content is licensed according to the W3C Software License at
+    *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+    *
+    *   Simple accordion pattern example
+    */
+
+    'use strict';
+
+    Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(function (accordion) {
+
+        // Allow for multiple accordion sections to be expanded at the same time
+        var allowMultiple = accordion.hasAttribute('data-allow-multiple');
+        // Allow for each toggle to both open and close individually
+        var allowToggle = (allowMultiple) ? allowMultiple : accordion.hasAttribute('data-allow-toggle');
+
+        // Create the array of toggle elements for the accordion group
+        var triggers = Array.prototype.slice.call(accordion.querySelectorAll('.Accordion-trigger'));
+        var panels = Array.prototype.slice.call(accordion.querySelectorAll('.Accordion-panel'));
+
+        accordion.addEventListener('click', function (event) {
+            var target = event.target;
+
+            if (target.classList.contains('Accordion-trigger')) {
+                // Check if the current toggle is expanded.
+                var isExpanded = target.getAttribute('aria-expanded') == 'true';
+                var active = accordion.querySelector('[aria-expanded="true"]');
+
+                // without allowMultiple, close the open accordion
+                if (!allowMultiple && active && active !== target) {
+                    // Set the expanded state on the triggering element
+                    active.setAttribute('aria-expanded', 'true');
+                    // Hide the accordion sections, using aria-controls to specify the desired section
+                    document.getElementById(active.getAttribute('aria-controls')).setAttribute('hidden', '');
+
+                    // When toggling is not allowed, clean up disabled state
+                    if (!allowToggle) {
+                        active.removeAttribute('aria-disabled');
+                    }
+                }
+
+                if (!isExpanded) {
+                    // Set the expanded state on the triggering element
+                    target.setAttribute('aria-expanded', 'true');
+                    // Hide the accordion sections, using aria-controls to specify the desired section
+                    document.getElementById(target.getAttribute('aria-controls')).removeAttribute('hidden');
+
+                    // If toggling is not allowed, set disabled state on trigger
+                    if (!allowToggle) {
+                        target.setAttribute('aria-disabled', 'true');
+                    }
+                }
+                else if (allowToggle && isExpanded) {
+                    // Set the expanded state on the triggering element
+                    target.setAttribute('aria-expanded', 'false');
+                    // Hide the accordion sections, using aria-controls to specify the desired section
+                    document.getElementById(target.getAttribute('aria-controls')).setAttribute('hidden', '');
+                }
+
+                event.preventDefault();
+            }
+        });
+
+        // Bind keyboard behaviors on the main accordion container
+        accordion.addEventListener('keydown', function (event) {
+            var target = event.target;
+            var key = event.which.toString();
+            // 33 = Page Up, 34 = Page Down
+            var ctrlModifier = (event.ctrlKey && key.match(/33|34/));
+
+            // Is this coming from an accordion header?
+            if (target.classList.contains('Accordion-trigger')) {
+                // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
+                // 38 = Up, 40 = Down
+                if (key.match(/38|40/) || ctrlModifier) {
+                    var index = triggers.indexOf(target);
+                    var direction = (key.match(/34|40/)) ? 1 : -1;
+                    var length = triggers.length;
+                    var newIndex = (index + length + direction) % length;
+
+                    triggers[newIndex].focus();
+
+                    event.preventDefault();
+                }
+                else if (key.match(/35|36/)) {
+                    // 35 = End, 36 = Home keyboard operations
+                    switch (key) {
+                        // Go to first accordion
+                        case '36':
+                            triggers[0].focus();
+                            break;
+                        // Go to last accordion
+                        case '35':
+                            triggers[triggers.length - 1].focus();
+                            break;
+                    }
+
+                    event.preventDefault();
+                }
+            }
+            else if (ctrlModifier) {
+                // Control + Page Up/ Page Down keyboard operations
+                // Catches events that happen inside of panels
+                panels.forEach(function (panel, index) {
+                    if (panel.contains(target)) {
+                        triggers[index].focus();
+
+                        event.preventDefault();
+                    }
+                });
+            }
+        });
+
+        // Minor setup: will set disabled state, via aria-disabled, to an
+        // expanded/ active accordion which is not allowed to be toggled close
+        if (!allowToggle) {
+            // Get the first expanded/ active accordion
+            var expanded = accordion.querySelector('[aria-expanded="true"]');
+
+            // If an expanded/ active accordion is found, disable
+            if (expanded) {
+                expanded.setAttribute('aria-disabled', 'true');
+            }
+        }
+
+    });
+
+
+</script>
+
+</html>

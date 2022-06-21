@@ -46,3 +46,12 @@ body .statusText
 {
     color: var(--tealHeavy);
 }
+
+p{
+    font-family: '72 Regular';
+}
+
+p b {
+    font-family: '72 Bold';
+    font-weight: 400;
+}
