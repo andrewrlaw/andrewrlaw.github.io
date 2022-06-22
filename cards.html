@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cards</title>
+    <link rel="stylesheet" href="ndis_zh.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+/* CARD STYLES */
+.NDIScard {
+    max-width: 1200px;
+    width: auto;
+    padding: 32px;
+    border: 1px solid var(--grey);
+    border-radius: 16px;
+    box-shadow: 0px 2px 10px rgb(0, 0, 0, 0.2)
+}
+
+/* Card background colours */
+.NDIScardBasic {
+    background-color: var(--white);
+}
+
+.NDIScardCallout {
+    background-color: var(--purpleLight);
+}
+
+/*Card with highlight styles */
+
+.NDIScard.NDIScardHighlight {
+    padding: 0px;
+    overflow: hidden;
+}
+
+.NDIScard.NDIScardHighlight .NDIScardHighlightTop,
+.NDIScard.NDIScardHighlight .NDIScardHighlightBottom {
+    padding: 36px;
+    display: block;
+}
+
+.NDIScard.NDIScardHighlight .NDIScardHighlightTop {
+    border-bottom: 1px solid var(--grey);
+}
+
+.NDIScard.NDIScardHighlight .NDIScardHighlightBottom {
+    background: var(--purpleLight);
+}
+
+/* Control the width of both cards with this container */
+.NDIScardContainer {
+    display: block;
+    max-width: 800px;
+}
+
+.NDIScardContainer .NDIScardBasic {
+    position: relative;
+    z-index: 100;
+}
+
+/* Drawer extension styles */
+.NDISdrawer {
+    width: auto;
+    max-width: 1200px;
+    position: relative;
+    margin-top: -24px;
+    line-height: 1.6;
+    background: var(--purpleLight);
+    padding: 16px 0 0 0;
+    z-index: 0;
+}
+
+.NDISdrawer h3 {
+    margin: 0;
+    padding: 16px 12px 12px 12px;
+}
+
+.NDISdrawer-trigger {
+    background: none;
+    display: block;
+    margin: 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.NDISdrawer h3 button {
+    border-style: none;
+    padding: 24px 18px;
+}
+
+.NDISdrawer h3 button::-moz-focus-inner {
+    border: 0;
+}
+
+.NDISdrawer button .NDISdrawer-title {
+    font-family: "72 Bold";
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 28px;
+    color: var(--black);
+    padding-left: 32px;
+}
+
+.NDISdrawer-title {
+    display: block;
+    pointer-events: none;
+    outline: none;
+}
+
+.NDISdrawer-title:before {
+    font-family: 'Material Symbols Rounded';
+    content: "\e5cf";
+    font-size: 24px;
+    position: absolute;
+    left: 18px;
+    transition: 300ms linear;
+}
+
+.NDISdrawer-trigger[aria-expanded="true"] .NDISdrawer-title:before {
+    transform: rotate(-180deg);
+}
+
+.NDISdrawer-panel {
+    margin: 0 36px 36px 36px;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+}
+
+/* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+.NDISdrawer-panel[hidden] {
+    display: none;
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+}
+
+.NDISdrawer-panel fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.NDISdrawer-panel input {
+    border: 1px solid hsl(0, 0%, 62%);
+    border-radius: 0.3em;
+    display: block;
+    font-size: inherit;
+    padding: 0.3em 0.5em;
+}
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Basic card</h1>
+
+    <section class="NDIScardContainer">
+
+        <section class="NDIScard NDIScardBasic">
+            <span class="material-symbols-rounded" aria-hidden="true">content_paste</span>
+            <h2>Title goes here</h2>
+            <p class=“NDISparagraph”>This is a subheading</p>
+        </section>
+
+    </section>
+
+
+    <h1>Callout card</h1>
+    <section class="NDIScardContainer">
+        <section class="NDIScard NDIScardCallout">
+            <span class="material-symbols-rounded" aria-hidden="true">
+                assignment
+            </span>
+            <h2>Title goes here</h2>
+            <p class=“NDISparagraph”>This is a subheading</p>
+        </section>
+
+    </section>
+
+    <h1>Card with drawer</h1>
+
+    <section class="NDIScardContainer">
+
+        <section class="NDIScard NDIScardBasic">
+            <span class="material-symbols-rounded" aria-hidden="true">content_paste</span>
+            <h2>Title goes here</h2>
+            <p class=“NDISparagraph”>This is a subheading</p>
+        </section>
+
+        <!-- Drawer -->
+        <div id="NDISdrawerGroup" class="NDIScard NDISdrawer" data-allow-toggle="true">
+            <h3>
+                <button aria-expanded="false" class="NDISdrawer-trigger" aria-controls="sect1" id="NDISdrawer1id">
+                    <span class="NDISdrawer-title">
+                        Personal Information
+                    </span>
+                </button>
+            </h3>
+            <div id="sect1" class="NDISdrawer-panel" hidden>
+                <!-- Variable content within section, may include any type of markup or interactive widgets. -->
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                    classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
+                    professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                    consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
+                    literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33
+                    of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
+                    book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of
+                    Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <h1>Card with highlight area</h1>
+
+    <section class="NDIScardContainer">
+
+        <section class="NDIScard NDIScardHighlight">
+            <span class="NDIScardHighlightTop">
+                <h2 class="mt-0 mb-0">Title goes here</h2>
+                <p class="NDISparagraph mt-0 mb-0">This is a subheading</p>
+            </span>
+            <span class="NDIScardHighlightBottom">
+                <p class="mt-0 mb-0">This book is a treatise on the theory of ethics, very popular during the
+                    Renaissance. The first line of
+                    Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+            </span>
+        </section>
+
+    </section>
+
+
+    <script>
+        'use strict';
+
+        Array.prototype.slice.call(document.querySelectorAll('.NDISdrawer')).forEach(function (NDISdrawer) {
+
+            // Allow for multiple NDISdrawer sections to be expanded at the same time
+            var allowMultiple = NDISdrawer.hasAttribute('data-allow-multiple');
+            // Allow for each toggle to both open and close individually
+            var allowToggle = (allowMultiple) ? allowMultiple : NDISdrawer.hasAttribute('data-allow-toggle');
+            // Create the array of toggle elements for the NDISdrawer group
+            var triggers = Array.prototype.slice.call(NDISdrawer.querySelectorAll('.NDISdrawer-trigger'));
+            var panels = Array.prototype.slice.call(NDISdrawer.querySelectorAll('.NDISdrawer-panel'));
+
+
+            NDISdrawer.addEventListener('click', function (event) {
+                var target = event.target;
+
+                if (target.classList.contains('NDISdrawer-trigger')) {
+                    // Check if the current toggle is expanded.
+                    var isExpanded = target.getAttribute('aria-expanded') == 'true';
+                    var active = NDISdrawer.querySelector('[aria-expanded="true"]');
+
+                    // without allowMultiple, close the open NDISdrawer
+                    if (!allowMultiple && active && active !== target) {
+                        // Set the expanded state on the triggering element
+                        active.setAttribute('aria-expanded', 'false');
+                        // Hide the NDISdrawer sections, using aria-controls to specify the desired section
+                        document.getElementById(active.getAttribute('aria-controls')).setAttribute('hidden', '');
+
+
+                    }
+
+                    if (!isExpanded) {
+                        // Set the expanded state on the triggering element
+                        target.setAttribute('aria-expanded', 'true');
+                        // Hide the NDISdrawer sections, using aria-controls to specify the desired section
+                        document.getElementById(target.getAttribute('aria-controls')).removeAttribute('hidden');
+
+                        // If toggling is not allowed, set disabled state on trigger
+                        if (!allowToggle) {
+                            target.setAttribute('aria-disabled', 'true');
+                        }
+                    }
+                    else if (allowToggle && isExpanded) {
+                        // Set the expanded state on the triggering element
+                        target.setAttribute('aria-expanded', 'false');
+                        // Hide the NDISdrawer sections, using aria-controls to specify the desired section
+                        document.getElementById(target.getAttribute('aria-controls')).setAttribute('hidden', '');
+                    }
+
+                    event.preventDefault();
+                }
+            });
+
+            // Bind keyboard behaviors on the main NDISdrawer container
+            NDISdrawer.addEventListener('keydown', function (event) {
+                var target = event.target;
+                var key = event.which.toString();
+
+                var isExpanded = target.getAttribute('aria-expanded') == 'true';
+                var allowToggle = (allowMultiple) ? allowMultiple : NDISdrawer.hasAttribute('data-allow-toggle');
+
+                // 33 = Page Up, 34 = Page Down
+                var ctrlModifier = (event.ctrlKey && key.match(/33|34/));
+
+                // Is this coming from an NDISdrawer header?
+                if (target.classList.contains('NDISdrawer-trigger')) {
+                    // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
+                    // 38 = Up, 40 = Down
+                    if (key.match(/38|40/) || ctrlModifier) {
+                        var index = triggers.indexOf(target);
+                        var direction = (key.match(/34|40/)) ? 1 : -1;
+                        var length = triggers.length;
+                        var newIndex = (index + length + direction) % length;
+
+                        triggers[newIndex].focus();
+
+                        event.preventDefault();
+                    }
+                    else if (key.match(/35|36/)) {
+                        // 35 = End, 36 = Home keyboard operations
+                        switch (key) {
+                            // Go to first NDISdrawer
+                            case '36':
+                                triggers[0].focus();
+                                break;
+                            // Go to last NDISdrawer
+                            case '35':
+                                triggers[triggers.length - 1].focus();
+                                break;
+                        }
+                        event.preventDefault();
+
+                    }
+
+                }
+            });
+
+            // These are used to style the NDISdrawer when one of the buttons has focus
+            NDISdrawer.querySelectorAll('.NDISdrawer-trigger').forEach(function (trigger) {
+
+                trigger.addEventListener('focus', function (event) {
+                    NDISdrawer.classList.add('focus');
+                });
+
+                trigger.addEventListener('blur', function (event) {
+                    NDISdrawer.classList.remove('focus');
+                });
+
+            });
+
+        });
+
+    </script>
+</body>
+
+
+</html>
