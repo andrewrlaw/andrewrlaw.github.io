@@ -6,89 +6,103 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Inputs</title>
-<link rel="stylesheet" href="https://andrewrlaw.github.io/ndis_zh.css">
+<link rel="stylesheet" href="ndis_zh.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-.NDISlabel {
-    font-weight: 400;
-    font-family: '72 Bold';
-    margin-top	: 16px;
-    display: block;
-}
+    .NDISlabel {
+        font-weight: 400;
+        font-family: '72 Bold';
+        margin-top: 16px;
+        display: block;
+    }
 
-.NDIStextInput,
-.NDIStextAreaInput {
-    border       : 1px solid var(--black);
-    border-radius: 4px;
-    padding      : 13px 16px;
-  	margin-top	: 12px;
-    font-family: '72 Light';
-    font-weight: 100;
-    font-size: 16px;
-}
+    .NDIStextInput,
+    .NDIStextAreaInput,
+    .NDISselect {
+        border: 1px solid var(--black);
+        background: var(--white);
+        border-radius: 4px;
+        padding: 13px 16px;
+        margin-top: 12px;
+        font-family: '72 Light';
+        font-weight: 100;
+        font-size: 16px;
+    }
 
-.NDIStextAreaInput
-{
- min-width: 200px; 
- overflow:auto;
-}
+    .NDISselect {
+        padding-right: 2.5em;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48'%3E%3Cpath fill='%236A2875' d='M24 30.15Q23.7 30.15 23.45 30.05Q23.2 29.95 22.95 29.7L13.05 19.8Q12.65 19.4 12.675 18.725Q12.7 18.05 13.1 17.65Q13.6 17.15 14.175 17.225Q14.75 17.3 15.2 17.7L24 26.5L32.8 17.7Q33.2 17.3 33.875 17.25Q34.55 17.2 34.95 17.7Q35.45 18.1 35.375 18.75Q35.3 19.4 34.9 19.85L25.05 29.7Q24.8 29.95 24.55 30.05Q24.3 30.15 24 30.15Z'/%3E%3C/svg%3E");
+        background-size: 24px;
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+    }
 
-.NDIStextInput:hover,
-.NDIStextAreaInput:hover {
-    border-color : var(--purple);
-}
+    .NDISselect::-ms-expand {
+        display: none;
+    }
 
-.NDIStextInput:active,
-.NDIStextAreaInput:active {
-    border       : 2px solid var(--purpleHeavy);
-    padding      : 12px 15px;
-}
+    .NDIStextAreaInput {
+        min-width: 200px;
+        overflow: auto;
+    }
 
-.NDIStextInputIconDollar
-{
-   position: relative; 
-}
-.NDIStextInputIconDollar::before
-{
-left: 12px;
-top: -4px;
-font-family: 'Material Symbols Rounded';
-content: '\e227';
-position: absolute;
-font-size: 24px;
-color: var(--black);
-}
+    .NDIStextInput:hover,
+    .NDIStextAreaInput:hover,
+    .NDISselect:hover {
+        border-color: var(--purple);
+    }
 
-.NDIStextInputIconDollar .NDIStextInput
-{
-    padding-left: 38px;
-}
+    .NDIStextInput:active,
+    .NDIStextAreaInput:active,
+    .NDISselect:active {
+        border: 2px solid var(--purpleHeavy);
+        padding: 12px 15px;
+    }
 
+    .NDISselect:active {
+        border: 2px solid var(--purpleHeavy);
+        padding: 12px 2em 12px 15px;
+    }
 
-.NDIStextInputIconDollar .NDIStextInput:active
-{
-    padding-left: 37px;
-}
+    .NDIStextInputIconDollar {
+        position: relative;
+    }
 
+    .NDIStextInputIconDollar::before {
+        left: 12px;
+        top: -4px;
+        font-family: 'Material Symbols Rounded';
+        content: '\e227';
+        position: absolute;
+        font-size: 24px;
+        color: var(--black);
+    }
 
-.NDIStextAreaInput {
-	width: 400px;
-	min-height: 100px;
-	overflow: hidden;
-	box-sizing: border-box;
-}
-
-small
-{
-    text-align: right;
-  position: absolute;  
-  bottom: -24px;
-  right: 0px;
-}
+    .NDIStextInputIconDollar .NDIStextInput {
+        padding-left: 38px;
+    }
 
 
+    .NDIStextInputIconDollar .NDIStextInput:active {
+        padding-left: 37px;
+    }
+
+
+    .NDIStextAreaInput {
+        width: 400px;
+        min-height: 100px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    small {
+        text-align: right;
+        position: absolute;
+        bottom: -24px;
+        right: 0px;
+    }
 </style>
 </head>
 
@@ -103,6 +117,16 @@ small
     <label class="NDISlabel" for="NDIStextareaExample" id="textareaDesciption">A label for the textarea input</label>
     <textarea aria-describedby="textareaDesciption" class="NDIStextAreaInput"></textarea>
     <small><span id="characterCount"></span> characters remaining</small>
+
+
+    <label class="NDISlabel" for="NDISinputExample">A label for the select input</label>
+    <select class="NDISselect">
+        <option>This is a native select element</option>
+        <option>Apples</option>
+        <option>Bananas</option>
+        <option>Grapes</option>
+        <option>Oranges</option>
+    </select>
 </body>
 
 </html>
