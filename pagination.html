@@ -8,77 +8,153 @@
     <title>Pagination</title>
     <link rel="stylesheet" href="ndis_zh.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
     <style>
+        .NDISpagination {
+            display: inline-block;
+            width: 100%;
+        }
 
-.NDISpagination {
-    display  : inline-block;
-    width: 100%;
-}
+        .NDISpagination .NDISpaginationResults,
+        .NDISpagination .NDISpaginationPerPage {
+            display: inline-block;
+            width: 49%;
+        }
 
-.NDISpagination .NDISpaginationResults, .NDISpagination .NDISpaginationPerPage {
-    display  : inline-block;
-    width: 49%;
-}
+        .NDISpagination .NDISpaginationResults span,
+        .NDISpagination .NDISpaginationPerPage span {
+            display: inline-block;
+        }
 
-.NDISpagination .NDISpaginationResults span, .NDISpagination .NDISpaginationPerPage span
-{
-    display: inline-block;
-}
-.NDISpagination .NDISpaginationResults span:first-of-type, .NDISpagination .NDISpaginationPerPage span:first-of-type
-{ 
-    display: inline-block;
-    padding-right: 1em;
-}
+        .NDISpagination .NDISpaginationResults span.records {
+            width: 100%;
+        }
 
-.NDISpagination .NDISpaginationPerPage
-{
-   text-align: right; 
-}
-.NDISpagination button{
-    background: var(--white);
-    font-size: 1em;
-    line-height: 1em;
-    border: 1px solid var(--purpleHeavy);
-    padding: 12px;
-    min-width: 42px;
-    text-align: center;
-}
+        .NDISpagination .NDISpaginationResults span:first-of-type,
+        .NDISpagination .NDISpaginationPerPage span:first-of-type {
+            display: inline-block;
+        }
 
-.NDISpagination button span{
-    font-size: 0.75em;
-    vertical-align: baseline;
-}
+        .NDISpagination .NDISpaginationPerPage {
+            text-align: right;
+        }
 
-.NDISpagination button span.right{
-    margin-right: 0px;
-    margin-left: 8px;
-}
+        .NDISpagination button {
+            background: var(--white);
+            font-size: 1em;
+            line-height: 1em;
+            border: 1px solid var(--purpleHeavy);
+            padding: 12px;
+            min-width: 42px;
+            text-align: center;
+            position: relative;
+        }
 
+        .NDISpagination button span {
+            font-size: 0.75em;
+            vertical-align: baseline;
+        }
+
+        .NDISpagination button:hover {
+            background: var(--greyLight);
+            text-decoration: underline;
+            color: var(--purpleHeavy);
+        }
+
+        .NDISpagination button.active {
+            background: var(--purpleLight);
+            -webkit-box-shadow: inset 0px 0px 9px rgba(106, 40, 117, 0.7);
+            box-shadow: inset 0px 0px 9px rgba(106, 40, 117, 0.7);
+        }
+
+        .NDISpagination button.active:after {
+            position: absolute;
+            content: '';
+            height: 2px;
+            background: var(--purpleHeavy);
+            bottom: -10px;
+            width: 100%;
+            display: block;
+            left: 0;
+        }
+
+        .NDISpagination button:active {
+            background: var(--greyLight);
+            text-decoration: underline;
+            color: var(--purpleHeavy);
+            border-width: 2px;
+            padding: 11px;
+        }
+
+        .NDISpagination button.active:active {
+            padding: 12px;
+            background: var(--purpleLight);
+            border-width: 1px;
+        }
+
+        .NDISpagination button.active:hover {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+
+        .NDISpagination button span.right {
+            margin-right: 0px;
+            margin-left: 8px;
+        }
+
+        @media only screen and (min-width : 896px) and (max-width : 1096px) {
+            .NDISpagination .NDISpaginationPerPage span:first-of-type {
+                width: 100%;
+            }
+
+
+        }
+
+        @media only screen and (min-width : 0px) and (max-width : 895px) {
+            .NDISpagination .NDISpaginationPerPage span:first-of-type {
+                width: 100%;
+            }
+
+            .NDISpagination .NDISpaginationResults,
+            .NDISpagination .NDISpaginationPerPage {
+                width: 100%;
+            }
+
+            .NDISpagination .NDISpaginationPerPage {
+                text-align: left;
+                margin-top: 1em;
+            }
+
+        }
     </style>
 </head>
 
 <body>
-    <span class="NDISpagination">
-        <span class="NDISpaginationResults">
-            <span>Showing 1 - 5 of 100 claims</span>
-            <span>
-                <button><span class="material-symbols-rounded">arrow_back_ios_new</span>First</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>Last<span class="material-symbols-rounded right">arrow_forward_ios</span></button>
-            </span>
-        </span>
-        
-        <span class="NDISpaginationPerPage">
-            <span>Claims per page</span>
-            <button>5</button>
-            <button>10</button>
-            <button>20</button>
+<span class="NDISpagination">
+    <span class="NDISpaginationResults">
+        <span class="records">Showing 1 &mdash; 5 of 100 records</span>
+        <span>
+            <button aria-label="Go to first page"><span
+                    class="material-symbols-rounded" aria-hidden="true">arrow_back_ios_new</span>First</button>
+            <button aria-label="Go to page 1">1</button>
+            <button aria-label="Go to page 2" class="active">2</button>
+            <button aria-label="Go to page 3">3</button>
+            <button aria-label="Go to page 4">4</button>
+            <button aria-label="Go to last page">Last<span
+                    class="material-symbols-rounded right" aria-hidden="true">arrow_forward_ios</span></button>
         </span>
     </span>
+
+    <span class="NDISpaginationPerPage">
+        <span>Records per page:</span>
+        <button>10</button>
+        <button>20</button>
+        <button class="active">50</button>
+        <button>100</button>
+        <button>Show all</button>
+    </span>
+</span>
 </body>
 
 </html>

@@ -8,7 +8,6 @@
 <title>Inputs</title>
 <link rel="stylesheet" href="ndis_zh.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
     .NDISlabel {
         font-weight: 400;
@@ -63,14 +62,14 @@
 
     .NDISselect:active {
         border: 2px solid var(--purpleHeavy);
-        padding: 12px 2em 12px 15px;
+        padding: 12px 2.5em 12px 15px;
     }
 
-    .NDIStextInputIconDollar {
+    .NDIStextInputIconBefore {
         position: relative;
     }
 
-    .NDIStextInputIconDollar::before {
+    .NDIStextInputIconBefore::before {
         left: 12px;
         top: -4px;
         font-family: 'Material Symbols Rounded';
@@ -80,14 +79,36 @@
         color: var(--black);
     }
 
-    .NDIStextInputIconDollar .NDIStextInput {
+    .NDIStextInputIconBefore .NDIStextInput {
         padding-left: 38px;
     }
 
-
-    .NDIStextInputIconDollar .NDIStextInput:active {
+    .NDIStextInputIconBefore .NDIStextInput:active {
         padding-left: 37px;
     }
+
+    .NDIStextInputIconAfter {
+        position: relative;
+    }
+
+    .NDIStextInputIconAfter::After {
+        right: 12px;
+        top: -4px;
+        font-family: 'Material Symbols Rounded';
+        content: '\e8f5';
+        position: absolute;
+        font-size: 24px;
+        color: var(--black);
+    }
+
+    .NDIStextInputIconAfter .NDIStextInput {
+        padding-right: 38px;
+    }
+
+    .NDIStextInputIconAfter .NDIStextInput:active {
+        padding-right: 37px;
+    }
+
 
 
     .NDIStextAreaInput {
@@ -109,7 +130,10 @@
 <body>
     <a href="#">Link</a>
     <label class="NDISlabel" for="NDISinputExample">A label for the form input</label>
-    <span class="NDIStextInputIconDollar"><input class="NDIStextInput" name="NDISinputExample" type="text"></span>
+    <span class="NDIStextInputIconBefore"><input class="NDIStextInput" name="NDISinputExample" type="text"></span>
+
+    <label class="NDISlabel" for="NDISinputExample">A label for the form input</label>
+    <span class="NDIStextInputIconAfter"><input class="NDIStextInput" name="NDISinputExample" type="text"></span>
 
     <label class="NDISlabel" for="NDISinputExample">A label for the form input</label>
     <input class="NDIStextInput iconDollar" name="NDISinputExample" type="text">

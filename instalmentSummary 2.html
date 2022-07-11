@@ -18,6 +18,7 @@
             list-style: none;
             margin: 0;
             padding: 0;
+            width: 100%;
             display: flex;
         }
 
@@ -55,6 +56,15 @@
             line-height: 1em
         }
 
+        .NDISinstalmentSummary li span.numbers.plus:before {
+            content: '\002B';
+            padding-right: 0.25em;
+        }
+        .NDISinstalmentSummary li span.numbers.equals:before {
+            content: '\003D';
+            padding-right: 0.25em;
+        }
+
         .NDISinstalmentSummary li span span.small {
             font-style: italic;
             font-size: 16px;
@@ -62,6 +72,15 @@
             white-space: nowrap;
         }
 
+        .NDISinstalmentSummary li .material-symbols-rounded {
+            display: inline-block;
+            vertical-align: bottom;
+        }
+
+        .NDISinstalmentSummary li .numbers.lozenge
+            {
+                padding-top: 0em;
+            }
 
 
 
@@ -84,6 +103,13 @@
                 margin-bottom: 1em;
             }
 
+            .NDISinstalmentSummary li:last-of-type, .NDISinstalmentSummary.calloutCard li:last-of-type
+            {
+                padding-bottom: 0em;
+            }
+
+            
+
             .NDISinstalmentSummary li span.text, .NDISinstalmentSummary.calloutCard li span.text{
             font-size: 16px;
             padding-bottom: 0;
@@ -97,6 +123,38 @@
             .NDISinstalmentSummary.calloutCard li {
                 width: 100%;
                 display: inline-block;
+                border-bottom: 1px solid var(--grey);
+                padding-bottom: 1em;
+            }
+
+            .NDISinstalmentSummary li:last-of-type,
+            .NDISinstalmentSummary.calloutCard li:last-of-type {
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+
+            .NDISinstalmentSummary li span.text, .NDISinstalmentSummary li span.numbers,
+            .NDISinstalmentSummary.calloutCard li span.text, .NDISinstalmentSummary.calloutCard li span.numbers{
+                width: 48%;
+                float: left;
+                clear: none;
+            }
+        }
+
+        @media only screen and (min-width : 0px) and (max-width : 564px) {
+            .NDISinstalmentSummary li span.text, .NDISinstalmentSummary li span.numbers,
+            .NDISinstalmentSummary.calloutCard li span.text, .NDISinstalmentSummary.calloutCard li span.numbers{
+                width: 100%;
+            }
+
+            .NDISinstalmentSummary li .numbers.lozenge
+            {
+                padding-top: 0.75em;
+            }
+
+            .NDISinstalmentSummary li,
+            .NDISinstalmentSummary.calloutCard li {
+                margin-bottom: 0.5em;
             }
         }
     </style>
@@ -108,7 +166,7 @@
             <li><span class="text">Instalment</span> <span class="numbers">&#36;16,500.00</span></li>
             <li><span class="text">Rollover</span> <span class="numbers">&#36;0.00</span></li>
             <li><span class="text">Spent</span> <span class="numbers">&#36;8,496.40</span></li>
-            <li><span class="text">Balance</span> <span class="numbers"><span class="NDISlozenge">&#36;8,003.60</span></span></li>
+            <li><span class="text">Balance</span> <span class="numbers lozenge"><span class="NDISlozenge">&#36;8,003.60</span></span></li>
         </ul>
     </section>
 
@@ -118,8 +176,8 @@
         <ul class="NDISinstalmentSummary calloutCard">
             <li><span class="text">Next instalment date</span> <span class="numbers">3 April 2022 <span class="small">(in 11 days)</span></span></li>
             <li><span class="text">Next instalment release</span> <span class="numbers">&#36;16,500.00</span></li>
-            <li><span class="text">Current flexible funds</span> <span class="numbers">&#43; &#36;8,003.60</span></li>
-            <li><span class="text">Next instalment opening balance</span> <span class="numbers">&#61; &#36;24,996.40</span></li>
+            <li><span class="text"><span class="sr-only">&#43;&nbsp;</span>Current flexible funds</span> <span class="numbers plus">&#36;8,003.60</span></li>
+            <li><span class="text"><span class="sr-only">&#61;&nbsp;</span>Next instalment opening balance</span> <span class="numbers equals">&#36;24,996.40</span></li>
         </ul>
     </section>
 

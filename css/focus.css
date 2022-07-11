@@ -3,7 +3,7 @@ a:focus,
 a.standaloneLink:focus,
 button:focus,
 table.NDIStableSortable th button:focus,
-input:focus,
+input[type="text"]:focus,
 textarea:focus,
 select:focus,
 .NDISinputGroupButton.active input+label,
@@ -31,11 +31,11 @@ a:focus:not(:focus-visible),
 select:focus:not(:focus-visible),
 a.standaloneLink:focus:not(:focus-visible),
 .NDISbuttonGroup span button:focus:not(:focus-visible),
-input:focus:not(:focus-visible),
+input[type="text"]:focus:not(:focus-visible),
 button:focus:not(:focus-visible),
 .NDISinputGroupButton.active input+label:focus:not(:focus-visible),
 .NDISinputGroup input:focus:not(:focus-visible)+label,
 .NDISlegendInput:focus:not(:focus-visible)+.NDISlegendLabel,
 [role="tab"]:focus:not(:focus-visible) {
-    outline: 0;
+    outline: none !important;
 }
