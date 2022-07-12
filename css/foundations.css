@@ -21,8 +21,9 @@
     src        : url('https://andrewrlaw.github.io/72-Black.ttf') format('truetype');
 }
 
-/* COLOUR VARIABLES */
+
 :root {
+    /* COLOUR VARIABLES */
     --purpleHeavy : #6A2875;
     --purpleLight : #F2E7F4;
     --purple      : #8631A8;
@@ -38,18 +39,20 @@
     --alert       : #9D100F;
     --alertLight  : #F5E5E8;
     --focus       : #0c99ff;
+    /* SHADOW VARIABLE */
+    --shadow10    : 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* UTILITY CLASSES */
 .sr-only {
     position: absolute;
-    width       : 1px;
-    height      : 1px;
-    padding     : 0;
-    margin      : -1px;
-    overflow    : hidden;
-    clip        : rect(0, 0, 0, 0);
-    border      : 0;
+    width   : 1px;
+    height  : 1px;
+    padding : 0;
+    margin  : -1px;
+    overflow: hidden;
+    clip    : rect(0, 0, 0, 0);
+    border  : 0;
 }
 
 /* UTILITY CLASSES TO STRIP MARGIN FROM ONE SIDE OF AN ELEMENT */

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>System messages</title>
+    <link rel="stylesheet" href="ndis_zh.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+    <style>
+body {
+    padding: 0;
+    margin: 0;
+
+}
+
+button.NDISdismiss {
+    background: none;
+    color: var(--black);
+    padding: 7px 6px 5px 6px;
+    min-width: 110px;
+}
+
+button.NDISdismiss .material-symbols-rounded {
+    padding-bottom: 4px;
+}
+
+.NDISmessage {
+    /* TEMPORARY MARGIN PLACEMENT */
+    margin-bottom: 2em;
+}
+
+.NDISmessage {
+    width: auto;
+    display: flex;
+    background: var(--greyLight);
+    box-shadow: var(--shadow10);
+    -webkit-box-shadow: var(--shadow10);
+    -moz-box-shadow: var(--shadow10);
+    padding: 16px 24px;
+    border-bottom: 2px solid var(--black)
+}
+
+.NDISmessage .NDISmessageContent {
+    padding-left: 32px;
+    display: block;
+}
+
+.NDISmessageContentContainer {
+    order: 1;
+    flex-grow: 1;
+}
+
+
+.NDISmessageButtonContainer {
+    order: 2;
+    flex-grow: 2;
+    align-items: center;
+    display: flex;
+    padding-left: 2em;
+    justify-content: flex-end;
+}
+
+.NDISmessage h2 {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.NDISmessage a {
+    color: var(--black);
+}
+
+.NDISmessage .NDISmessageContent p:first-of-type,
+.NDISmessage .NDISmessageContent li:first-of-type {
+    margin-top: 0;
+}
+
+.NDISmessage.NDISmessageSuccess {
+    background: var(--tealLight);
+    border-bottom-color: var(--tealHeavy);
+}
+
+.NDISmessage.NDISmessageWarning {
+    background: var(--warningLight);
+    border-bottom-color: var(--warning);
+}
+
+.NDISmessage.NDISmessageAlert {
+    background: var(--alertLight);
+    border-bottom-color: var(--alert);
+}
+
+.NDISmessage.NDISmessageSuccess h2 {
+    color: var(--tealHeavy);
+}
+
+.NDISmessage h2 span.material-symbols-rounded {
+    position: relative;
+    vertical-align: bottom;
+    padding-right: 6px;
+    padding-bottom: 1px;
+}
+
+.NDISmessage.NDISmessageAlert h2 span.material-symbols-rounded {
+    color: var(--alert);
+}
+
+@media only screen and (min-width : 0px) and (max-width : 600px) {
+    .NDISmessage {
+        flex-direction: column-reverse;
+        padding: 16px 24px 32px 24px;
+    }
+
+
+}
+    </style>
+
+</head>
+
+<body>
+
+<span class="NDISmessage NDISmessageSuccess">
+    <span class="NDISmessageButtonContainer">
+        <button class="NDISdismiss" onclick="removeThis(this);"><span class="material-symbols-rounded"
+                aria-hidden="true">close</span>Dismiss</button>
+    </span>
+    <span class="NDISmessageContentContainer">
+        <h2><span class="material-symbols-rounded" aria-hidden="true">check_circle</span>Success!</h2>
+        <span class="NDISmessageContent">
+            <p>I am a success message, I appear when you submit a form or complete a task.</p>
+        </span>
+    </span>
+</span>
+
+<span class="NDISmessage NDISmessageWarning">
+    <span class="NDISmessageButtonContainer">
+        <button class="NDISdismiss" onclick="removeThis(this);"><span class="material-symbols-rounded"
+                aria-hidden="true">close</span>Dismiss</button>
+    </span>
+    <span class="NDISmessageContentContainer">
+        <h2><span class="material-symbols-rounded" aria-hidden="true">warning</span>There was an error</h2>
+        <span class="NDISmessageContent">
+            <p>I am a system error, I appear when there are system outages or issues. E.g. Due to planned
+                maintenance The NDIS Portal will be unavailable from 01 JAN 2022 10:00AM AEST to 02 JAN 2022 9:30AM
+                AEST.</p>
+        </span>
+    </span>
+</span>
+
+<span class="NDISmessage NDISmessageAlert">
+    <span class="NDISmessageButtonContainer">
+        <button class="NDISdismiss" onclick="removeThis(this);"><span class="material-symbols-rounded"
+                aria-hidden="true">close</span>Dismiss</button>
+    </span>
+    <span class="NDISmessageContentContainer">
+        <h2><span class="material-symbols-rounded" aria-hidden="true">warning</span>There was an error</h2>
+        <span class="NDISmessageContent">
+            <p>There are missing fields:<br/>
+                <a href="#">Phone number</a><br/>
+                <a href="#">Nominee name</a><br/>
+                <a href="#">Email address</a></p>
+        </span>
+    </span>
+</span>
+
+<script type="text/javascript">
+//<![CDATA[
+    function removeThis(_this) {
+            $(_this).parents('.NDISmessage').remove();
+        };
+//]]>
+</script>
+
+</body>
+
+
+</html>

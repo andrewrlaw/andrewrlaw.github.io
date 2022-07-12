@@ -10,153 +10,153 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
-        .NDISinstalmentSummary {
-            font-weight: 400;
-            font-family: '72 Light';
-            color: var(--black);
-            font-size: 24px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: flex;
-        }
-
-        .NDISinstalmentSummary li {
-            margin-left: 0px;
-            display: flex;
-            align-self: start;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .NDISinstalmentSummary li span.text {
-            font-family: '72 Bold';
-            font-size: 16px;
-            display: flex;
-            padding-bottom: 1em;
-            padding-right: 2em;
-            margin-bottom: 1em;
-            border-bottom: 2px solid var(--purpleHeavy);
-            line-height: 1.25em;
-        }
-
-        .NDISinstalmentSummary.calloutCard li span.text {
-            border-bottom: 2px solid var(--black);
-        }
-
-        /* .NDISinstalmentSummary li span.text .symbol{
-    padding-left: 1em;
+.NDISinstalmentSummary {
+    font-weight: 400;
+    font-family: '72 Light';
+    color: var(--black);
+    font-size: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     display: flex;
-    align-items: start;
+}
+
+.NDISinstalmentSummary li {
+    margin-left: 0px;
+    display: flex;
+    align-self: start;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.NDISinstalmentSummary li span.text {
+    font-family: '72 Bold';
+    font-size: 16px;
+    display: flex;
+    padding-bottom: 1em;
+    padding-right: 2em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid var(--purpleHeavy);
+    line-height: 1.25em;
+}
+
+.NDISinstalmentSummary.calloutCard li span.text {
+    border-bottom: 2px solid var(--black);
+}
+
+/* .NDISinstalmentSummary li span.text .symbol{
+padding-left: 1em;
+display: flex;
+align-items: start;
 } */
 
-        .NDISinstalmentSummary li span.numbers {
-            padding-right: 1em;
-            line-height: 1em
-        }
+.NDISinstalmentSummary li span.numbers {
+    padding-right: 1em;
+    line-height: 1em
+}
 
-        .NDISinstalmentSummary li span.numbers.plus:before {
-            content: '\002B';
-            padding-right: 0.25em;
-        }
-        .NDISinstalmentSummary li span.numbers.equals:before {
-            content: '\003D';
-            padding-right: 0.25em;
-        }
+.NDISinstalmentSummary li span.numbers.plus:before {
+    content: '\002B';
+    padding-right: 0.25em;
+}
+.NDISinstalmentSummary li span.numbers.equals:before {
+    content: '\003D';
+    padding-right: 0.25em;
+}
 
-        .NDISinstalmentSummary li span span.small {
-            font-style: italic;
-            font-size: 16px;
-            line-height: 1em;
-            white-space: nowrap;
-        }
+.NDISinstalmentSummary li span span.small {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1em;
+    white-space: nowrap;
+}
 
-        .NDISinstalmentSummary li .material-symbols-rounded {
-            display: inline-block;
-            vertical-align: bottom;
-        }
+.NDISinstalmentSummary li .material-symbols-rounded {
+    display: inline-block;
+    vertical-align: bottom;
+}
 
-        .NDISinstalmentSummary li .numbers.lozenge
-            {
-                padding-top: 0em;
-            }
-
-
+.NDISinstalmentSummary li .numbers.lozenge
+    {
+        padding-top: 0em;
+    }
 
 
-        @media only screen and (min-width : 896px) and (max-width : 1096px) {
-            .NDISinstalmentSummary.calloutCard li span.text {
-                min-height: 2.5em;
-            }
 
-        }
 
-        @media only screen and (min-width : 0px) and (max-width : 895px) {
-            .NDISinstalmentSummary {
-                display: inline-block;
-                font-size: 18px;
-            }
+@media only screen and (min-width : 896px) and (max-width : 1096px) {
+    .NDISinstalmentSummary.calloutCard li span.text {
+        min-height: 2.5em;
+    }
 
-            .NDISinstalmentSummary li
-            {
-                margin-bottom: 1em;
-            }
+}
 
-            .NDISinstalmentSummary li:last-of-type, .NDISinstalmentSummary.calloutCard li:last-of-type
-            {
-                padding-bottom: 0em;
-            }
+@media only screen and (min-width : 0px) and (max-width : 895px) {
+    .NDISinstalmentSummary {
+        display: inline-block;
+        font-size: 18px;
+    }
 
-            
+    .NDISinstalmentSummary li
+    {
+        margin-bottom: 1em;
+    }
 
-            .NDISinstalmentSummary li span.text, .NDISinstalmentSummary.calloutCard li span.text{
-            font-size: 16px;
-            padding-bottom: 0;
-            padding-right: 0;
-            margin-bottom: 0;
-            line-height: 1.25em;
-            border-bottom: none;
-            }
+    .NDISinstalmentSummary li:last-of-type, .NDISinstalmentSummary.calloutCard li:last-of-type
+    {
+        padding-bottom: 0em;
+    }
 
-            .NDISinstalmentSummary li,
-            .NDISinstalmentSummary.calloutCard li {
-                width: 100%;
-                display: inline-block;
-                border-bottom: 1px solid var(--grey);
-                padding-bottom: 1em;
-            }
+    
 
-            .NDISinstalmentSummary li:last-of-type,
-            .NDISinstalmentSummary.calloutCard li:last-of-type {
-                border-bottom: none;
-                margin-bottom: 0;
-            }
+    .NDISinstalmentSummary li span.text, .NDISinstalmentSummary.calloutCard li span.text{
+    font-size: 16px;
+    padding-bottom: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+    line-height: 1.25em;
+    border-bottom: none;
+    }
 
-            .NDISinstalmentSummary li span.text, .NDISinstalmentSummary li span.numbers,
-            .NDISinstalmentSummary.calloutCard li span.text, .NDISinstalmentSummary.calloutCard li span.numbers{
-                width: 48%;
-                float: left;
-                clear: none;
-            }
-        }
+    .NDISinstalmentSummary li,
+    .NDISinstalmentSummary.calloutCard li {
+        width: 100%;
+        display: inline-block;
+        border-bottom: 1px solid var(--grey);
+        padding-bottom: 1em;
+    }
 
-        @media only screen and (min-width : 0px) and (max-width : 564px) {
-            .NDISinstalmentSummary li span.text, .NDISinstalmentSummary li span.numbers,
-            .NDISinstalmentSummary.calloutCard li span.text, .NDISinstalmentSummary.calloutCard li span.numbers{
-                width: 100%;
-            }
+    .NDISinstalmentSummary li:last-of-type,
+    .NDISinstalmentSummary.calloutCard li:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
 
-            .NDISinstalmentSummary li .numbers.lozenge
-            {
-                padding-top: 0.75em;
-            }
+    .NDISinstalmentSummary li span.text, .NDISinstalmentSummary li span.numbers,
+    .NDISinstalmentSummary.calloutCard li span.text, .NDISinstalmentSummary.calloutCard li span.numbers{
+        width: 48%;
+        float: left;
+        clear: none;
+    }
+}
 
-            .NDISinstalmentSummary li,
-            .NDISinstalmentSummary.calloutCard li {
-                margin-bottom: 0.5em;
-            }
-        }
+@media only screen and (min-width : 0px) and (max-width : 564px) {
+    .NDISinstalmentSummary li span.text, .NDISinstalmentSummary li span.numbers,
+    .NDISinstalmentSummary.calloutCard li span.text, .NDISinstalmentSummary.calloutCard li span.numbers{
+        width: 100%;
+    }
+
+    .NDISinstalmentSummary li .numbers.lozenge
+    {
+        padding-top: 0.75em;
+    }
+
+    .NDISinstalmentSummary li,
+    .NDISinstalmentSummary.calloutCard li {
+        margin-bottom: 0.5em;
+    }
+}
     </style>
 </head>
 
