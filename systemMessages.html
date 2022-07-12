@@ -125,24 +125,20 @@ button.NDISdismiss .material-symbols-rounded {
 <body>
 
 <span class="NDISmessage NDISmessageSuccess">
-    <span class="NDISmessageButtonContainer">
-        <button class="NDISdismiss" onclick="removeThis(this);"><span class="material-symbols-rounded"
-                aria-hidden="true">close</span>Dismiss</button>
-    </span>
-    <span class="NDISmessageContentContainer">
+    <span class="NDISmessageContentContainer" tabindex="0">
         <h2><span class="material-symbols-rounded" aria-hidden="true">check_circle</span>Success!</h2>
         <span class="NDISmessageContent">
             <p>I am a success message, I appear when you submit a form or complete a task.</p>
         </span>
     </span>
+    <span class="NDISmessageButtonContainer">
+        <button class="NDISdismiss" onclick="removeThis(this);" tabindex="0"><span class="material-symbols-rounded"
+                aria-hidden="true">close</span>Dismiss</button>
+    </span>
 </span>
 
 <span class="NDISmessage NDISmessageWarning">
-    <span class="NDISmessageButtonContainer">
-        <button class="NDISdismiss" onclick="removeThis(this);"><span class="material-symbols-rounded"
-                aria-hidden="true">close</span>Dismiss</button>
-    </span>
-    <span class="NDISmessageContentContainer">
+    <span class="NDISmessageContentContainer" tabindex="0">
         <h2><span class="material-symbols-rounded" aria-hidden="true">warning</span>There was an error</h2>
         <span class="NDISmessageContent">
             <p>I am a system error, I appear when there are system outages or issues. E.g. Due to planned
@@ -150,14 +146,14 @@ button.NDISdismiss .material-symbols-rounded {
                 AEST.</p>
         </span>
     </span>
+    <span class="NDISmessageButtonContainer">
+        <button class="NDISdismiss" onclick="removeThis(this);" tabindex="0"><span class="material-symbols-rounded"
+                aria-hidden="true">close</span>Dismiss</button>
+    </span>
 </span>
 
 <span class="NDISmessage NDISmessageAlert">
-    <span class="NDISmessageButtonContainer">
-        <button class="NDISdismiss" onclick="removeThis(this);"><span class="material-symbols-rounded"
-                aria-hidden="true">close</span>Dismiss</button>
-    </span>
-    <span class="NDISmessageContentContainer">
+    <span class="NDISmessageContentContainer" tabindex="0">
         <h2><span class="material-symbols-rounded" aria-hidden="true">warning</span>There was an error</h2>
         <span class="NDISmessageContent">
             <p>There are missing fields:<br/>
@@ -165,6 +161,10 @@ button.NDISdismiss .material-symbols-rounded {
                 <a href="#">Nominee name</a><br/>
                 <a href="#">Email address</a></p>
         </span>
+    </span>
+    <span class="NDISmessageButtonContainer">
+        <button class="NDISdismiss" onclick="removeThis(this);" tabindex="0"><span class="material-symbols-rounded"
+                aria-hidden="true">close</span>Dismiss</button>
     </span>
 </span>
 
