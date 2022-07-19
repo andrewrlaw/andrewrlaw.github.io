@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML 5 Boilerplate</title>
+  <link rel="stylesheet" type="text/css"  href="ndis_zh.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+.NDIStooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* the bubble element, added inside the toggletip live region */
+
+.NDIStooltip-bubble {
+  display: inline-block;
+  position: absolute;
+  border-radius: 8px;
+  top: 2.5em;
+  left: -5em;
+  width: 10em;
+  padding: 0.5rem;
+  background: var(--purpleHeavy );
+  color: #fff;
+}
+
+.NDIStooltip-bubble::before
+{
+    position: absolute;
+  top: -0.9em;
+  height: 0;
+  width: 0;
+  left: 5em;
+  border: 0.5em solid transparent;
+  border-bottom-color: var(--purpleHeavy);
+  content: "";
+}
+
+button.NDIStooltip {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--purpleHeavy);
+  color: var(--white);
+  padding: 0;
+  font-family: '72 Bold';
+  font-weight: 400;
+} 
+
+button.NDIStooltip:focus {
+    outline       : 3px solid var(--focus);
+    outline-offset: 2px;
+    transition    : none;s
+}
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.<span class="NDIStooltip-container">
+    <button class="NDIStooltip" type="button" aria-label="more info" data-NDIStooltip-content="This clarifies whatever needs clarifying">&#63;</button>
+    <span role="status"></span>
+  </span></p>
+
+
+<script>
+(function() {
+  // Get all the toggletip buttons
+  var toggletips = document.querySelectorAll('[data-NDIStooltip-content]');
+
+  // Iterate over them
+  Array.prototype.forEach.call(toggletips, function (toggletip) {
+    // Get the message from the data-content element
+    var message = toggletip.getAttribute('data-NDIStooltip-content');
+
+    // Get the live region element
+    var liveRegion = toggletip.nextElementSibling;
+
+    // Toggle the message
+    toggletip.addEventListener('click', function () {
+        liveRegion.innerHTML = '';
+        window.setTimeout(function() {
+          liveRegion.innerHTML = '<span class="NDIStooltip-bubble">'+ message +'</span>';
+        }, 100);
+    });
+
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+      if (toggletip !== e.target) {
+        liveRegion.innerHTML = '';
+      }                        
+    });
+
+    // Remove toggletip on ESC
+    toggletip.addEventListener('keydown', function (e) {
+      if ((e.keyCode || e.which) === 27)
+      liveRegion.innerHTML = '';
+    });
+    
+    // Remove on blur
+    toggletip.addEventListener('blur', function (e) {
+      liveRegion.innerHTML = '';
+    });
+  });
+}());
+</script>
+</html>

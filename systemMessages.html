@@ -11,171 +11,255 @@
         integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
     <style>
-body {
-    padding: 0;
-    margin: 0;
+        body {
+            padding: 0;
+            margin: 0;
 
-}
+        }
 
-button.NDISdismiss {
-    background: none;
-    color: var(--black);
-    padding: 7px 6px 5px 6px;
-    min-width: 110px;
-}
+        button.NDISdismiss {
+            background: none;
+            color: var(--black);
+            padding: 7px 6px 5px 6px;
+            min-width: 110px;
+        }
 
-button.NDISdismiss .material-symbols-rounded {
-    padding-bottom: 4px;
-    display: inline-block !important;
-}
+        button.NDISdismiss .material-symbols-rounded {
+            padding-bottom: 4px;
+            display: inline-block !important;
+        }
 
-.NDISmessage {
-    /* TEMPORARY MARGIN PLACEMENT */
-    margin-bottom: 2em;
-}
+        .NDISmessage {
+            /* TEMPORARY MARGIN PLACEMENT */
+            margin-bottom: 2em;
+        }
 
-.NDISmessage {
-    width: auto;
-    display: flex;
-    background: var(--greyLight);
-    box-shadow: var(--shadow10);
-    -webkit-box-shadow: var(--shadow10);
-    -moz-box-shadow: var(--shadow10);
-    padding: 16px 24px;
-    border-bottom: 2px solid var(--black)
-}
+        .NDISmessage {
+            width: auto;
+            display: flex;
+            background: var(--greyLight);
+            box-shadow: var(--shadow10);
+            -webkit-box-shadow: var(--shadow10);
+            -moz-box-shadow: var(--shadow10);
+            padding: 16px 24px;
+            border-bottom: 2px solid var(--black)
+        }
 
-.NDISmessage .NDISmessageContent {
-    padding-left: 32px;
-    display: block;
-}
+        .NDISmessage .NDISmessageContent {
+            padding-left: 32px;
+            display: block;
+        }
 
-.NDISmessageContentContainer {
-    order: 1;
-    flex-grow: 1;
-}
-
-
-.NDISmessageButtonContainer {
-    order: 2;
-    flex-grow: 2;
-    align-items: center;
-    display: flex;
-    padding-left: 2em;
-    justify-content: flex-end;
-}
-
-.NDISmessage h2 {
-    margin-bottom: 0;
-    font-size: 16px;
-    line-height: 24px;
-}
-
-.NDISmessage a {
-    color: var(--black);
-}
-
-.NDISmessage .NDISmessageContent p:first-of-type,
-.NDISmessage .NDISmessageContent li:first-of-type {
-    margin-top: 0;
-}
-
-.NDISmessage.NDISmessageSuccess {
-    background: var(--tealLight);
-    border-bottom-color: var(--tealHeavy);
-}
-
-.NDISmessage.NDISmessageWarning {
-    background: var(--warningLight);
-    border-bottom-color: var(--warning);
-}
-
-.NDISmessage.NDISmessageAlert {
-    background: var(--alertLight);
-    border-bottom-color: var(--alert);
-}
-
-.NDISmessage.NDISmessageSuccess h2 {
-    color: var(--tealHeavy);
-}
-
-.NDISmessage h2 span.material-symbols-rounded {
-    position: relative;
-    vertical-align: bottom;
-    padding-right: 6px;
-    padding-bottom: 1px;
-}
-
-.NDISmessage.NDISmessageAlert h2 span.material-symbols-rounded {
-    color: var(--alert);
-}
-
-@media only screen and (min-width : 0px) and (max-width : 600px) {
-    .NDISmessage {
-        flex-direction: column-reverse;
-        padding: 16px 24px 32px 24px;
-    }
+        .NDISmessageContentContainer {
+            order: 1;
+            flex-grow: 1;
+        }
 
 
-}
+        .NDISmessageButtonContainer {
+            order: 2;
+            flex-grow: 2;
+            align-items: center;
+            display: flex;
+            padding-left: 2em;
+            justify-content: flex-end;
+        }
+
+        .NDISmessage h2 {
+            margin-bottom: 0;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .NDISmessage a {
+            color: var(--black);
+        }
+
+        .NDISmessage .NDISmessageContent p:first-of-type,
+        .NDISmessage .NDISmessageContent li:first-of-type {
+            margin-top: 0;
+        }
+
+        .NDISmessage.NDISmessageSuccess {
+            background: var(--tealLight);
+            border-bottom-color: var(--tealHeavy);
+        }
+
+        .NDISmessage.NDISmessageWarning {
+            background: var(--warningLight);
+            border-bottom-color: var(--warning);
+        }
+
+        .NDISmessage.NDISmessageAlert {
+            background: var(--alertLight);
+            border-bottom-color: var(--alert);
+        }
+
+        .NDISmessage.NDISmessageSuccess h2 {
+            color: var(--tealHeavy);
+        }
+
+        .NDISmessage h2 span.material-symbols-rounded {
+            position: relative;
+            vertical-align: bottom;
+            padding-right: 6px;
+            padding-bottom: 1px;
+        }
+
+        .NDISmessage.NDISmessageAlert h2 span.material-symbols-rounded {
+            color: var(--alert);
+        }
+
+        @media only screen and (min-width : 0px) and (max-width : 600px) {
+            .NDISmessage {
+                flex-direction: column-reverse;
+                padding: 16px 24px 32px 24px;
+            }
+
+
+        }
+
+
+        /* button placement */
+        .triggers {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 3em;
+        }
+        .triggers button {
+            margin-bottom: 1em;
+        }
+
     </style>
 
 </head>
 
 <body>
 
-<span class="NDISmessage NDISmessageSuccess">
-    <span class="NDISmessageContentContainer" tabindex="0">
-        <h2><span class="material-symbols-rounded" aria-hidden="true">check_circle</span>Success!</h2>
-        <span class="NDISmessageContent">
-            <p>I am a success message, I appear when you submit a form or complete a task.</p>
+    <span class="triggers">
+        <button onclick="successMessage()">Toggle success message</button>
+        <button onclick="warningMessage()">Toggle warning message</button>
+        <button onclick="alertMessage()">Toggle alert message</button>
+        <button onclick="alert2Message()">Toggle alert message with links</button>
+    </span>
+
+    <span class="NDISmessage NDISmessageSuccess" id="NDISmessageSuccess" aria-live="assertive" style="display:none;">
+        <span class="NDISmessageContentContainer" tabindex="0">
+            <h2><span class="material-symbols-rounded" aria-hidden="true">check_circle</span>Success!</h2>
+            <span class="NDISmessageContent">
+                <p>I am a success message, I appear when you submit a form or complete a task.</p>
+            </span>
+        </span>
+        <span class="NDISmessageButtonContainer">
+            <button class="NDISdismiss" onclick="removeThis(this);" tabindex="0"><span class="material-symbols-rounded"
+                    aria-hidden="true">close</span>Dismiss</button>
         </span>
     </span>
-    <span class="NDISmessageButtonContainer">
-        <button class="NDISdismiss" onclick="removeThis(this);" tabindex="0"><span class="material-symbols-rounded"
-                aria-hidden="true">close</span>Dismiss</button>
-    </span>
-</span>
 
-<span class="NDISmessage NDISmessageWarning">
-    <span class="NDISmessageContentContainer" tabindex="0">
-        <h2><span class="material-symbols-rounded" aria-hidden="true">warning</span>There was an error</h2>
-        <span class="NDISmessageContent">
-            <p>I am a system error, I appear when there are system outages or issues. E.g. Due to planned
-                maintenance The NDIS Portal will be unavailable from 01 JAN 2022 10:00AM AEST to 02 JAN 2022 9:30AM
-                AEST.</p>
+    <span class="NDISmessage NDISmessageWarning" id="NDISmessageWarning" aria-live="assertive" style="display:none;">
+        <span class="NDISmessageContentContainer" tabindex="0">
+            <h2><span class="material-symbols-rounded" aria-hidden="true">warning</span>There was an error</h2>
+            <span class="NDISmessageContent">
+                <p>I am a system error, I appear when there are system outages or issues. E.g. Due to planned
+                    maintenance The NDIS Portal will be unavailable from 01 JAN 2022 10:00AM AEST to 02 JAN 2022 9:30AM
+                    AEST.</p>
+            </span>
+        </span>
+        <span class="NDISmessageButtonContainer">
+            <button class="NDISdismiss" onclick="removeThis(this);" tabindex="0"><span class="material-symbols-rounded"
+                    aria-hidden="true">close</span>Dismiss</button>
         </span>
     </span>
-    <span class="NDISmessageButtonContainer">
-        <button class="NDISdismiss" onclick="removeThis(this);" tabindex="0"><span class="material-symbols-rounded"
-                aria-hidden="true">close</span>Dismiss</button>
-    </span>
-</span>
 
-<span class="NDISmessage NDISmessageAlert">
-    <span class="NDISmessageContentContainer" tabindex="0">
-        <h2><span class="material-symbols-rounded" aria-hidden="true">warning</span>There was an error</h2>
-        <span class="NDISmessageContent">
-            <p>There are missing fields:<br/>
-                <a href="#">Phone number</a><br/>
-                <a href="#">Nominee name</a><br/>
-                <a href="#">Email address</a></p>
+    <span class="NDISmessage NDISmessageAlert" id="NDISmessageAlert" role="alert" style="display:none;">
+        <span class="NDISmessageContentContainer" tabindex="0">
+            <h2><span class="material-symbols-rounded" aria-hidden="true">warning</span>There was an error</h2>
+            <span class="NDISmessageContent">
+                <p>There has been a catastrophic error!</p>
+            </span>
+        </span>
+        <span class="NDISmessageButtonContainer">
+            <button class="NDISdismiss" onclick="removeThis(this);" tabindex="0"><span class="material-symbols-rounded"
+                    aria-hidden="true">close</span>Dismiss</button>
         </span>
     </span>
-    <span class="NDISmessageButtonContainer">
-        <button class="NDISdismiss" onclick="removeThis(this);" tabindex="0"><span class="material-symbols-rounded"
-                aria-hidden="true">close</span>Dismiss</button>
-    </span>
-</span>
 
-<script type="text/javascript">
-//<![CDATA[
-    function removeThis(_this) {
+    <span class="NDISmessage NDISmessageAlert" id="NDISmessageAlert2" style="display:none;">
+        <span class="NDISmessageContentContainer">
+            <h2 tabindex="0"><span class="material-symbols-rounded" aria-hidden="true">warning</span>There was an error
+            </h2>
+            <span class="NDISmessageContent">
+                <p>There are missing fields:<br />
+                    <a href="#">Phone number</a><br />
+                    <a href="#">Nominee name</a><br />
+                    <a href="#">Email address</a>
+                </p>
+            </span>
+        </span>
+        <span class="NDISmessageButtonContainer">
+            <button class="NDISdismiss" onclick="removeThis(this);" tabindex="0"><span class="material-symbols-rounded"
+                    aria-hidden="true">close</span>Dismiss</button>
+        </span>
+    </span>
+
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+        function removeThis(_this) {
             $(_this).parents('.NDISmessage').remove();
         };
 //]]>
-</script>
-
+    </script>
+    <script type="text/javascript">
+        //<![CDATA[
+        function successMessage() {
+            var x = document.getElementById("NDISmessageSuccess");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+        }
+//]]>
+    </script>
+    <script type="text/javascript">
+        //<![CDATA[
+        function warningMessage() {
+            var x = document.getElementById("NDISmessageWarning");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+        }
+//]]>
+    </script>
+    <script type="text/javascript">
+        //<![CDATA[
+        function alertMessage() {
+            var x = document.getElementById("NDISmessageAlert");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+        }
+//]]>
+    </script>
+    <script type="text/javascript">
+        //<![CDATA[
+        function alert2Message() {
+            var x = document.getElementById("NDISmessageAlert2");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+        }
+//]]>
+    </script>
 </body>
 
 

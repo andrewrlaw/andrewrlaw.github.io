@@ -24,9 +24,10 @@
 
 :root {
     /* COLOUR VARIABLES */
-    --purpleHeavy : #6A2875;
     --purpleLight : #F2E7F4;
+    --purpleHeavy : #6A2875;
     --purple      : #8631A8;
+    --purpleDark  : #3A1640;
     --tealHeavy   : #007C89;
     --tealLight   : #EDF6F7;
     --white       : #FFFFFF;
